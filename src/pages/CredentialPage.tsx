@@ -5,13 +5,18 @@ import { CredentialCardsCertificate, CredentialCardsPassport } from "../componen
 import { AvailableCredentialFilter } from "../components/filters";
 import { AvailableCredentialHeader } from "../components/headers";
 import { DummyDataArray } from "../dummyData";
-import { Accent, BaseContainer, fontBasic, ItemCard, marginDynamic } from "../styles";
+import { Accent, backgroundColorDynamic, borderRadiusDynamic, FlexWrap, fontBasic, marginDynamic, paddingDynamic } from "../styles";
 
 export const CredentialPage = () => {
   const [currentFilter, setCurrentFilter] = useState("All");
 
   return (
-    <View style={BaseContainer}>
+    <View
+      style={{
+        ...paddingDynamic("12%", 24, 0, 24),
+        // ...marginDynamic("-16%", -16, 0, -16),
+      }}
+    >
       <AvailableCredentialHeader />
       <AvailableCredentialFilter
         setCurrentFilter={setCurrentFilter}
@@ -73,7 +78,15 @@ export const CredentialPage = () => {
           }
         })}
 
-        <View style={ItemCard}>
+        <View
+          style={{
+            ...borderRadiusDynamic(16),
+            ...paddingDynamic(24, 16, 24, 16),
+            ...marginDynamic(16, 0, 16, 0),
+            ...FlexWrap,
+            ...backgroundColorDynamic(Accent.accent_green_3),
+          }}
+        >
           <TouchableOpacity onPress={() => {}}>
             <Text style={{ ...fontBasic(14, "bold", Accent.accent_blue_10) }}>
               Academic Transcript Year 1

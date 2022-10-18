@@ -8,9 +8,8 @@ import {
   BackgroundColorWhite,
   borderMake,
   BorderRadius16,
-  BorderRadiusBottomOnly16,
+  borderRadiusBottomDynamic,
   borderRadiusDynamic,
-  ButtonGeneral,
   dimensionDynamic,
   FlexDirectionRow,
   FlexOne,
@@ -30,18 +29,18 @@ import {
 
 export const BaseContainer: ViewStyle = {
   ...FlexOne,
-  ...paddingDynamic('10%', 24, 24, 24),
+  ...paddingDynamic("10%", 24, 24, 24),
 };
 
 export const BaseContainerCounter: ViewStyle = {
-  ...paddingDynamic('16%', 24, 0, 24),
-  ...marginDynamic('-16%', -16, 0, -16),
+  ...paddingDynamic("16%", 24, 0, 24),
+  ...marginDynamic("-16%", -16, 0, -16),
 };
 
 export const InputSpace: ViewStyle = {
   ...borderRadiusDynamic(4),
-  ...dimensionDynamic('auto', '90%'),
-  ...marginDynamic(8, 'auto', 0, 'auto'),
+  ...dimensionDynamic("auto", "90%"),
+  ...marginDynamic(8, "auto", 0, "auto"),
   ...borderRadiusDynamic(8),
   ...paddingDynamic(16, 8, 16, 24),
   ...backgroundColorDynamic(White),
@@ -54,13 +53,12 @@ export const ForgetClick: ViewStyle = {
 };
 
 export const Button: ViewStyle = {
-  borderColor: '#01396C',
-  backgroundColor: '#01396C',
-  ...marginDynamic('85%', 'auto', 0, 'auto'),
+  ...backgroundColorDynamic("#01396C"),
+  ...marginDynamic("85%", "auto", 0, "auto"),
   ...borderRadiusDynamic(32),
-  ...dimensionDynamic('auto', '90%'),
+  ...borderMake(2, "#01396C"),
+  ...dimensionDynamic("auto", "90%"),
   ...paddingDynamic(16, 0, 16, 0),
-  ...ButtonGeneral,
   ...AlignItemCenter,
 };
 
@@ -73,7 +71,7 @@ export const MediumMargin: ViewStyle = {
 };
 
 export const HeaderSpace: ViewStyle = {
-  ...marginDynamic('2%'),
+  ...marginDynamic("2%"),
   ...FlexDirectionRow,
   ...JustifySpaceBetween,
   ...AlignItemCenter,
@@ -86,10 +84,10 @@ export const HeaderSpaceAddTest: ViewStyle = {
 };
 
 export const HeroSpace: ViewStyle = {
-  backgroundColor: heroColors.primary,
+  ...backgroundColorDynamic(heroColors.primary),
   ...borderRadiusDynamic(16),
   ...paddingDynamic(24, 24, 24, 24),
-  ...marginDynamic('6%'),
+  ...marginDynamic("6%"),
   ...FlexDirectionRow,
   ...JustifySpaceBetween,
   ...AlignItemCenter,
@@ -100,16 +98,16 @@ export const FlexRow: ViewStyle = {
 };
 
 export const HeroSpaceBackOne: ViewStyle = {
-  backgroundColor: Neutral.neutral_1,
-  ...BorderRadiusBottomOnly16,
-  ...marginDynamic(0, 'auto', 0, 'auto'),
-  ...dimensionDynamic('auto', '80%'),
+  ...borderRadiusBottomDynamic(16),
+  ...marginDynamic(0, "auto", 0, "auto"),
+  ...dimensionDynamic("auto", "80%"),
+  ...backgroundColorDynamic(Neutral.neutral_1),
 };
 
 export const HeroSpaceBackTwo: ViewStyle = {
   ...HeroSpaceBackOne,
   ...BackgroundColorWhite,
-  ...dimensionDynamic('auto', '70%'),
+  ...dimensionDynamic("auto", "70%"),
 };
 
 export const ImageDiscover: ViewStyle = {
@@ -120,29 +118,29 @@ export const ImageDiscover: ViewStyle = {
 
 export const CurrentStatusSpace: ViewStyle = {
   ...ShadowLight,
-  ...marginDynamic('10%'),
+  ...marginDynamic("10%"),
 };
 
 export const CurrentStatusItem: ViewStyle = {
   ...AlignItemCenter,
-  ...dimensionDynamic(60, '20%'),
+  ...dimensionDynamic(60, "20%"),
 };
 
 export const CurrentStatusImg: ViewStyle = {
-  backgroundColor: heroColors.secondary,
   ...SquareBox60px,
   ...borderRadiusDynamic(80),
   ...marginDynamic(0, 0, 8),
+  ...backgroundColorDynamic(heroColors.secondary),
 };
 
 export const CurrentStatus: ViewStyle = {
-  backgroundColor: titleColors.white,
   ...JustifySpaceBetween,
   ...FlexDirectionRow,
   ...paddingDynamic(24, 24, 48, 24),
   ...marginDynamic(12),
   ...borderRadiusDynamic(16),
-  ...dimensionDynamic('auto', '100%'),
+  ...dimensionDynamic("auto", "100%"),
+  ...backgroundColorDynamic(titleColors.white),
 };
 
 export const HighlightSpace: ViewStyle = {
@@ -150,7 +148,7 @@ export const HighlightSpace: ViewStyle = {
   ...JustifySpaceBetween,
   ...FlexDirectionRow,
   ...AlignItemCenter,
-  ...marginDynamic('8%'),
+  ...marginDynamic("8%"),
 };
 
 export const HighlightItem: ViewStyle = {
@@ -160,7 +158,7 @@ export const HighlightItem: ViewStyle = {
 };
 
 export const HighlightPic: ViewStyle = {
-  backgroundColor: 'grey',
+  ...backgroundColorDynamic("grey"),
   ...marginDynamic(0, 15),
   ...SquareBox60px,
   ...borderRadiusDynamic(50),
@@ -168,64 +166,65 @@ export const HighlightPic: ViewStyle = {
 
 export const vectorImg: ViewStyle = {
   ...SquareBox250px,
-  ...marginDynamic('20%', 'auto', 0, 'auto'),
+  ...marginDynamic("20%", "auto", 0, "auto"),
 };
 
 export const title: ViewStyle = {
   ...FlexDirectionRow,
   ...FlexWrap,
-  ...marginDynamic('30%'),
+  ...marginDynamic("30%"),
 };
 
 export const buttonRow: ViewStyle = {
   ...FlexDirectionRow,
   ...JustifySpaceEvenly,
-  ...marginDynamic(0, 0, '15%'),
+  ...marginDynamic(0, 0, "15%"),
 };
 
 export const button: ViewStyle = {
-  ...paddingDynamic(15, 0, 15),
+  ...paddingDynamic(8, 0, 8),
   ...AlignItemCenter,
-  ...borderMake(4, White),
+  ...borderMake(2, White),
   ...borderRadiusDynamic(50),
-  ...dimensionDynamic('auto', '45%'),
+  ...dimensionDynamic("auto", "45%"),
 };
 
 export const buttonInverse: ViewStyle = {
   ...button,
-  backgroundColor: 'white',
+  backgroundColor: "white",
 };
 
 export const marginAuto: ViewStyle = {
-  ...marginDynamic(0, 'auto', 0, 'auto'),
+  ...marginDynamic(0, "auto", 0, "auto"),
 };
 
 export const footer: ViewStyle = {
-  ...marginDynamic('40%'),
+  ...marginDynamic("40%"),
 };
 
 export const ItemCard: ViewStyle = {
-  backgroundColor: '#02C9A5',
   ...borderRadiusDynamic(16),
   ...paddingDynamic(24, 16, 24, 16),
-  ...marginDynamic(16, 0, 16),
+  ...marginDynamic(16, 0, 16, 0),
+  ...FlexWrap,
+  ...backgroundColorDynamic(Accent.accent_green_3),
 };
 
 export const certImg: ViewStyle = {
   backgroundColor: Primary.primary_blue,
   ...SquareBox80px,
   ...borderRadiusDynamic(24),
-  ...marginDynamic(0, '10%'),
+  ...marginDynamic(0, "10%"),
 };
 
 export const QRCodeSpace: ViewStyle = {
   backgroundColor: Primary.primary_blue,
-  ...BorderRadiusBottomOnly16,
+  ...borderRadiusBottomDynamic(16),
   ...FlexDirectionRow,
   ...JustifySpaceBetween,
   ...AlignItemCenter,
   ...marginDynamic(48, -16, -24, -16),
-  ...paddingDynamic(16, 16, 16, 16),
+  ...paddingDynamic(16, 16, 24, 16),
 };
 
 export const InitializeBg: ViewStyle = {
@@ -237,42 +236,42 @@ export const InitializeBg: ViewStyle = {
 export const DiscoverBg: ViewStyle = {
   ...PositionAbsolute,
   ...borderRadiusDynamic(32),
-  ...dimensionDynamic('64%', '120%'),
+  ...dimensionDynamic("64%", "120%"),
 };
 
 export const Title: TextStyle = {
-  ...marginDynamic('30%'),
-  ...fontBasic(28, '600', '#1A232B'),
+  ...marginDynamic("30%"),
+  ...fontBasic(28, "600", "#1A232B"),
   ...paddingDynamic(0, 0, 0, 16),
 };
 
 export const Label: TextStyle = {
-  ...fontBasic(16, '400', '#676D71', 0.8),
+  ...fontBasic(16, "400", "#676D71", 0.8),
   ...marginDynamic(24, 0, 0, 16),
 };
 
 export const ForgetText: TextStyle = {
-  ...fontBasic(14, 'bold', '#01396C'),
+  ...fontBasic(14, "bold", "#01396C"),
 };
 
 export const textButtonInverse: TextStyle = {
-  ...fontBasic(20, '500', '#01396C'),
+  ...fontBasic(20, "500", "#01396C"),
 };
 
 export const textComment: TextStyle = {
-  ...fontBasic(12, 'normal', White, 0.7),
+  ...fontBasic(12, "normal", White, 0.7),
 };
 
 export const textTitle: TextStyle = {
-  ...fontBasic(28, '600', White),
+  ...fontBasic(28, "600", White),
 };
 
 export const textTitleSpan: TextStyle = {
-  ...fontBasic(14, 'bold', '#02C9A5'),
+  ...fontBasic(28, "bold", "#02C9A5"),
 };
 
 export const textButton: TextStyle = {
-  ...fontBasic(20, '500', White),
+  ...fontBasic(20, "500", White),
 };
 
 export const HeroSpaceText: TextStyle = {
@@ -282,33 +281,33 @@ export const HeroSpaceText: TextStyle = {
 };
 
 export const CurrentStatusImgText: TextStyle = {
-  ...fontBasic(12, 'normal', heroColorsText.primary),
+  ...fontBasic(12, "normal", heroColorsText.primary),
 };
 
 export const ButtonText: TextStyle = {
-  ...fontBasic(20, '500', White),
+  ...fontBasic(20, "500", White),
 };
 
 export const NormalText = {
-  ...fontBasic(16, '600', Accent.accent_blue_10),
+  ...fontBasic(14, "600", Accent.accent_blue_10),
 };
 
 export const NormalTextWhite: TextStyle = {
-  ...fontBasic(14, '600', titleColors.primary),
+  ...fontBasic(14, "600", titleColors.primary),
 };
 
 export const MediumText: TextStyle = {
-  ...fontBasic(16, '800', titleColors.secondary),
+  ...fontBasic(16, "800", titleColors.secondary),
 };
 
 export const MediumTextWhite: TextStyle = {
-  ...fontBasic(16, '800', White),
+  ...fontBasic(16, "800", White),
 };
 
 export const TextComment: TextStyle = {
-  ...fontBasic(12, 'normal', 'black', 0.7),
+  ...fontBasic(12, "normal", "black", 0.7),
 };
 
 export const TextCommentWhite: TextStyle = {
-  ...fontBasic(12, 'normal', White, 0.7),
+  ...fontBasic(12, "normal", White, 0.7),
 };

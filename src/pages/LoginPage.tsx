@@ -2,57 +2,107 @@ import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
 import {
-  BaseContainer,
-  button,
-  buttonInverse,
-  buttonRow,
-  footer,
-  InitializeBg,
-  marginAuto,
-  textButton,
-  textButtonInverse,
-  textComment,
-  textTitle,
-  textTitleSpan,
-  title,
-  vectorImg,
+  AlignItemCenter,
+  backgroundColorDynamic,
+  borderMake,
+  borderRadiusDynamic,
+  dimensionDynamic,
+  FlexDirectionRow,
+  FlexOne,
+  FlexWrap,
+  fontBasic,
+  JustifySpaceCenter,
+  JustifySpaceEvenly,
+  marginDynamic,
+  paddingDynamic,
+  PositionAbsolute,
+  SquareBox250px,
+  White,
 } from "../styles";
 
-export const LoginPage = ({navigation}) => {
-  // const checkNav = useNavigation();
+const Background_img = "../media/initialize_app_bg.png";
+const Illustration_img = "../media/initalize_Illustration.png";
+
+export const LoginPage = ({ navigation }) => {
   const GoToLoginDetail = () => {
-    navigation.navigate('LoginScreenStack');
-    console.log('GoToLoginDetail', navigation);
+    navigation.navigate("LoginScreenStack");
+    console.log("GoToLoginDetail", navigation);
   };
 
-  const background_img = '../media/initialize_app_bg.png';
-  const illustration_img = '../media/initalize_Illustration.png';
-
   return (
-    <View style={{...BaseContainer, backgroundColor: '#002E94'}}>
-      <View style={InitializeBg}>
-        <Image source={require(background_img)} />
+    <View
+      style={{
+        ...FlexOne,
+        ...paddingDynamic("10%", 24, 24, 24),
+        ...backgroundColorDynamic("#002E94"),
+      }}
+    >
+      <View
+        style={{
+          ...JustifySpaceCenter,
+          ...PositionAbsolute,
+          ...dimensionDynamic(1, 1),
+        }}
+      >
+        <Image source={require(Background_img)} />
       </View>
 
-      <View style={title}>
-        <Text style={textTitle}>
-          Managing your credential {'\n'}is easy with
-          <Text style={textTitleSpan}> myBID</Text>
+      <View
+        style={{ ...FlexDirectionRow, ...FlexWrap, ...marginDynamic("30%") }}
+      >
+        <Text style={{ ...fontBasic(28, "600", White) }}>
+          Managing your credential {"\n"}is easy with
+          <Text style={{ ...fontBasic(28, "bold", "#02C9A5") }}> myBID</Text>
         </Text>
       </View>
       <View>
-        <Image source={require(illustration_img)} style={vectorImg} />
+        <Image
+          source={require(Illustration_img)}
+          style={{
+            ...SquareBox250px,
+            ...marginDynamic("20%", "auto", 0, "auto"),
+          }}
+        />
       </View>
-      <View style={footer}>
-        <View style={buttonRow}>
-          <TouchableOpacity style={button} onPress={GoToLoginDetail}>
-            <Text style={textButton}>Log In</Text>
+      <View style={{ ...marginDynamic("40%") }}>
+        <View
+          style={{
+            ...FlexDirectionRow,
+            ...JustifySpaceEvenly,
+            ...marginDynamic(0, 0, "15%"),
+          }}
+        >
+          <TouchableOpacity
+            style={{
+              ...paddingDynamic(8, 0, 8),
+              ...AlignItemCenter,
+              ...borderMake(2, White),
+              ...borderRadiusDynamic(50),
+              ...dimensionDynamic("auto", "45%"),
+            }}
+            onPress={GoToLoginDetail}
+          >
+            <Text style={{ ...fontBasic(20, "500", White) }}>Log In</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={buttonInverse}>
-            <Text style={textButtonInverse}>Sign Up</Text>
+          <TouchableOpacity
+            style={{
+              ...paddingDynamic(8, 0, 8),
+              ...AlignItemCenter,
+              ...borderMake(2, White),
+              ...borderRadiusDynamic(50),
+              ...dimensionDynamic("auto", "45%"),
+              ...backgroundColorDynamic(White),
+            }}
+          >
+            <Text style={{ ...fontBasic(20, "500", "#01396C") }}>Sign Up</Text>
           </TouchableOpacity>
         </View>
-        <Text style={{...textComment, ...marginAuto}}>
+        <Text
+          style={{
+            ...fontBasic(12, "normal", White, 0.7),
+            ...marginDynamic(0, "auto", 0, "auto"),
+          }}
+        >
           By continuing you accept the Terms of Use
         </Text>
       </View>
