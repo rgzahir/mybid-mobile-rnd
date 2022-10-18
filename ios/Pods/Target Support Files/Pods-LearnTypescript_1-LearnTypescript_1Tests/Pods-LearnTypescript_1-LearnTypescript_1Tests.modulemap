@@ -1,0 +1,6 @@
+module Pods_LearnTypescript_1_LearnTypescript_1Tests {
+  umbrella header "Pods-LearnTypescript_1-LearnTypescript_1Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
