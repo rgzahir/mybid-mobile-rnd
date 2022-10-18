@@ -6,13 +6,13 @@ import { KeyboardAvoid } from "../components/keyboardAvoid";
 import { LoginPage } from "../pages";
 import BottomNav from "./BottomNav";
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({ navigation }) => {
   // console.log('mnav', navigation);
   // navigation.navigate('LoginScreenStack');
   return <LoginPage navigation={navigation} />;
 };
 
-const LoginDetailScreen = ({navigation}) => {
+const LoginDetailScreen = ({ navigation }) => {
   return <KeyboardAvoid navigation={navigation} />;
 };
 
@@ -28,7 +28,8 @@ const StackNav = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={'LoginScreen'}>
+      initialRouteName={"LoginScreen"}
+    >
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="LoginScreenStack" component={LoginDetailScreen} />
       <Stack.Screen name="DashboardScreenStack" component={BottomTabStack} />

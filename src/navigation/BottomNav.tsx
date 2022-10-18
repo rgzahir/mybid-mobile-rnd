@@ -7,6 +7,10 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { CredentialPage, DiscoverPage } from "../pages";
 import { Accent, marginDynamic, Primary } from "../styles";
 
+// interface IProfileScreen {
+//   navigation: NativeStackNavigationProp<>;
+// }
+
 const DiscoverScreen = () => {
   return <DiscoverPage />;
 };
@@ -17,7 +21,7 @@ const CredentialScreen = () => {
 
 const FinanceScreen = () => {
   return (
-    <View style={{...marginDynamic('auto', 'auto', 'auto', 'auto')}}>
+    <View style={{ ...marginDynamic("auto", "auto", "auto", "auto") }}>
       <TouchableOpacity>
         <Text>FINANCE SCREEN</Text>
       </TouchableOpacity>
@@ -25,13 +29,15 @@ const FinanceScreen = () => {
   );
 };
 
-const ProfileScreen = ({navigation}) => {
+const ProfileScreen = ({ navigation }) => {
   const checkNav = useNavigation();
   const logOutHandler = () => {
-    checkNav.navigate('LoginScreen');
+    // navigation.goBack();
+    checkNav.navigate("LoginScreen");
+    console.log(navigation);
   };
   return (
-    <View style={{...marginDynamic('auto', 'auto', 'auto', 'auto')}}>
+    <View style={{ ...marginDynamic("auto", "auto", "auto", "auto") }}>
       <TouchableOpacity onPress={logOutHandler}>
         <Text>LOG OUT</Text>
       </TouchableOpacity>
@@ -42,11 +48,11 @@ const ProfileScreen = ({navigation}) => {
 const Tab = createBottomTabNavigator();
 
 const BottomNav = () => {
-  const MyTabBar = ({state, descriptors, navigation}) => {
+  const MyTabBar = ({ state, descriptors, navigation }) => {
     return (
-      <View style={{flexDirection: 'row'}}>
+      <View style={{ flexDirection: "row" }}>
         {state.routes.map((route, index) => {
-          const {options} = descriptors[route.key];
+          const { options } = descriptors[route.key];
           const label =
             options.tabBarLabel !== undefined
               ? options.tabBarLabel
@@ -58,20 +64,20 @@ const BottomNav = () => {
 
           const onPress = () => {
             const event = navigation.emit({
-              type: 'tabPress',
+              type: "tabPress",
               target: route.key,
               canPreventDefault: true,
             });
 
             if (!isFocused && !event.defaultPrevented) {
               // The `merge: true` option makes sure that the params inside the tab screen are preserved
-              navigation.navigate({name: route.name, merge: true});
+              navigation.navigate({ name: route.name, merge: true });
             }
           };
 
           const onLongPress = () => {
             navigation.emit({
-              type: 'tabLongPress',
+              type: "tabLongPress",
               target: route.key,
             });
           };
@@ -79,13 +85,14 @@ const BottomNav = () => {
           return (
             <TouchableOpacity
               accessibilityRole="button"
-              accessibilityState={isFocused ? {selected: true} : {}}
+              accessibilityState={isFocused ? { selected: true } : {}}
               accessibilityLabel={options.tabBarAccessibilityLabel}
               testID={options.tabBarTestID}
               onPress={onPress}
               onLongPress={onLongPress}
-              style={{flex: 1}}>
-              <Text style={{color: isFocused ? '#673ab7' : '#222'}}>
+              style={{ flex: 1 }}
+            >
+              <Text style={{ color: isFocused ? "#673ab7" : "#222" }}>
                 {label}
               </Text>
             </TouchableOpacity>
@@ -104,20 +111,21 @@ const BottomNav = () => {
         tabBarActiveBackgroundColor: Accent.accent_green_1,
         tabBarAllowFontScaling: true,
       }}
-      initialRouteName={'Discover'}>
+      initialRouteName={"Discover"}
+    >
       <Tab.Screen
         name="Discover"
         component={DiscoverScreen}
         options={{
-          tabBarLabel: 'Discover',
-          tabBarIcon: ({color, size, focused}) =>
+          tabBarLabel: "Discover",
+          tabBarIcon: ({ color, size, focused }) =>
             focused ? (
               <View>
-                <Text style={{color: Primary.primary_blue}}>F</Text>
+                <Text style={{ color: Primary.primary_blue }}>F</Text>
               </View>
             ) : (
               <View>
-                <Text style={{color: Accent.accent_blue_2}}>F</Text>
+                <Text style={{ color: Accent.accent_blue_2 }}>F</Text>
               </View>
             ),
         }}
@@ -126,15 +134,15 @@ const BottomNav = () => {
         name="Credentials"
         component={CredentialScreen}
         options={{
-          tabBarLabel: 'Credentials',
-          tabBarIcon: ({color, size, focused}) =>
+          tabBarLabel: "Credentials",
+          tabBarIcon: ({ color, size, focused }) =>
             focused ? (
               <View>
-                <Text style={{color: Primary.primary_blue}}>F</Text>
+                <Text style={{ color: Primary.primary_blue }}>F</Text>
               </View>
             ) : (
               <View>
-                <Text style={{color: Accent.accent_blue_2}}>F</Text>
+                <Text style={{ color: Accent.accent_blue_2 }}>F</Text>
               </View>
             ),
         }}
@@ -143,15 +151,15 @@ const BottomNav = () => {
         name="Finance"
         component={FinanceScreen}
         options={{
-          tabBarLabel: 'Finance',
-          tabBarIcon: ({color, size, focused}) =>
+          tabBarLabel: "Finance",
+          tabBarIcon: ({ color, size, focused }) =>
             focused ? (
               <View>
-                <Text style={{color: Primary.primary_blue}}>F</Text>
+                <Text style={{ color: Primary.primary_blue }}>F</Text>
               </View>
             ) : (
               <View>
-                <Text style={{color: Accent.accent_blue_2}}>F</Text>
+                <Text style={{ color: Accent.accent_blue_2 }}>F</Text>
               </View>
             ),
         }}
@@ -160,15 +168,15 @@ const BottomNav = () => {
         name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarLabel: 'Profile',
-          tabBarIcon: ({color, size, focused}) =>
+          tabBarLabel: "Profile",
+          tabBarIcon: ({ color, size, focused }) =>
             focused ? (
               <View>
-                <Text style={{color: Primary.primary_blue}}>F</Text>
+                <Text style={{ color: Primary.primary_blue }}>F</Text>
               </View>
             ) : (
               <View>
-                <Text style={{color: Accent.accent_blue_2}}>F</Text>
+                <Text style={{ color: Accent.accent_blue_2 }}>F</Text>
               </View>
             ),
         }}
