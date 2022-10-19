@@ -12,6 +12,7 @@ interface IPassport {
   dateOfIssue?: string;
   qrCode: string;
   lastUpdated?: string;
+  category?: "All" | "Basic" | "Education" | "Finance";
   isShown: boolean;
   UpdateIsShown: Function;
 }
@@ -30,7 +31,7 @@ export const CredentialDataOne: IPassport = {
   credentialType: "passport",
   credentialName: "International Passport",
   credentialProvider: "Malaysia",
-  fullName: "Joey Chan Chan Chan",
+  fullName: "Joey Chan Chan Chan Chan Chan Chan ",
   isShown: false,
   UpdateIsShown() {
     this.isShown = !this.isShown;
@@ -38,9 +39,10 @@ export const CredentialDataOne: IPassport = {
   },
   lastUpdated: "date string?",
   nationality: "Malaysia",
-  profilePicture: "url",
+  profilePicture: require("../media/Avatar.png"),
   passportNumber: "B234 4152 551",
-  qrCode: "url",
+  qrCode: require("../media/Group.png"),
+  category: "Basic",
 };
 
 export const CredentialDataTwo: IPassport = {
@@ -56,8 +58,9 @@ export const CredentialDataTwo: IPassport = {
     console.log("UpdateIsShown invoked !");
   },
   lastUpdated: "date string?",
-  profilePicture: "url",
-  qrCode: "url",
+  profilePicture: require("../media/usci_logo.png"),
+  qrCode: require("../media/Group.png"),
+  category: "Education",
 };
 
 export const CredentialDataThree: IPassport = {
@@ -73,9 +76,10 @@ export const CredentialDataThree: IPassport = {
   },
   lastUpdated: "date string?",
   nationality: "Japan",
-  profilePicture: "url",
+  profilePicture: "",
   passportNumber: "B234 4152 551",
-  qrCode: "url",
+  qrCode: require("../media/Group.png"),
+  category: "Basic",
 };
 
 export const DummyDataArray = [

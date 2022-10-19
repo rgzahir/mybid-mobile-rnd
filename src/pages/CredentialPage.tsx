@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 
-import { CredentialCardsCertificate, CredentialCardsPassport } from "../components/cards";
 import { AvailableCredentialFilter } from "../components/filters";
 import { AvailableCredentialHeader } from "../components/headers";
-import { DummyDataArray } from "../dummyData";
-import { Accent, backgroundColorDynamic, borderRadiusDynamic, FlexWrap, fontBasic, marginDynamic, paddingDynamic } from "../styles";
+import { CredentialListComponent } from "../components/lists";
+import { paddingDynamic } from "../styles";
 
 export const CredentialPage = () => {
   const [currentFilter, setCurrentFilter] = useState("All");
@@ -13,7 +12,8 @@ export const CredentialPage = () => {
   return (
     <View
       style={{
-        ...paddingDynamic("12%", 24, 0, 24),
+        ...paddingDynamic("12%", 24, "40%", 24),
+        marginBottom: 88,
         // ...marginDynamic("-16%", -16, 0, -16),
       }}
     >
@@ -23,85 +23,7 @@ export const CredentialPage = () => {
         currentFilter={currentFilter}
       />
 
-      <ScrollView>
-        {DummyDataArray.map((item, key) => {
-          const { credentialType } = item;
-          const [isShownLocal, setIsShownLocal] = useState(false);
-
-          if (currentFilter === "All") {
-            if (credentialType === "passport") {
-              return (
-                <CredentialCardsPassport
-                  key={key}
-                  isShownLocal={isShownLocal}
-                  setIsShownLocal={setIsShownLocal}
-                  Data={item}
-                />
-              );
-            }
-            if (credentialType === "certificate") {
-              return (
-                <CredentialCardsCertificate
-                  key={key}
-                  isShownLocal={isShownLocal}
-                  setIsShownLocal={setIsShownLocal}
-                  Data={item}
-                />
-              );
-            }
-          }
-
-          if (currentFilter === "Basic") {
-            if (credentialType === "passport") {
-              return (
-                <CredentialCardsPassport
-                  key={key}
-                  isShownLocal={isShownLocal}
-                  setIsShownLocal={setIsShownLocal}
-                  Data={item}
-                />
-              );
-            }
-          }
-
-          if (currentFilter === "Education") {
-            if (credentialType === "certificate") {
-              return (
-                <CredentialCardsCertificate
-                  key={key}
-                  isShownLocal={isShownLocal}
-                  setIsShownLocal={setIsShownLocal}
-                  Data={item}
-                />
-              );
-            }
-          }
-        })}
-
-        <View
-          style={{
-            ...borderRadiusDynamic(16),
-            ...paddingDynamic(24, 16, 24, 16),
-            ...marginDynamic(16, 0, 16, 0),
-            ...FlexWrap,
-            ...backgroundColorDynamic(Accent.accent_green_3),
-          }}
-        >
-          <TouchableOpacity onPress={() => {}}>
-            <Text style={{ ...fontBasic(14, "bold", Accent.accent_blue_10) }}>
-              Academic Transcript Year 1
-            </Text>
-            <Text
-              style={{
-                ...fontBasic(12, "bold", Accent.accent_blue_5, 1, "italic"),
-                ...marginDynamic(8),
-              }}
-            >
-              USCI University
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
+      <CredentialListComponent currentFilter={currentFilter} />
     </View>
   );
 };
