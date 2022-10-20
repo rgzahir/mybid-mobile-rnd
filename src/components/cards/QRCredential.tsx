@@ -7,12 +7,16 @@ type TQRCredentialProps = {
   showQR?: boolean;
   setShowQR?: Function;
   data?: any;
+  showVerifyModal: boolean;
+  setShowVerifyModal: any;
 };
 
 export const QRCredential: React.FC<TQRCredentialProps> = ({
   showQR,
   setShowQR,
   data,
+  showVerifyModal,
+  setShowVerifyModal,
 }) => {
   const { qrCode } = data;
 
@@ -56,6 +60,10 @@ export const QRCredential: React.FC<TQRCredentialProps> = ({
         }}
         onPress={() => {
           setShowQR(!showQR);
+        }}
+        onLongPress={() => {
+          setShowVerifyModal(!showVerifyModal);
+          // console.log("onlongpress QR", showVerifyModal);
         }}
       >
         {qrPic()}

@@ -5,12 +5,24 @@ import { DummyDataArray } from "../../dummyData";
 import { AlignItemCenter, borderMake, borderRadiusDynamic, dimensionDynamic, fontBasic, marginDynamic, paddingDynamic } from "../../styles";
 import { CredentialCard, DataCredentialCertificate, DataCredentialPassport } from "../cards";
 
-type TcredentialListProps = {
+type TCredentialListProps = {
   currentFilter: string;
+  showVerifyModal: boolean;
+  setShowVerifyModal: any;
+  showDetailModal: boolean;
+  setShowDetailModal: any;
+  showQRModal: boolean;
+  setShowQRModal: any;
 };
 
-export const CredentialListComponent: React.FC<TcredentialListProps> = ({
+export const CredentialListComponent: React.FC<TCredentialListProps> = ({
   currentFilter,
+  showVerifyModal,
+  setShowVerifyModal,
+  showDetailModal,
+  setShowDetailModal,
+  showQRModal,
+  setShowQRModal,
 }) => {
   return (
     <View>
@@ -46,12 +58,19 @@ export const CredentialListComponent: React.FC<TcredentialListProps> = ({
             return (
               <View>
                 <CredentialCard
+                  key={key}
                   isShownLocal={isShownLocal}
                   setIsShownLocal={setIsShownLocal}
                   showQR={showQR}
                   setShowQR={setShowQR}
                   data={item}
                   checkCredentialType={checkCredentialType}
+                  showVerifyModal={showVerifyModal}
+                  setShowVerifyModal={setShowVerifyModal}
+                  showDetailModal={showDetailModal}
+                  setShowDetailModal={setShowDetailModal}
+                  showQRModal={showQRModal}
+                  setShowQRModal={setShowQRModal}
                 />
               </View>
             );
@@ -68,6 +87,12 @@ export const CredentialListComponent: React.FC<TcredentialListProps> = ({
                   setShowQR={setShowQR}
                   data={item}
                   checkCredentialType={checkCredentialType}
+                  showVerifyModal={showVerifyModal}
+                  setShowVerifyModal={setShowVerifyModal}
+                  showDetailModal={showDetailModal}
+                  setShowDetailModal={setShowDetailModal}
+                  showQRModal={showQRModal}
+                  setShowQRModal={setShowQRModal}
                 />
               </View>
             );
