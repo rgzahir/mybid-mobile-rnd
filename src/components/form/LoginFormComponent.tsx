@@ -62,7 +62,7 @@ export const LoginFormComponent: React.FC<TLoginFormComponent> = ({
               </Text>
             </TouchableOpacity>
 
-            <GeneralButton onPresshandler={handleSubmit} />
+            <GeneralButton label="Log In" onPressHandler={handleSubmit} />
           </View>
         )}
       </Formik>

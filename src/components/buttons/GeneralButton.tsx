@@ -2,23 +2,26 @@ import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 import {
-    AlignItemCenter,
-    backgroundColorDynamic,
-    borderMake,
-    borderRadiusDynamic,
-    dimensionDynamic,
-    fontBasic,
-    marginDynamic,
-    paddingDynamic,
-    White,
+  AlignItemCenter,
+  backgroundColorDynamic,
+  borderMake,
+  borderRadiusDynamic,
+  dimensionDynamic,
+  fontBasic,
+  marginDynamic,
+  paddingDynamic,
+  White,
 } from "../../styles";
 
 type TGeneralButtonProps = {
-  onPresshandler?: Any;
+  label: string;
+  onPressHandler?: any;
+  message?: string;
 };
 
 export const GeneralButton: React.FC<TGeneralButtonProps> = ({
-  onPresshandler,
+  label,
+  onPressHandler,
 }) => {
   return (
     <View>
@@ -33,11 +36,10 @@ export const GeneralButton: React.FC<TGeneralButtonProps> = ({
           ...AlignItemCenter,
         }}
         onPress={() => {
-          console.log("Go To Dashboard");
-          onPresshandler();
+          onPressHandler();
         }}
       >
-        <Text style={{ ...fontBasic(20, "500", White) }}>Log In</Text>
+        <Text style={{ ...fontBasic(20, "500", White) }}>{label}</Text>
       </TouchableOpacity>
     </View>
   );

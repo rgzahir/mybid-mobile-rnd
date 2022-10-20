@@ -150,6 +150,10 @@ export const JustifySpaceCenter: ViewStyle = {
   justifyContent: "center",
 } as const;
 
+export const JustifyFlexStart: ViewStyle = {
+  justifyContent: "flex-start",
+} as const;
+
 export const MarginAutoHorizontal: ViewStyle = {
   marginLeft: "auto",
   marginRight: "auto",

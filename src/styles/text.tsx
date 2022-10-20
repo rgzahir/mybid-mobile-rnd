@@ -16,7 +16,8 @@ export const fontBasic = (
     | "900",
   color?: string,
   opacity?: number,
-  style?: "normal" | "italic"
+  style?: "normal" | "italic",
+  lineHeight?: number
 ) => {
   const obj: TextStyle = {
     fontSize: size,
@@ -24,6 +25,7 @@ export const fontBasic = (
     color: color,
     opacity: opacity,
     fontStyle: style,
+    lineHeight: lineHeight,
   };
   return obj;
 };
