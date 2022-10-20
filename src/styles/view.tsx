@@ -154,6 +154,10 @@ export const JustifyFlexStart: ViewStyle = {
   justifyContent: "flex-start",
 } as const;
 
+export const JustifyFlexEnd: ViewStyle = {
+  justifyContent: "flex-end",
+} as const;
+
 export const MarginAutoHorizontal: ViewStyle = {
   marginLeft: "auto",
   marginRight: "auto",

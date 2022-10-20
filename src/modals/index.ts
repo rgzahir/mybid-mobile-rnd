@@ -3,3 +3,4 @@ export * from "./CredentialDetailModal";
 export * from "./VerifyCredentialModal";
 export * from "./ShowQRCodeModal";
 export * from "./ShowCertificateModal";
+export * from "./VerifyCompletedModal";
