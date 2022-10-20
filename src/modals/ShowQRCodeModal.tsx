@@ -98,6 +98,9 @@ export const ShowQRCodeModal: React.FC<TShowQRCodeModalProps> = ({
       <TextItem_3
         subTitle="Scan This QR Code"
         subText="This code contains your graduation certificate"
+        color_1={White}
+        color_2={White}
+        width="60%"
       />
     </View>
   );

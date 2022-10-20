@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import { View } from "react-native";
 
+import { TextButtonCenter } from "../components/buttons";
 import { AvailableCredentialFilter } from "../components/filters";
 import { AvailableCredentialHeader } from "../components/headers";
 import { CredentialListComponent } from "../components/lists";
-import { BaseModal, CredentialDetailModal, ShowCertificateModal, ShowQRCodeModal, VerifyCredentialModal } from "../modals";
+import {
+  BaseModal,
+  CredentialDetailModal,
+  ShowCertificateModal,
+  ShowQRCodeModal,
+  VerifyCompletedModal,
+  VerifyCredentialModal,
+} from "../modals";
 import { marginDynamic, paddingDynamic } from "../styles";
 
 export const CredentialPage = () => {
@@ -13,6 +21,7 @@ export const CredentialPage = () => {
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [showQRModal, setShowQRModal] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
+  const [showVerifyCompleted, setShowVerifyCompleted] = useState(false);
 
   const showNextModal_1 = () => {
     setShowDetailModal(!showDetailModal);
@@ -22,6 +31,11 @@ export const CredentialPage = () => {
   const showNextModal_2 = () => {
     setShowDetailModal(!showDetailModal);
     setShowPreview(!showPreview);
+  };
+
+  const showNextModal_3 = () => {
+    setShowVerifyModal(!showVerifyModal);
+    setShowVerifyCompleted(!showVerifyCompleted);
   };
 
   return (
@@ -51,6 +65,7 @@ export const CredentialPage = () => {
         indicator={showVerifyModal}
         setIndicator={setShowVerifyModal}
         Detail={VerifyCredentialModal}
+        pushNextModalFunction={showNextModal_3}
       />
 
       <BaseModal
@@ -71,6 +86,19 @@ export const CredentialPage = () => {
         indicator={showPreview}
         setIndicator={setShowPreview}
         Detail={ShowCertificateModal}
+      />
+
+      <BaseModal
+        indicator={showVerifyCompleted}
+        setIndicator={setShowVerifyCompleted}
+        Detail={VerifyCompletedModal}
+      />
+
+      <TextButtonCenter
+        label="Show Verify Completed"
+        onPressHandler={() => {
+          setShowVerifyCompleted(!showVerifyCompleted);
+        }}
       />
     </View>
   );

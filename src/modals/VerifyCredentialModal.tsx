@@ -1,27 +1,20 @@
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 
+import { TextButtonCenter } from "../components/buttons";
 import { TextItem_1 } from "../components/TextItem";
-import {
-  backgroundColorDynamic,
-  borderRadiusDynamic,
-  FlexOne,
-  fontBasic,
-  marginDynamic,
-  Neutral,
-  paddingDynamic,
-  Primary,
-  White,
-} from "../styles";
+import { backgroundColorDynamic, borderRadiusDynamic, FlexOne, fontBasic, marginDynamic, Neutral, paddingDynamic, White } from "../styles";
 
 type TVerifyCredentialModalProps = {
   indicator: boolean;
   setIndicator: any;
+  pushNextModalFunction?: any;
 };
 
 export const VerifyCredentialModal: React.FC<TVerifyCredentialModalProps> = ({
   indicator,
   setIndicator,
+  pushNextModalFunction,
 }) => {
   const updateVerifyModal = () => {
     setIndicator(!indicator);
@@ -34,7 +27,7 @@ export const VerifyCredentialModal: React.FC<TVerifyCredentialModalProps> = ({
         ...backgroundColorDynamic(White),
         ...paddingDynamic(100, 16, 0, 16),
         ...borderRadiusDynamic(32),
-        ...marginDynamic("20%"),
+        ...marginDynamic("15%"),
       }}
     >
       <Text
@@ -47,7 +40,7 @@ export const VerifyCredentialModal: React.FC<TVerifyCredentialModalProps> = ({
 
       <View
         style={{
-          ...marginDynamic(32),
+          ...marginDynamic(32, 0, 16),
         }}
       >
         <TextItem_1
@@ -80,22 +73,8 @@ export const VerifyCredentialModal: React.FC<TVerifyCredentialModalProps> = ({
         />
       </View>
 
-      <TouchableOpacity
-        style={{
-          ...marginDynamic(16, "auto", 0, "auto"),
-        }}
-        onPress={updateVerifyModal}
-        // onPress={setIndicator(!indicator)}
-      >
-        <Text
-          style={{
-            ...fontBasic(16, "600", Primary.primary_blue, 1, "normal", 24),
-            alignSelf: "center",
-          }}
-        >
-          Decline
-        </Text>
-      </TouchableOpacity>
+      <TextButtonCenter label="Accept" onPressHandler={pushNextModalFunction} />
+      <TextButtonCenter label="Decline" onPressHandler={updateVerifyModal} />
     </View>
   );
 };
