@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, FunctionComponent, useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
 import {
@@ -13,13 +13,7 @@ import {
   SquareBox80px,
 } from "../../styles";
 
-type TDataCredentialCertificateProps = {
-  data?: any;
-  showQR?: boolean;
-  setShowQR?: any;
-};
-
-export const DataCredentialCertificate: React.FC<
+export const DataCredentialCertificate: FunctionComponent<
   TDataCredentialCertificateProps
 > = ({ data, showQR, setShowQR }) => {
   const { profilePicture, fullName, dateOfIssue } = data;
@@ -49,7 +43,7 @@ export const DataCredentialCertificate: React.FC<
   };
 
   return (
-    <View>
+    <Fragment>
       <TouchableOpacity
         style={{
           ...FlexRow,
@@ -91,7 +85,7 @@ export const DataCredentialCertificate: React.FC<
           </Text>
         </View>
       </TouchableOpacity>
-    </View>
+    </Fragment>
   );
 };
 

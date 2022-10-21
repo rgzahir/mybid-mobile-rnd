@@ -1,20 +1,12 @@
-import React from "react";
+import React, { Fragment, FunctionComponent } from "react";
 import { Image, TouchableOpacity, View } from "react-native";
 
 import { backgroundColorDynamic, borderRadiusDynamic, dimensionDynamic, FlexRow, marginDynamic, paddingDynamic, White } from "../../styles";
 
-type TQRCredentialProps = {
-  showQR?: boolean;
-  setShowQR?: Function;
-  data?: any;
-  showVerifyModal: boolean;
-  setShowVerifyModal: any;
-};
-
-export const QRCredential: React.FC<TQRCredentialProps> = ({
+export const QRCredential: FunctionComponent<TQRCredentialProps> = ({
+  data,
   showQR,
   setShowQR,
-  data,
   showVerifyModal,
   setShowVerifyModal,
 }) => {
@@ -25,11 +17,10 @@ export const QRCredential: React.FC<TQRCredentialProps> = ({
       return (
         <View
           style={{
-            // ...dimensionDynamic(150, 150),
             ...borderRadiusDynamic(16),
+            ...backgroundColorDynamic(White),
             ...marginDynamic(0, "auto", 0, "auto"),
             ...paddingDynamic(16, 16, 16, 16),
-            ...backgroundColorDynamic(White),
           }}
         >
           <Image source={qrCode} />
@@ -39,11 +30,10 @@ export const QRCredential: React.FC<TQRCredentialProps> = ({
       return (
         <View
           style={{
-            ...dimensionDynamic(150, 150),
             ...borderRadiusDynamic(16),
-            ...marginDynamic(0, "auto", 0, "auto"),
-            // ...paddingDynamic(16, 16, 16, 16),
             ...backgroundColorDynamic(White),
+            ...dimensionDynamic(150, 150),
+            ...marginDynamic(0, "auto", 0, "auto"),
           }}
         />
       );
@@ -51,7 +41,7 @@ export const QRCredential: React.FC<TQRCredentialProps> = ({
   };
 
   return (
-    <View>
+    <Fragment>
       <TouchableOpacity
         style={{
           ...FlexRow,
@@ -63,12 +53,11 @@ export const QRCredential: React.FC<TQRCredentialProps> = ({
         }}
         onLongPress={() => {
           setShowVerifyModal(!showVerifyModal);
-          // console.log("onlongpress QR", showVerifyModal);
         }}
       >
         {qrPic()}
       </TouchableOpacity>
-    </View>
+    </Fragment>
   );
 };
 

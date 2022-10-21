@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 import {
@@ -15,33 +15,14 @@ import {
   Primary,
   Secondary,
 } from "../../styles";
+import { BackButton } from "../buttons";
 
-type TCredentialCardFooterProps = {
-  showQR?: boolean;
-  setShowQR?: any;
-  data?: any;
-  showDetailModal: boolean;
-  setShowDetailModal: any;
-  showQRModal: boolean;
-  setShowQRModal: any;
-};
-
-export const CredentialCardFooter: React.FC<TCredentialCardFooterProps> = ({
-  showQR,
-  setShowQR,
-  data,
-  showDetailModal,
-  setShowDetailModal,
-  showQRModal,
-  setShowQRModal,
-}) => {
+export const CredentialCardFooter: FunctionComponent<
+  TCredentialCardFooterProps
+> = ({ data, showQR, setShowQR, showDetailModal, setShowDetailModal }) => {
   const { lastUpdated } = data;
   const updateShowQR = () => {
     setShowQR(!showQR);
-  };
-
-  const updateShowQRModal = () => {
-    setShowQRModal(!showQRModal);
   };
 
   const updateShowDetailModal = () => {
@@ -51,10 +32,10 @@ export const CredentialCardFooter: React.FC<TCredentialCardFooterProps> = ({
   return (
     <View
       style={{
+        ...AlignItemCenter,
         ...FlexOne,
         ...FlexRow,
         ...JustifySpaceBetween,
-        ...AlignItemCenter,
         ...backgroundColorDynamic(Primary.primary_blue),
         ...borderRadiusBottomDynamic(16),
         ...marginDynamic(0, -16, -24, -16),
@@ -96,19 +77,11 @@ export const CredentialCardFooter: React.FC<TCredentialCardFooterProps> = ({
         </Text>
       </View>
 
-      <TouchableOpacity
-        onPress={updateShowDetailModal}
-        // onPress={() => {
-        //   console.log(
-        //     "show detail",
-        //     showDetailModal,
-        //     setShowDetailModal,
-        //     updateModal
-        //   );
-        // }}
-      >
-        <Text style={{ color: Secondary.secondary_green }}>{">>>"}</Text>
-      </TouchableOpacity>
+      <BackButton
+        fontColor={Secondary.secondary_green}
+        label=">>>"
+        onPressHandler={updateShowDetailModal}
+      />
     </View>
   );
 };

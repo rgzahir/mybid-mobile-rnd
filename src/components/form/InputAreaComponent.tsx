@@ -1,28 +1,22 @@
-import React from "react";
-import { Text, TextInput, View } from "react-native";
+import React, { Fragment, FunctionComponent } from "react";
+import { Text, TextInput } from "react-native";
 
 import {
-    backgroundColorDynamic,
-    borderRadiusDynamic,
-    dimensionDynamic,
-    fontBasic,
-    marginDynamic,
-    paddingDynamic,
-    White,
+  backgroundColorDynamic,
+  borderRadiusDynamic,
+  dimensionDynamic,
+  fontBasic,
+  marginDynamic,
+  paddingDynamic,
+  White,
 } from "../../styles";
 
-type TInputAreaProps = {
-  label?: string;
-  placeholder?: string;
-  onChangeText?: Function;
-  onBlur?: Function;
-  value?: string;
-  secureTextEntry?: boolean;
-};
-
-export const InputArea: React.FC<TInputAreaProps> = ({ label, ...props }) => {
+export const InputArea: FunctionComponent<TInputAreaProps> = ({
+  label,
+  ...props
+}) => {
   return (
-    <View>
+    <Fragment>
       <Text
         style={{
           ...fontBasic(16, "400", "#676D71", 0.8),
@@ -34,15 +28,15 @@ export const InputArea: React.FC<TInputAreaProps> = ({ label, ...props }) => {
       <TextInput
         style={{
           ...borderRadiusDynamic(4),
+          ...borderRadiusDynamic(8),
+          ...backgroundColorDynamic(White),
           ...dimensionDynamic("auto", "90%"),
           ...marginDynamic(8, "auto", 0, "auto"),
-          ...borderRadiusDynamic(8),
           ...paddingDynamic(16, 8, 16, 24),
-          ...backgroundColorDynamic(White),
         }}
         {...props}
       />
-    </View>
+    </Fragment>
   );
 };
 

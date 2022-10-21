@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, FunctionComponent, useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
 import {
@@ -13,17 +13,9 @@ import {
   SquareBox80px,
 } from "../../styles";
 
-type TDataCredentialPassportProps = {
-  data?: any;
-  showQR?: boolean;
-  setShowQR?: any;
-};
-
-export const DataCredentialPassport: React.FC<TDataCredentialPassportProps> = ({
-  data,
-  showQR,
-  setShowQR,
-}) => {
+export const DataCredentialPassport: FunctionComponent<
+  TDataCredentialPassportProps
+> = ({ data, showQR, setShowQR }) => {
   const { profilePicture, fullName, nationality, passportNumber } = data;
   const pic = () => {
     if (profilePicture) {
@@ -51,7 +43,7 @@ export const DataCredentialPassport: React.FC<TDataCredentialPassportProps> = ({
   };
 
   return (
-    <View>
+    <Fragment>
       <TouchableOpacity
         style={{
           ...FlexRow,
@@ -100,7 +92,7 @@ export const DataCredentialPassport: React.FC<TDataCredentialPassportProps> = ({
           </Text>
         </View>
       </TouchableOpacity>
-    </View>
+    </Fragment>
   );
 };
 

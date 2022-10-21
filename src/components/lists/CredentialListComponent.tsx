@@ -1,21 +1,13 @@
-import React, { useState } from "react";
+import React, { Fragment, FunctionComponent, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 import { DummyDataArray } from "../../dummyData";
 import { AlignItemCenter, borderMake, borderRadiusDynamic, dimensionDynamic, fontBasic, marginDynamic, paddingDynamic } from "../../styles";
 import { CredentialCard, DataCredentialCertificate, DataCredentialPassport } from "../cards";
 
-type TCredentialListProps = {
-  currentFilter: string;
-  showVerifyModal: boolean;
-  setShowVerifyModal: any;
-  showDetailModal: boolean;
-  setShowDetailModal: any;
-  showQRModal: boolean;
-  setShowQRModal: any;
-};
-
-export const CredentialListComponent: React.FC<TCredentialListProps> = ({
+export const CredentialListComponent: FunctionComponent<
+  TCredentialListProps
+> = ({
   currentFilter,
   showVerifyModal,
   setShowVerifyModal,
@@ -25,7 +17,7 @@ export const CredentialListComponent: React.FC<TCredentialListProps> = ({
   setShowQRModal,
 }) => {
   return (
-    <View>
+    <Fragment>
       <ScrollView>
         {DummyDataArray.map((item, key) => {
           const { category } = item;
@@ -58,18 +50,18 @@ export const CredentialListComponent: React.FC<TCredentialListProps> = ({
             return (
               <View>
                 <CredentialCard
-                  key={key}
-                  isShownLocal={isShownLocal}
-                  setIsShownLocal={setIsShownLocal}
-                  showQR={showQR}
-                  setShowQR={setShowQR}
                   data={item}
-                  checkCredentialType={checkCredentialType}
+                  isShownLocal={isShownLocal}
+                  key={key}
+                  showQR={showQR}
                   showVerifyModal={showVerifyModal}
-                  setShowVerifyModal={setShowVerifyModal}
                   showDetailModal={showDetailModal}
-                  setShowDetailModal={setShowDetailModal}
                   showQRModal={showQRModal}
+                  checkCredentialType={checkCredentialType}
+                  setIsShownLocal={setIsShownLocal}
+                  setShowQR={setShowQR}
+                  setShowVerifyModal={setShowVerifyModal}
+                  setShowDetailModal={setShowDetailModal}
                   setShowQRModal={setShowQRModal}
                 />
               </View>
@@ -80,18 +72,18 @@ export const CredentialListComponent: React.FC<TCredentialListProps> = ({
             return (
               <View>
                 <CredentialCard
-                  key={key}
-                  isShownLocal={isShownLocal}
-                  setIsShownLocal={setIsShownLocal}
-                  showQR={showQR}
-                  setShowQR={setShowQR}
                   data={item}
-                  checkCredentialType={checkCredentialType}
+                  isShownLocal={isShownLocal}
+                  key={key}
+                  showQR={showQR}
                   showVerifyModal={showVerifyModal}
-                  setShowVerifyModal={setShowVerifyModal}
                   showDetailModal={showDetailModal}
-                  setShowDetailModal={setShowDetailModal}
                   showQRModal={showQRModal}
+                  checkCredentialType={checkCredentialType}
+                  setIsShownLocal={setIsShownLocal}
+                  setShowQR={setShowQR}
+                  setShowVerifyModal={setShowVerifyModal}
+                  setShowDetailModal={setShowDetailModal}
                   setShowQRModal={setShowQRModal}
                 />
               </View>
@@ -101,13 +93,13 @@ export const CredentialListComponent: React.FC<TCredentialListProps> = ({
 
         <TouchableOpacity
           style={{
-            ...marginDynamic(16, "auto", 0, "auto"),
+            borderStyle: "dashed",
+            ...AlignItemCenter,
             ...borderRadiusDynamic(32),
             ...borderMake(2, "#01396C"),
-            borderStyle: "dashed",
             ...dimensionDynamic("auto", "90%"),
+            ...marginDynamic(16, "auto", 0, "auto"),
             ...paddingDynamic(8, 0, 16, 0),
-            ...AlignItemCenter,
           }}
           onPress={() => {
             console.log("Add other credentials Fx");
@@ -121,7 +113,7 @@ export const CredentialListComponent: React.FC<TCredentialListProps> = ({
           </Text>
         </TouchableOpacity>
       </ScrollView>
-    </View>
+    </Fragment>
   );
 };
 

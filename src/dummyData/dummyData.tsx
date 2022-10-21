@@ -5,16 +5,16 @@ interface IPassport {
   credentialType: TCredentialType;
   credentialName: string;
   credentialProvider: string;
-  profilePicture: string;
   fullName: string;
+  isShown: boolean;
+  profilePicture: string;
+  qrCode: string;
+  UpdateIsShown: Function;
+  category?: "All" | "Basic" | "Education" | "Finance";
+  dateOfIssue?: string;
+  lastUpdated?: string;
   nationality?: string;
   passportNumber?: string;
-  dateOfIssue?: string;
-  qrCode: string;
-  lastUpdated?: string;
-  category?: "All" | "Basic" | "Education" | "Finance";
-  isShown: boolean;
-  UpdateIsShown: Function;
 }
 
 // type TData = [{}];

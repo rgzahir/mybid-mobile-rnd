@@ -1,12 +1,5 @@
 import { ViewStyle } from "react-native";
 
-type marginDynamicProps = {
-  a?: string | number | any;
-  b?: string | number | any;
-  c?: string | number | any;
-  d?: string | number | any;
-};
-
 export const borderRadiusDynamic = (radius: number) => {
   return { borderRadius: radius };
 };
@@ -19,6 +12,20 @@ export const borderMake = (width?: number, color?: string) => {
   return {
     borderWidth: width,
     borderColor: color,
+  };
+};
+
+export const backgroundColorDynamic = (color: number | string) => {
+  return { backgroundColor: color };
+};
+
+export const dimensionDynamic = (
+  height?: string | number,
+  width?: string | number
+) => {
+  return {
+    height: height,
+    width: width,
   };
 };
 
@@ -60,20 +67,6 @@ export const paddingDynamic = (
     paddingBottom: bottom,
     paddingLeft: left,
   };
-};
-
-export const dimensionDynamic = (
-  height?: string | number,
-  width?: string | number
-) => {
-  return {
-    height: height,
-    width: width,
-  };
-};
-
-export const backgroundColorDynamic = (color: number | string) => {
-  return { backgroundColor: color };
 };
 
 export const AlignItemCenter: ViewStyle = { alignItems: "center" } as const;
@@ -123,16 +116,6 @@ export const FlexOne: ViewStyle = { flex: 1 } as const;
 export const FlexDirectionRow: ViewStyle = { flexDirection: "row" } as const;
 
 export const FlexWrap: ViewStyle = { flexWrap: "wrap" } as const;
-
-export const ButtonGeneral: ViewStyle = {
-  ...AlignItemCenter,
-  ...borderRadiusDynamic(32),
-  ...dimensionDynamic("auto", "90%"),
-  ...paddingDynamic(16, 0, 16, 0),
-  ...marginDynamic("60%", "auto", 0, "auto"),
-  ...borderMake(4, "#01396C"),
-  ...backgroundColorDynamic("#01396C"),
-} as const;
 
 export const JustifySpaceBetween: ViewStyle = {
   justifyContent: "space-between",

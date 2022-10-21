@@ -1,16 +1,14 @@
-import React from "react";
-import { Text, View } from "react-native";
+import React, { Fragment, FunctionComponent } from "react";
+import { Text } from "react-native";
 
 import { Accent, fontBasic, marginDynamic, Primary } from "../../styles";
 
-type TTextItemProps = {
-  subTitle: string;
-  subText: string;
-};
-
-export const TextItem_2: React.FC<TTextItemProps> = ({ subTitle, subText }) => {
+export const TextItem_2: FunctionComponent<TTextItem_1Props> = ({
+  subTitle,
+  subText,
+}) => {
   return (
-    <View>
+    <Fragment>
       <Text
         style={{
           ...fontBasic(16, "600", Primary.primary_blue, 1, "normal", 20),
@@ -27,7 +25,7 @@ export const TextItem_2: React.FC<TTextItemProps> = ({ subTitle, subText }) => {
       >
         {subText}
       </Text>
-    </View>
+    </Fragment>
   );
 };
 

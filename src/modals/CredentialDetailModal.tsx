@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { Text, View } from "react-native";
 
 import { SquareButton, TextButtonCenter } from "../components/buttons";
@@ -17,18 +17,13 @@ import {
   White,
 } from "../styles";
 
-type TCredentialDetailModalProps = {
-  indicator: boolean;
-  setIndicator: any;
-  pushNextModalFunction?: any;
-  pushNextModalFunction_1?: any;
-};
-
-export const CredentialDetailModal: React.FC<TCredentialDetailModalProps> = ({
+export const CredentialDetailModal: FunctionComponent<
+  TCredentialDetailModalProps
+> = ({
   indicator,
-  setIndicator,
   pushNextModalFunction,
   pushNextModalFunction_1,
+  setIndicator,
 }) => {
   const Show_QR_Icon = require("../media/Scan_qr_alt_light.png");
   const View_Icon = require("../media/Img_box_light.png");
@@ -41,9 +36,9 @@ export const CredentialDetailModal: React.FC<TCredentialDetailModalProps> = ({
       style={{
         ...FlexOne,
         ...backgroundColorDynamic(White),
-        ...paddingDynamic(50, 16, 0, 16),
         ...borderRadiusDynamic(32),
         ...marginDynamic("20%"),
+        ...paddingDynamic(50, 16, 0, 16),
       }}
     >
       <TextItem_2
@@ -92,13 +87,13 @@ export const CredentialDetailModal: React.FC<TCredentialDetailModalProps> = ({
 
       <View style={{ ...FlexRow, ...JustifySpaceAround }}>
         <SquareButton
-          label="Show QR"
           icon={Show_QR_Icon}
+          label="Show QR"
           onPressHandler={pushNextModalFunction}
         />
         <SquareButton
-          label="View"
           icon={View_Icon}
+          label="View"
           onPressHandler={pushNextModalFunction_1}
         />
       </View>

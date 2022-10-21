@@ -18,7 +18,7 @@ export const LoginDetailPage: React.FC<TLoginDetailPageProps> = ({
   };
 
   return (
-    <View style={{}}>
+    <View>
       <TouchableOpacity
         onPress={goBackPageHandler}
         style={{

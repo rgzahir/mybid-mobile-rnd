@@ -74,8 +74,8 @@ export const LoginPage = ({ navigation }) => {
         >
           <TouchableOpacity
             style={{
-              ...paddingDynamic(8, 0, 8),
               ...AlignItemCenter,
+              ...paddingDynamic(8, 0, 8),
               ...borderMake(2, White),
               ...borderRadiusDynamic(50),
               ...dimensionDynamic("auto", "45%"),
@@ -86,8 +86,8 @@ export const LoginPage = ({ navigation }) => {
           </TouchableOpacity>
           <TouchableOpacity
             style={{
-              ...paddingDynamic(8, 0, 8),
               ...AlignItemCenter,
+              ...paddingDynamic(8, 0, 8),
               ...borderMake(2, White),
               ...borderRadiusDynamic(50),
               ...dimensionDynamic("auto", "45%"),

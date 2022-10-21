@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Text, View } from "react-native";
 
 import {
@@ -15,27 +15,27 @@ import {
 
 export const DiscoverHighlightItem = () => {
   return (
-    <View>
+    <Fragment>
       <View
         style={{
-          ...marginDynamic(0, 0, 16),
           ...AlignItemCenter,
           ...FlexDirectionRow,
+          ...marginDynamic(0, 0, 16),
         }}
       >
         <View
           style={{
-            ...backgroundColorDynamic("grey"),
-            ...marginDynamic(0, 15),
             ...SquareBox60px,
+            ...backgroundColorDynamic("grey"),
             ...borderRadiusDynamic(50),
+            ...marginDynamic(0, 15),
           }}
         />
         <View>
           <Text
             style={{
-              ...fontBasic(14, "600", Accent.accent_blue_10),
               ...FlexWrap,
+              ...fontBasic(14, "600", Accent.accent_blue_10),
             }}
           >
             You just added your first credentials.
@@ -53,24 +53,24 @@ export const DiscoverHighlightItem = () => {
 
       <View
         style={{
-          ...marginDynamic(0, 0, 16),
           ...AlignItemCenter,
           ...FlexDirectionRow,
+          ...marginDynamic(0, 0, 16),
         }}
       >
         <View
           style={{
-            ...backgroundColorDynamic("grey"),
-            ...marginDynamic(0, 15),
             ...SquareBox60px,
+            ...backgroundColorDynamic("grey"),
             ...borderRadiusDynamic(50),
+            ...marginDynamic(0, 15),
           }}
         />
         <View>
           <Text
             style={{
-              ...fontBasic(14, "600", Accent.accent_blue_10),
               ...FlexWrap,
+              ...fontBasic(14, "600", Accent.accent_blue_10),
             }}
           >
             You just added your first credentials.
@@ -88,24 +88,24 @@ export const DiscoverHighlightItem = () => {
 
       <View
         style={{
-          ...marginDynamic(0, 0, 16),
           ...AlignItemCenter,
           ...FlexDirectionRow,
+          ...marginDynamic(0, 0, 16),
         }}
       >
         <View
           style={{
-            ...backgroundColorDynamic("grey"),
-            ...marginDynamic(0, 15),
             ...SquareBox60px,
+            ...backgroundColorDynamic("grey"),
             ...borderRadiusDynamic(50),
+            ...marginDynamic(0, 15),
           }}
         />
         <View>
           <Text
             style={{
-              ...fontBasic(14, "600", Accent.accent_blue_10),
               ...FlexWrap,
+              ...fontBasic(14, "600", Accent.accent_blue_10),
             }}
           >
             You just added your first credentials.
@@ -123,24 +123,24 @@ export const DiscoverHighlightItem = () => {
 
       <View
         style={{
-          ...marginDynamic(0, 0, 16),
           ...AlignItemCenter,
           ...FlexDirectionRow,
+          ...marginDynamic(0, 0, 16),
         }}
       >
         <View
           style={{
-            ...backgroundColorDynamic("grey"),
-            ...marginDynamic(0, 15),
             ...SquareBox60px,
+            ...backgroundColorDynamic("grey"),
             ...borderRadiusDynamic(50),
+            ...marginDynamic(0, 15),
           }}
         />
         <View>
           <Text
             style={{
-              ...fontBasic(14, "600", Accent.accent_blue_10),
               ...FlexWrap,
+              ...fontBasic(14, "600", Accent.accent_blue_10),
             }}
           >
             You just added your first credentials.
@@ -158,24 +158,24 @@ export const DiscoverHighlightItem = () => {
 
       <View
         style={{
-          ...marginDynamic(0, 0, 16),
           ...AlignItemCenter,
           ...FlexDirectionRow,
+          ...marginDynamic(0, 0, 16),
         }}
       >
         <View
           style={{
-            ...backgroundColorDynamic("grey"),
-            ...marginDynamic(0, 15),
             ...SquareBox60px,
+            ...backgroundColorDynamic("grey"),
             ...borderRadiusDynamic(50),
+            ...marginDynamic(0, 15),
           }}
         />
         <View>
           <Text
             style={{
-              ...fontBasic(14, "600", Accent.accent_blue_10),
               ...FlexWrap,
+              ...fontBasic(14, "600", Accent.accent_blue_10),
             }}
           >
             You just added your first credentials.
@@ -190,7 +190,7 @@ export const DiscoverHighlightItem = () => {
           </Text>
         </View>
       </View>
-    </View>
+    </Fragment>
   );
 };
 

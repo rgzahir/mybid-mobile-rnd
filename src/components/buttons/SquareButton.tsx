@@ -1,6 +1,8 @@
-import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import React, { Fragment, FunctionComponent } from "react";
+import { Image, Text, TouchableOpacity } from "react-native";
 
+import { checkBackgroundColor } from "../../functions";
+import { checkFontColor } from "../../functions/checkFontColor";
 import {
   AlignItemCenter,
   backgroundColorDynamic,
@@ -9,40 +11,38 @@ import {
   fontBasic,
   marginDynamic,
   paddingDynamic,
-  Primary,
-  White,
 } from "../../styles";
 
-type TSquareButtonProps = {
-  label: string;
-  onPressHandler?: any;
-  message?: string;
-  icon?: "" | any;
-};
-
-export const SquareButton: React.FC<TSquareButtonProps> = ({
+export const SquareButton: FunctionComponent<TSquareButtonProps> = ({
   label,
   icon,
   onPressHandler,
+  backgroundColor,
+  fontColor,
 }) => {
   return (
-    <View>
+    <Fragment>
       <TouchableOpacity
         style={{
-          ...paddingDynamic(16, 16, 16, 16),
-          ...borderRadiusDynamic(16),
-          ...backgroundColorDynamic(Primary.primary_blue),
-          ...dimensionDynamic("auto", 160),
           ...AlignItemCenter,
+          ...borderRadiusDynamic(16),
+          ...backgroundColorDynamic(checkBackgroundColor(backgroundColor)),
+          ...dimensionDynamic("auto", 160),
+          ...paddingDynamic(16, 16, 16, 16),
         }}
         onPress={onPressHandler}
       >
         <Image source={icon} />
-        <Text style={{ ...fontBasic(12, "500", White), ...marginDynamic(16) }}>
+        <Text
+          style={{
+            ...fontBasic(12, "500", checkFontColor(fontColor)),
+            ...marginDynamic(16),
+          }}
+        >
           {label}
         </Text>
       </TouchableOpacity>
-    </View>
+    </Fragment>
   );
 };
 

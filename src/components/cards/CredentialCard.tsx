@@ -1,32 +1,17 @@
-import React, { useState } from "react";
+import React, { Fragment, FunctionComponent } from "react";
 import { View } from "react-native";
 
-import { backgroundColorDynamic, borderRadiusDynamic, FlexOne, marginDynamic, paddingDynamic } from "../../styles";
+import { Accent, backgroundColorDynamic, borderRadiusDynamic, FlexOne, marginDynamic, paddingDynamic, White } from "../../styles";
 import CredentialCardFooter from "./CredentialCardFooter";
 import CredentialCardHeader from "./CredentialCardHeader";
 import QRCredential from "./QRCredential";
 
-type TCredentialCardProps = {
-  isShownLocal: boolean;
-  setIsShownLocal: Function;
-  showQR?: boolean;
-  setShowQR?: Function;
-  data?: any;
-  checkCredentialType?: any;
-  showVerifyModal: boolean;
-  setShowVerifyModal: any;
-  showDetailModal: boolean;
-  setShowDetailModal: any;
-  showQRModal: boolean;
-  setShowQRModal: any;
-};
-
-export const CredentialCard: React.FC<TCredentialCardProps> = ({
+export const CredentialCard: FunctionComponent<TCredentialCardProps> = ({
+  data,
   isShownLocal,
   setIsShownLocal,
   showQR,
   setShowQR,
-  data,
   checkCredentialType,
   showVerifyModal,
   setShowVerifyModal,
@@ -36,23 +21,30 @@ export const CredentialCard: React.FC<TCredentialCardProps> = ({
   setShowQRModal,
 }) => {
   const { credentialType } = data;
+  const checkIsShown = () => {
+    if (isShownLocal) {
+      return Accent.accent_blue_1;
+    }
+
+    return White;
+  };
 
   return (
     <View
       style={{
-        ...backgroundColorDynamic("#02C9A5"),
+        ...FlexOne,
+        ...backgroundColorDynamic(checkIsShown()),
         ...borderRadiusDynamic(16),
         ...paddingDynamic(24, 16, 24, 16),
         ...marginDynamic(16, 0, 16, 0),
-        ...FlexOne,
       }}
     >
       <CredentialCardHeader
+        data={data}
         isShownLocal={isShownLocal}
         setIsShownLocal={setIsShownLocal}
-        data={data}
       />
-      <View>
+      <Fragment>
         {isShownLocal ? (
           <View>
             {showQR ? (
@@ -67,11 +59,9 @@ export const CredentialCard: React.FC<TCredentialCardProps> = ({
               checkCredentialType(credentialType)
             )}
           </View>
-        ) : (
-          <View />
-        )}
-      </View>
-      <View>
+        ) : null}
+      </Fragment>
+      <Fragment>
         {isShownLocal ? (
           <CredentialCardFooter
             showQR={showQR}
@@ -82,10 +72,8 @@ export const CredentialCard: React.FC<TCredentialCardProps> = ({
             showQRModal={showQRModal}
             setShowQRModal={setShowQRModal}
           />
-        ) : (
-          <View />
-        )}
-      </View>
+        ) : null}
+      </Fragment>
     </View>
   );
 };

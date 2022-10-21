@@ -1,17 +1,11 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { Text, View } from "react-native";
 
-import { TextButtonCenter } from "../components/buttons";
+import { GeneralButton, TextButtonCenter } from "../components/buttons";
 import { TextItem_1 } from "../components/TextItem";
 import { backgroundColorDynamic, borderRadiusDynamic, FlexOne, fontBasic, marginDynamic, Neutral, paddingDynamic, White } from "../styles";
 
-type TVerifyCredentialModalProps = {
-  indicator: boolean;
-  setIndicator: any;
-  pushNextModalFunction?: any;
-};
-
-export const VerifyCredentialModal: React.FC<TVerifyCredentialModalProps> = ({
+export const VerifyCredentialModal: FunctionComponent<TModalProps> = ({
   indicator,
   setIndicator,
   pushNextModalFunction,
@@ -73,7 +67,7 @@ export const VerifyCredentialModal: React.FC<TVerifyCredentialModalProps> = ({
         />
       </View>
 
-      <TextButtonCenter label="Accept" onPressHandler={pushNextModalFunction} />
+      <GeneralButton label="Accept" onPressHandler={pushNextModalFunction} />
       <TextButtonCenter label="Decline" onPressHandler={updateVerifyModal} />
     </View>
   );

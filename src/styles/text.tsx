@@ -1,4 +1,25 @@
+import { FunctionComponent } from "react";
 import { TextStyle } from "react-native";
+
+type TFontBasicProps = {
+  size: number;
+  weight?:
+    | "normal"
+    | "bold"
+    | "100"
+    | "200"
+    | "300"
+    | "400"
+    | "500"
+    | "600"
+    | "700"
+    | "800"
+    | "900";
+  color?: string;
+  opacity?: number;
+  style?: "normal" | "italic";
+  lineHeight?: number;
+};
 
 export const fontBasic = (
   size: number,

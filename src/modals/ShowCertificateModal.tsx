@@ -1,32 +1,26 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { Image, Text, View } from "react-native";
 
 import { BackButton } from "../components/buttons";
 import {
-    AlignItemCenter,
-    backgroundColorDynamic,
-    borderRadiusDynamic,
-    FlexOne,
-    FlexRow,
-    fontBasic,
-    JustifyFlexStart,
-    marginDynamic,
-    paddingDynamic,
-    White,
+  AlignItemCenter,
+  backgroundColorDynamic,
+  borderRadiusDynamic,
+  dimensionDynamic,
+  FlexOne,
+  FlexRow,
+  fontBasic,
+  JustifyFlexStart,
+  marginDynamic,
+  paddingDynamic,
+  White,
 } from "../styles";
 
-type TShowCertificateModalProps = {
-  indicator: boolean;
-  setIndicator: any;
-  pushNextModalFunction?: any;
-  pushNextModalFunction_1?: any;
-};
-
-export const ShowCertificateModal: React.FC<TShowCertificateModalProps> = ({
+export const ShowCertificateModal: FunctionComponent<TModalProps> = ({
   indicator,
   setIndicator,
 }) => {
-  const QR_CODE = require("../media/Group.png");
+  const CERTIFICATE_PREVIEW = require("../media/image 6.png");
   const updateShowPreviewModal = () => {
     setIndicator(!indicator);
   };
@@ -41,16 +35,16 @@ export const ShowCertificateModal: React.FC<TShowCertificateModalProps> = ({
     >
       <View
         style={{
+          ...AlignItemCenter,
           ...FlexRow,
           ...JustifyFlexStart,
-          ...AlignItemCenter,
         }}
       >
         <View>
           <BackButton
             label="< Back"
             onPressHandler={updateShowPreviewModal}
-            color="white"
+            fontColor="white"
           />
         </View>
 
@@ -67,12 +61,15 @@ export const ShowCertificateModal: React.FC<TShowCertificateModalProps> = ({
       <View
         style={{
           ...borderRadiusDynamic(16),
+          ...backgroundColorDynamic(White),
           ...marginDynamic("40%", "auto", 48, "auto"),
           ...paddingDynamic(32, 32, 32, 32),
-          ...backgroundColorDynamic(White),
         }}
       >
-        <Image source={QR_CODE} />
+        <Image
+          source={CERTIFICATE_PREVIEW}
+          style={{ ...dimensionDynamic(200, 200) }}
+        />
       </View>
     </View>
   );

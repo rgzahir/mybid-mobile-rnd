@@ -9,9 +9,9 @@ export const KeyboardAvoid = ({ navigation }) => {
     <KeyboardAvoidingView
       style={{
         ...FlexOne,
+        ...marginDynamic("-16%", -16, 0, -16),
         ...paddingDynamic("10%", 24, 24, 24),
         ...paddingDynamic("16%", 24, 0, 24),
-        ...marginDynamic("-16%", -16, 0, -16),
       }}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >

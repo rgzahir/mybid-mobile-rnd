@@ -1,3 +1,3 @@
 export const OnClickToDetailLogin = () => {
-  console.log('someting');
+  console.log("Hi");
 };

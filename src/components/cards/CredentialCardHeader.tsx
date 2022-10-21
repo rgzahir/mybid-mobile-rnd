@@ -1,27 +1,19 @@
-import React from "react";
+import React, { Fragment, FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 import { Accent, AlignItemCenter, FlexRow, fontBasic, JustifySpaceBetween, marginDynamic } from "../../styles";
 
-type TCredentialCardHeaderProps = {
-  isShownLocal?: boolean;
-  setIsShownLocal?: Function;
-  data?: any;
-};
-
-export const CredentialCardHeader: React.FC<TCredentialCardHeaderProps> = ({
-  isShownLocal,
-  setIsShownLocal,
-  data,
-}) => {
+export const CredentialCardHeader: FunctionComponent<
+  TCredentialCardHeaderProps
+> = ({ data, isShownLocal, setIsShownLocal }) => {
   const { credentialName, credentialProvider } = data;
 
   return (
-    <View>
+    <Fragment>
       <TouchableOpacity
         style={{
-          ...FlexRow,
           ...AlignItemCenter,
+          ...FlexRow,
           ...JustifySpaceBetween,
         }}
         onPress={() => {
@@ -41,11 +33,12 @@ export const CredentialCardHeader: React.FC<TCredentialCardHeaderProps> = ({
             {credentialProvider}
           </Text>
         </View>
+
         <Text style={{ ...fontBasic(16, "bold", Accent.accent_blue_5) }}>
           X
         </Text>
       </TouchableOpacity>
-    </View>
+    </Fragment>
   );
 };
 

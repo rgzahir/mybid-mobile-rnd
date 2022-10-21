@@ -2,6 +2,7 @@ import React from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 import { DiscoverHeroSpace, DiscoverHighlightItem, DiscoverShowStatus } from "../components";
+import { BackButton } from "../components/buttons";
 import {
   Accent,
   AlignItemCenter,
@@ -42,10 +43,10 @@ export const DiscoverPage = () => {
 
       <View
         style={{
-          ...marginDynamic("2%"),
+          ...AlignItemCenter,
           ...FlexDirectionRow,
           ...JustifySpaceBetween,
-          ...AlignItemCenter,
+          ...marginDynamic("2%"),
           ...paddingDynamic(8, 0, 8, 0),
         }}
       >
@@ -58,6 +59,7 @@ export const DiscoverPage = () => {
           >
             Welcome,
           </Text>
+
           <Text
             style={{
               ...fontBasic(16, "800", Accent.accent_green_4),
@@ -68,13 +70,7 @@ export const DiscoverPage = () => {
           </Text>
         </View>
 
-        <TouchableOpacity>
-          <Text
-            style={{ ...fontBasic(14, "bold", Accent.accent_green_1, 0.7) }}
-          >
-            X
-          </Text>
-        </TouchableOpacity>
+        <BackButton label="X" fontColor={Accent.accent_green_1} />
       </View>
 
       <DiscoverHeroSpace />
@@ -83,12 +79,13 @@ export const DiscoverPage = () => {
         <Text style={{ ...fontBasic(16, "800", White) }}>Current Status</Text>
         <DiscoverShowStatus />
       </View>
+
       <View
         style={{
-          ...paddingDynamic(0, 0, 8),
+          ...AlignItemCenter,
           ...JustifySpaceBetween,
           ...FlexDirectionRow,
-          ...AlignItemCenter,
+          ...paddingDynamic(0, 0, 8),
           ...marginDynamic("8%"),
         }}
       >
@@ -99,6 +96,8 @@ export const DiscoverPage = () => {
         >
           Highlights
         </Text>
+
+        {/* <BackButton label="View All" fontColor="black" /> */}
         <TouchableOpacity>
           <Text
             style={{
@@ -112,9 +111,9 @@ export const DiscoverPage = () => {
 
       <ScrollView
         style={{
+          ...FlexWrap,
           ...paddingDynamic(8, 24, 0, 24),
           ...marginDynamic(0, -16, -32, -16),
-          ...FlexWrap,
         }}
       >
         <DiscoverHighlightItem />

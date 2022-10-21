@@ -1,21 +1,13 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { Text, View } from "react-native";
 
-import { AlignItemCenter, dimensionDynamic, FlexWrap, fontBasic, marginDynamic } from "../../styles";
+import { AlignItemCenter, dimensionDynamic, FlexWrap, fontBasic, marginDynamic, textAlignDynamic } from "../../styles";
 
-type TTextItemProps = {
-  subTitle: string;
-  subText: string;
-  color_1?: string;
-  color_2?: string;
-  width?: string | number;
-};
-
-export const TextItem_3: React.FC<TTextItemProps> = ({
-  subTitle,
-  subText,
+export const TextItem_3: FunctionComponent<TTextItem_2Props> = ({
   color_1,
   color_2,
+  subTitle,
+  subText,
   width,
 }) => {
   return (
@@ -36,10 +28,10 @@ export const TextItem_3: React.FC<TTextItemProps> = ({
       </Text>
       <Text
         style={{
+          ...textAlignDynamic("center"),
+          ...FlexWrap,
           ...fontBasic(12, "400", color_2, 1, "normal", 14),
           ...marginDynamic(16, 0, 16, 0),
-          textAlign: "center",
-          ...FlexWrap,
         }}
       >
         {subText}

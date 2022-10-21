@@ -1,26 +1,18 @@
-import React from "react";
-import { Image, Modal, View } from "react-native";
+import React, { Fragment, FunctionComponent } from "react";
+import { Image, Modal } from "react-native";
 
 import { borderRadiusDynamic, dimensionDynamic, PositionAbsolute } from "../styles";
 
-type TBaseModalProps = {
-  indicator: boolean;
-  setIndicator: any;
-  Detail: any;
-  pushNextModalFunction?: any;
-  pushNextModalFunction_1?: any;
-};
-
-export const BaseModal: React.FC<TBaseModalProps> = ({
-  indicator,
-  setIndicator,
+export const BaseModal: FunctionComponent<TBaseModalProps> = ({
   Detail,
+  indicator,
   pushNextModalFunction,
   pushNextModalFunction_1,
+  setIndicator,
 }) => {
   const Discover_bg = "../media//discover_bg.png";
   return (
-    <View>
+    <Fragment>
       <Modal
         animationType="slide"
         transparent={true}
@@ -41,12 +33,12 @@ export const BaseModal: React.FC<TBaseModalProps> = ({
 
         <Detail
           indicator={indicator}
-          setIndicator={setIndicator}
           pushNextModalFunction={pushNextModalFunction}
           pushNextModalFunction_1={pushNextModalFunction_1}
+          setIndicator={setIndicator}
         />
       </Modal>
-    </View>
+    </Fragment>
   );
 };
 

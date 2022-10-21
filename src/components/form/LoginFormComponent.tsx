@@ -1,21 +1,14 @@
 import { Formik } from "formik";
-import React, { useState } from "react";
+import React, { Fragment, FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 import { fontBasic, marginDynamic } from "../../styles";
 import { GeneralButton } from "../buttons";
 import InputAreaComponent from "./InputAreaComponent";
 
-type TLoginFormComponent = {
-  // navigation?: NavigatorScreenParams<any, any> | undefined;
-  passToggle?: boolean;
-  setPassToggle?: Function;
-};
-
-export const LoginFormComponent: React.FC<TLoginFormComponent> = ({
+export const LoginFormComponent: FunctionComponent<TLoginFormComponent> = ({
   navigation,
   passToggle,
-  setPassToggle,
 }) => {
   const LoginHandler = () => {
     navigation.navigate("DashboardScreenStack");
@@ -23,7 +16,7 @@ export const LoginFormComponent: React.FC<TLoginFormComponent> = ({
   };
 
   return (
-    <View>
+    <Fragment>
       <Formik
         initialValues={{
           email: "",
@@ -34,13 +27,13 @@ export const LoginFormComponent: React.FC<TLoginFormComponent> = ({
           LoginHandler();
         }}
       >
-        {({ handleChange, handleBlur, handleSubmit, values }) => (
+        {({ values, handleChange, handleBlur, handleSubmit }) => (
           <View>
             <InputAreaComponent
               label="Email Address:"
-              placeholder="me@gmail.com"
               onChangeText={handleChange("email")}
               onBlur={handleBlur("email")}
+              placeholder="me@gmail.com"
               value={values.email}
               //for password use - security
               //secureTextEntry={true}
@@ -48,12 +41,12 @@ export const LoginFormComponent: React.FC<TLoginFormComponent> = ({
 
             <InputAreaComponent
               label="Password:"
-              placeholder="At least 6 characters"
               onChangeText={handleChange("password")}
               onBlur={handleBlur("password")}
-              value={values.password}
+              placeholder="At least 6 characters"
               //for password use - security
               secureTextEntry={passToggle}
+              value={values.password}
             />
 
             <TouchableOpacity style={{ ...marginDynamic(24, 0, 0, 16) }}>
@@ -70,7 +63,7 @@ export const LoginFormComponent: React.FC<TLoginFormComponent> = ({
           </View>
         )}
       </Formik>
-    </View>
+    </Fragment>
   );
 };
 

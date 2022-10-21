@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 
 import {
   Accent,
@@ -11,15 +11,16 @@ import {
   Neutral,
   paddingDynamic,
 } from "../../styles";
+import { BackButton } from "../buttons";
 
 export const AvailableCredentialHeader = () => {
   return (
     <View
       style={{
-        ...marginDynamic("8%"),
         ...FlexDirectionRow,
         ...JustifySpaceBetween,
         ...AlignItemCenter,
+        ...marginDynamic("8%"),
         ...paddingDynamic(8, 0, 8, 0),
       }}
     >
@@ -30,15 +31,8 @@ export const AvailableCredentialHeader = () => {
       >
         Available Credentials
       </Text>
-      <TouchableOpacity>
-        <Text
-          style={{
-            ...fontBasic(14, "600", Accent.accent_blue_10),
-          }}
-        >
-          X
-        </Text>
-      </TouchableOpacity>
+
+      <BackButton label="X" fontColor={Accent.accent_blue_10} />
     </View>
   );
 };

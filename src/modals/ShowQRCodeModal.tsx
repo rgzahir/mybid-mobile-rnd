@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { Image, Text, View } from "react-native";
 
 import { BackButton } from "../components/buttons";
@@ -20,14 +20,7 @@ import {
   White,
 } from "../styles";
 
-type TShowQRCodeModalProps = {
-  indicator: boolean;
-  setIndicator: any;
-  pushNextModalFunction?: any;
-  pushNextModalFunction_1?: any;
-};
-
-export const ShowQRCodeModal: React.FC<TShowQRCodeModalProps> = ({
+export const ShowQRCodeModal: FunctionComponent<TModalProps> = ({
   indicator,
   setIndicator,
 }) => {
@@ -49,9 +42,6 @@ export const ShowQRCodeModal: React.FC<TShowQRCodeModalProps> = ({
         source={BG_SHOW_QR_MODAL}
         style={{
           ...PositionAbsolute,
-          //   ...borderRadiusDynamic(32),
-          //   ...JustifySpaceCenter,
-          //   ...AlignItemCenter,
           ...marginDynamic(-48, -48, -32, -48),
           ...dimensionDynamic("140%", "140%"),
         }}
@@ -60,16 +50,16 @@ export const ShowQRCodeModal: React.FC<TShowQRCodeModalProps> = ({
 
       <View
         style={{
+          ...AlignItemCenter,
           ...FlexRow,
           ...JustifyFlexStart,
-          ...AlignItemCenter,
         }}
       >
         <View>
           <BackButton
+            fontColor={Primary.primary_blue}
             label="< Back"
             onPressHandler={updateShowQRModal}
-            color={Primary.primary_blue}
           />
         </View>
 
@@ -85,21 +75,20 @@ export const ShowQRCodeModal: React.FC<TShowQRCodeModalProps> = ({
 
       <View
         style={{
-          // ...dimensionDynamic(150, 150),
           ...borderRadiusDynamic(16),
+          ...backgroundColorDynamic(White),
           ...marginDynamic("40%", "auto", 48, "auto"),
           ...paddingDynamic(32, 32, 32, 32),
-          ...backgroundColorDynamic(White),
         }}
       >
         <Image source={QR_CODE} />
       </View>
 
       <TextItem_3
-        subTitle="Scan This QR Code"
-        subText="This code contains your graduation certificate"
         color_1={White}
         color_2={White}
+        subTitle="Scan This QR Code"
+        subText="This code contains your graduation certificate"
         width="60%"
       />
     </View>

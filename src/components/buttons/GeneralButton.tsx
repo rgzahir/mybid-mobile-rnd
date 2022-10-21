@@ -1,6 +1,8 @@
-import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import React, { Fragment, FunctionComponent } from "react";
+import { Text, TouchableOpacity } from "react-native";
 
+import { checkBackgroundColor } from "../../functions";
+import { checkFontColor } from "../../functions/checkFontColor";
 import {
   AlignItemCenter,
   backgroundColorDynamic,
@@ -10,40 +12,36 @@ import {
   fontBasic,
   marginDynamic,
   paddingDynamic,
-  White,
 } from "../../styles";
 
-type TGeneralButtonProps = {
-  label: string;
-  onPressHandler?: any;
-  message?: string;
-  marginTop?: string | number;
-};
-
-export const GeneralButton: React.FC<TGeneralButtonProps> = ({
+export const GeneralButton: FunctionComponent<TGeneralButtonProps> = ({
+  backgroundColor,
+  fontColor,
   label,
-  onPressHandler,
   marginTop,
+  onPressHandler,
 }) => {
   return (
-    <View>
+    <Fragment>
       <TouchableOpacity
         style={{
-          ...backgroundColorDynamic("#01396C"),
-          ...marginDynamic(marginTop, "auto", 0, "auto"),
+          ...AlignItemCenter,
+          ...backgroundColorDynamic(checkBackgroundColor(backgroundColor)),
           ...borderRadiusDynamic(32),
           ...borderMake(2, "#01396C"),
           ...dimensionDynamic("auto", "90%"),
           ...paddingDynamic(12, 0, 12, 0),
-          ...AlignItemCenter,
+          ...marginDynamic(marginTop, "auto", 0, "auto"),
         }}
         onPress={() => {
           onPressHandler();
         }}
       >
-        <Text style={{ ...fontBasic(20, "500", White) }}>{label}</Text>
+        <Text style={{ ...fontBasic(20, "500", checkFontColor(fontColor)) }}>
+          {label}
+        </Text>
       </TouchableOpacity>
-    </View>
+    </Fragment>
   );
 };
 

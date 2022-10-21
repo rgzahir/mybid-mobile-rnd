@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Text, View } from "react-native";
 
 import {
@@ -23,20 +23,20 @@ import {
 
 export const DiscoverHeroSpace = () => {
   return (
-    <View>
+    <Fragment>
       <View
         style={{
-          ...backgroundColorDynamic(heroColors.primary),
-          ...borderRadiusDynamic(16),
-          ...paddingDynamic(24, 24, 24, 24),
-          ...marginDynamic("6%"),
+          ...AlignItemCenter,
           ...FlexDirectionRow,
           ...JustifySpaceBetween,
-          ...AlignItemCenter,
+          ...backgroundColorDynamic(heroColors.primary),
+          ...borderRadiusDynamic(16),
+          ...marginDynamic("6%"),
+          ...paddingDynamic(24, 24, 24, 24),
         }}
       >
         <View style={{ ...JustifySpaceBetween, ...dimensionDynamic(90) }}>
-          <View style={{ ...FlexRow, ...AlignItemCenter }}>
+          <View style={{ ...AlignItemCenter, ...FlexRow }}>
             <Text
               style={{
                 ...fontBasic(14, "600", titleColors.primary),
@@ -82,7 +82,7 @@ export const DiscoverHeroSpace = () => {
           ...backgroundColorDynamic(White),
         }}
       />
-    </View>
+    </Fragment>
   );
 };
 

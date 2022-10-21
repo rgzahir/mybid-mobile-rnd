@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { View } from "react-native";
 
-import { TextButtonCenter } from "../components/buttons";
 import { AvailableCredentialFilter } from "../components/filters";
 import { AvailableCredentialHeader } from "../components/headers";
 import { CredentialListComponent } from "../components/lists";
@@ -47,58 +46,51 @@ export const CredentialPage = () => {
     >
       <AvailableCredentialHeader />
       <AvailableCredentialFilter
-        setCurrentFilter={setCurrentFilter}
         currentFilter={currentFilter}
+        setCurrentFilter={setCurrentFilter}
       />
 
       <CredentialListComponent
         currentFilter={currentFilter}
         showVerifyModal={showVerifyModal}
-        setShowVerifyModal={setShowVerifyModal}
-        showDetailModal={showDetailModal}
-        setShowDetailModal={setShowDetailModal}
         showQRModal={showQRModal}
+        showDetailModal={showDetailModal}
+        setShowVerifyModal={setShowVerifyModal}
+        setShowDetailModal={setShowDetailModal}
         setShowQRModal={setShowQRModal}
       />
 
       <BaseModal
-        indicator={showVerifyModal}
-        setIndicator={setShowVerifyModal}
         Detail={VerifyCredentialModal}
+        indicator={showVerifyModal}
         pushNextModalFunction={showNextModal_3}
+        setIndicator={setShowVerifyModal}
       />
 
       <BaseModal
-        indicator={showDetailModal}
-        setIndicator={setShowDetailModal}
         Detail={CredentialDetailModal}
+        indicator={showDetailModal}
         pushNextModalFunction={showNextModal_1}
         pushNextModalFunction_1={showNextModal_2}
+        setIndicator={setShowDetailModal}
       />
 
       <BaseModal
+        Detail={ShowQRCodeModal}
         indicator={showQRModal}
         setIndicator={setShowQRModal}
-        Detail={ShowQRCodeModal}
       />
 
       <BaseModal
+        Detail={ShowCertificateModal}
         indicator={showPreview}
         setIndicator={setShowPreview}
-        Detail={ShowCertificateModal}
       />
 
       <BaseModal
+        Detail={VerifyCompletedModal}
         indicator={showVerifyCompleted}
         setIndicator={setShowVerifyCompleted}
-        Detail={VerifyCompletedModal}
-      />
-
-      <TextButtonCenter
-        label="Show Verify Completed"
-        onPressHandler={() => {
-          setShowVerifyCompleted(!showVerifyCompleted);
-        }}
       />
     </View>
   );

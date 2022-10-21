@@ -23,11 +23,11 @@ export const DiscoverShowStatus = () => {
       style={{
         ...JustifySpaceBetween,
         ...FlexDirectionRow,
+        ...borderRadiusDynamic(16),
+        ...backgroundColorDynamic(titleColors.white),
+        ...dimensionDynamic("auto", "100%"),
         ...paddingDynamic(24, 24, 48, 24),
         ...marginDynamic(12),
-        ...borderRadiusDynamic(16),
-        ...dimensionDynamic("auto", "100%"),
-        ...backgroundColorDynamic(titleColors.white),
       }}
     >
       <View style={{ ...AlignItemCenter, ...dimensionDynamic(60, "20%") }}>
@@ -35,8 +35,8 @@ export const DiscoverShowStatus = () => {
           style={{
             ...SquareBox60px,
             ...borderRadiusDynamic(80),
-            ...marginDynamic(0, 0, 8),
             ...backgroundColorDynamic(heroColors.secondary),
+            ...marginDynamic(0, 0, 8),
           }}
         />
         <Text
@@ -52,9 +52,9 @@ export const DiscoverShowStatus = () => {
         <View
           style={{
             ...SquareBox60px,
+            ...backgroundColorDynamic(heroColors.secondary),
             ...borderRadiusDynamic(80),
             ...marginDynamic(0, 0, 8),
-            ...backgroundColorDynamic(heroColors.secondary),
           }}
         />
         <Text
@@ -70,9 +70,9 @@ export const DiscoverShowStatus = () => {
         <View
           style={{
             ...SquareBox60px,
+            ...backgroundColorDynamic(heroColors.secondary),
             ...borderRadiusDynamic(80),
             ...marginDynamic(0, 0, 8),
-            ...backgroundColorDynamic(heroColors.secondary),
           }}
         />
         <Text
@@ -88,9 +88,9 @@ export const DiscoverShowStatus = () => {
         <View
           style={{
             ...SquareBox60px,
+            ...backgroundColorDynamic(heroColors.secondary),
             ...borderRadiusDynamic(80),
             ...marginDynamic(0, 0, 8),
-            ...backgroundColorDynamic(heroColors.secondary),
           }}
         />
         <Text

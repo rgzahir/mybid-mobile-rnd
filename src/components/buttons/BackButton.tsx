@@ -1,38 +1,31 @@
-import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import React, { Fragment, FunctionComponent } from "react";
+import { Text, TouchableOpacity } from "react-native";
 
+import { checkFontColor } from "../../functions/checkFontColor";
 import { fontBasic, marginDynamic } from "../../styles";
 
-type TBackButtonProps = {
-  label: string;
-  onPressHandler?: any;
-  message?: string;
-  color?: string;
-};
-
-export const BackButton: React.FC<TBackButtonProps> = ({
+export const BackButton: FunctionComponent<TBackButtonProps> = ({
+  fontColor,
   label,
   onPressHandler,
-  color,
 }) => {
   return (
-    <View>
+    <Fragment>
       <TouchableOpacity
         style={{
           ...marginDynamic(16, 0, 16),
         }}
         onPress={onPressHandler}
-        // onPress={setIndicator(!indicator)}
       >
         <Text
           style={{
-            ...fontBasic(16, "600", color, 1, "normal", 24),
+            ...fontBasic(16, "600", checkFontColor(fontColor), 1, "normal", 24),
           }}
         >
           {label}
         </Text>
       </TouchableOpacity>
-    </View>
+    </Fragment>
   );
 };
 
