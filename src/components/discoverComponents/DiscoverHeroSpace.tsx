@@ -4,22 +4,19 @@ import { Text, View } from "react-native";
 import {
   AlignItemCenter,
   backgroundColorDynamic,
-  BorderRadius16,
   borderRadiusBottomDynamic,
   borderRadiusDynamic,
   dimensionDynamic,
   FlexDirectionRow,
-  FlexRow,
   fontBasic,
   heroColors,
   JustifySpaceBetween,
   marginDynamic,
   Neutral,
   paddingDynamic,
-  SquareBox90px,
   titleColors,
   White,
-} from "../styles";
+} from "../../styles";
 
 export const DiscoverHeroSpace = () => {
   return (
@@ -36,7 +33,7 @@ export const DiscoverHeroSpace = () => {
         }}
       >
         <View style={{ ...JustifySpaceBetween, ...dimensionDynamic(90) }}>
-          <View style={{ ...AlignItemCenter, ...FlexRow }}>
+          <View style={{ ...AlignItemCenter, ...FlexDirectionRow }}>
             <Text
               style={{
                 ...fontBasic(14, "600", titleColors.primary),
@@ -59,9 +56,9 @@ export const DiscoverHeroSpace = () => {
         </View>
         <View
           style={{
-            ...SquareBox90px,
-            ...BorderRadius16,
+            ...borderRadiusDynamic(16),
             ...backgroundColorDynamic(White),
+            ...dimensionDynamic(90, 90),
           }}
         />
       </View>

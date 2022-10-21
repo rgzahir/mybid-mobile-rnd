@@ -15,7 +15,7 @@ import {
   paddingDynamic,
   SquareBox60px,
   titleColors,
-} from "../styles";
+} from "../../styles";
 
 export const DiscoverShowStatus = () => {
   return (

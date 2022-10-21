@@ -1,7 +1,7 @@
 import React, { Fragment, FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
-import { Accent, AlignItemCenter, FlexRow, fontBasic, JustifySpaceBetween, marginDynamic } from "../../styles";
+import { Accent, AlignItemCenter, FlexDirectionRow, fontBasic, JustifySpaceBetween, marginDynamic } from "../../styles";
 
 export const CredentialCardHeader: FunctionComponent<
   TCredentialCardHeaderProps
@@ -13,7 +13,7 @@ export const CredentialCardHeader: FunctionComponent<
       <TouchableOpacity
         style={{
           ...AlignItemCenter,
-          ...FlexRow,
+          ...FlexDirectionRow,
           ...JustifySpaceBetween,
         }}
         onPress={() => {

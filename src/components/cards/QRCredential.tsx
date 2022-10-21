@@ -1,7 +1,15 @@
 import React, { Fragment, FunctionComponent } from "react";
 import { Image, TouchableOpacity, View } from "react-native";
 
-import { backgroundColorDynamic, borderRadiusDynamic, dimensionDynamic, FlexRow, marginDynamic, paddingDynamic, White } from "../../styles";
+import {
+  backgroundColorDynamic,
+  borderRadiusDynamic,
+  dimensionDynamic,
+  FlexDirectionRow,
+  marginDynamic,
+  paddingDynamic,
+  White,
+} from "../../styles";
 
 export const QRCredential: FunctionComponent<TQRCredentialProps> = ({
   data,
@@ -44,7 +52,7 @@ export const QRCredential: FunctionComponent<TQRCredentialProps> = ({
     <Fragment>
       <TouchableOpacity
         style={{
-          ...FlexRow,
+          ...FlexDirectionRow,
           ...marginDynamic(24, 0, 24, 0),
           ...paddingDynamic(8, 0, 8, 0),
         }}

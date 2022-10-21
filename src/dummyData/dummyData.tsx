@@ -82,8 +82,68 @@ export const CredentialDataThree: IPassport = {
   category: "Basic",
 };
 
+export const CredentialDataFour: IPassport = {
+  credentialId: 3,
+  credentialType: "passport",
+  credentialName: "International Passport",
+  credentialProvider: "Japan",
+  fullName: "Nobita Chan Chan Chan",
+  isShown: false,
+  UpdateIsShown() {
+    this.isShown = !this.isShown;
+    console.log("UpdateIsShown invoked !");
+  },
+  lastUpdated: "date string?",
+  nationality: "Japan",
+  profilePicture: "",
+  passportNumber: "B234 4152 551",
+  qrCode: require("../media/Group.png"),
+  category: "Basic",
+};
+
+export const CredentialDataFive: IPassport = {
+  credentialId: 3,
+  credentialType: "passport",
+  credentialName: "International Passport",
+  credentialProvider: "Japan",
+  fullName: "Nobita Chan Chan Chan",
+  isShown: false,
+  UpdateIsShown() {
+    this.isShown = !this.isShown;
+    console.log("UpdateIsShown invoked !");
+  },
+  lastUpdated: "date string?",
+  nationality: "Japan",
+  profilePicture: "",
+  passportNumber: "B234 4152 551",
+  qrCode: require("../media/Group.png"),
+  category: "Basic",
+};
+
+export const CredentialDataSix: IPassport = {
+  credentialId: 3,
+  credentialType: "passport",
+  credentialName: "International Passport",
+  credentialProvider: "Japan",
+  fullName: "Nobita Chan Chan Chan",
+  isShown: false,
+  UpdateIsShown() {
+    this.isShown = !this.isShown;
+    console.log("UpdateIsShown invoked !");
+  },
+  lastUpdated: "date string?",
+  nationality: "Japan",
+  profilePicture: "",
+  passportNumber: "B234 4152 551",
+  qrCode: require("../media/Group.png"),
+  category: "Basic",
+};
+
 export const DummyDataArray = [
   { ...CredentialDataOne },
   { ...CredentialDataTwo },
   { ...CredentialDataThree },
+  { ...CredentialDataFour },
+  { ...CredentialDataFive },
+  { ...CredentialDataSix },
 ];

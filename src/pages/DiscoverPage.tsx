@@ -1,8 +1,8 @@
 import React from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
-import { DiscoverHeroSpace, DiscoverHighlightItem, DiscoverShowStatus } from "../components";
 import { BackButton } from "../components/buttons";
+import { DiscoverHeroSpace, DiscoverHighlightItem, DiscoverShowStatus } from "../components/discoverComponents";
 import {
   Accent,
   AlignItemCenter,

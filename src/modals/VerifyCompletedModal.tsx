@@ -6,8 +6,8 @@ import { TextItem_3 } from "../components/TextItem";
 import {
   AlignItemCenter,
   backgroundColorDynamic,
+  FlexDirectionRow,
   FlexOne,
-  FlexRow,
   JustifyFlexEnd,
   JustifySpaceCenter,
   marginDynamic,
@@ -34,7 +34,7 @@ export const VerifyCompletedModal: FunctionComponent<TModalProps> = ({
     >
       <View
         style={{
-          ...FlexRow,
+          ...FlexDirectionRow,
           ...JustifyFlexEnd,
           ...paddingDynamic(0, 16),
         }}

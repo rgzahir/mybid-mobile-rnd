@@ -6,8 +6,8 @@ import {
   AlignItemCenter,
   backgroundColorDynamic,
   borderRadiusBottomDynamic,
+  FlexDirectionRow,
   FlexOne,
-  FlexRow,
   fontBasic,
   JustifySpaceBetween,
   marginDynamic,
@@ -34,7 +34,7 @@ export const CredentialCardFooter: FunctionComponent<
       style={{
         ...AlignItemCenter,
         ...FlexOne,
-        ...FlexRow,
+        ...FlexDirectionRow,
         ...JustifySpaceBetween,
         ...backgroundColorDynamic(Primary.primary_blue),
         ...borderRadiusBottomDynamic(16),
@@ -45,12 +45,12 @@ export const CredentialCardFooter: FunctionComponent<
       <View>
         <TouchableOpacity
           style={{
-            ...FlexRow,
+            ...FlexDirectionRow,
             ...JustifySpaceBetween,
           }}
           onPress={updateShowQR}
         >
-          <View style={{ ...marginDynamic(0, 0, 4), ...FlexRow }}>
+          <View style={{ ...marginDynamic(0, 0, 4), ...FlexDirectionRow }}>
             <Text
               style={{
                 ...fontBasic(14, "bold", Secondary.secondary_green),

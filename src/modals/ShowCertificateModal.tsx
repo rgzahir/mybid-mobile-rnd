@@ -7,8 +7,8 @@ import {
   backgroundColorDynamic,
   borderRadiusDynamic,
   dimensionDynamic,
+  FlexDirectionRow,
   FlexOne,
-  FlexRow,
   fontBasic,
   JustifyFlexStart,
   marginDynamic,
@@ -36,7 +36,7 @@ export const ShowCertificateModal: FunctionComponent<TModalProps> = ({
       <View
         style={{
           ...AlignItemCenter,
-          ...FlexRow,
+          ...FlexDirectionRow,
           ...JustifyFlexStart,
         }}
       >

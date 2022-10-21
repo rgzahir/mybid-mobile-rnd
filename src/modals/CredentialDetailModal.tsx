@@ -7,8 +7,8 @@ import {
   Accent,
   backgroundColorDynamic,
   borderRadiusDynamic,
+  FlexDirectionRow,
   FlexOne,
-  FlexRow,
   fontBasic,
   JustifySpaceAround,
   marginDynamic,
@@ -54,7 +54,13 @@ export const CredentialDetailModal: FunctionComponent<
         {"Bachelor of Arts (Hons) in Business Administration"}
       </Text>
 
-      <View style={{ ...FlexRow, ...JustifySpaceAround, ...marginDynamic(32) }}>
+      <View
+        style={{
+          ...FlexDirectionRow,
+          ...JustifySpaceAround,
+          ...marginDynamic(32),
+        }}
+      >
         <Text
           style={{
             ...fontBasic(10, "400", Neutral.neutral_10, 1, "normal", 12),
@@ -85,7 +91,7 @@ export const CredentialDetailModal: FunctionComponent<
         />
       </View>
 
-      <View style={{ ...FlexRow, ...JustifySpaceAround }}>
+      <View style={{ ...FlexDirectionRow, ...JustifySpaceAround }}>
         <SquareButton
           icon={Show_QR_Icon}
           label="Show QR"

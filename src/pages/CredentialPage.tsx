@@ -40,7 +40,7 @@ export const CredentialPage = () => {
   return (
     <View
       style={{
-        ...paddingDynamic("12%", 24, "40%", 24),
+        ...paddingDynamic(0, 24, 0, 24),
         ...marginDynamic(0, 0, 88),
       }}
     >

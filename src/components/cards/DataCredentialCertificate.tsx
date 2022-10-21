@@ -4,8 +4,8 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import {
   backgroundColorDynamic,
   borderRadiusDynamic,
+  FlexDirectionRow,
   FlexOne,
-  FlexRow,
   fontBasic,
   marginDynamic,
   paddingDynamic,
@@ -46,7 +46,7 @@ export const DataCredentialCertificate: FunctionComponent<
     <Fragment>
       <TouchableOpacity
         style={{
-          ...FlexRow,
+          ...FlexDirectionRow,
           ...marginDynamic(24, 0, 24, 0),
           ...paddingDynamic(8, 0, 8, 0),
         }}
