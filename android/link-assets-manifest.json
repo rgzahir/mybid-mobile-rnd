@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "resources/fonts/CustomIcon.tsx",
+      "sha1": "cb76304929e18b316440c4a6d929ad7675b4afd8"
+    },
+    {
+      "path": "resources/fonts/icomoon.ttf",
+      "sha1": "3142d1340d10d54414a4488779008dbdd4c2fba9"
+    },
+    {
+      "path": "resources/fonts/selection.ts",
+      "sha1": "999c001a336c704edd64b1de3443a3b0df26b07f"
+    }
+  ]
+}
