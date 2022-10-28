@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { Formik } from "formik";
 import React, { Fragment, FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
@@ -7,12 +8,13 @@ import { GeneralButton } from "../buttons";
 import InputAreaComponent from "./InputAreaComponent";
 
 export const LoginFormComponent: FunctionComponent<TLoginFormComponent> = ({
-  navigation,
   passToggle,
 }) => {
+  const checkNav = useNavigation();
+
   const LoginHandler = () => {
-    navigation.navigate("DashboardScreenStack");
-    console.log(navigation);
+    checkNav.navigate("DashboardScreenStack");
+    console.log(checkNav);
   };
 
   return (
@@ -31,6 +33,9 @@ export const LoginFormComponent: FunctionComponent<TLoginFormComponent> = ({
           <View>
             <InputAreaComponent
               label="Email Address:"
+              iconName="mail2"
+              iconSize={24}
+              iconColor="grey"
               onChangeText={handleChange("email")}
               onBlur={handleBlur("email")}
               placeholder="me@gmail.com"
@@ -41,6 +46,9 @@ export const LoginFormComponent: FunctionComponent<TLoginFormComponent> = ({
 
             <InputAreaComponent
               label="Password:"
+              iconName="mail2"
+              iconSize={24}
+              iconColor="grey"
               onChangeText={handleChange("password")}
               onBlur={handleBlur("password")}
               placeholder="At least 6 characters"

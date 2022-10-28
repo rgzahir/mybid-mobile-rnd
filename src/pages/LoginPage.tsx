@@ -1,9 +1,9 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
 import {
   AlignItemCenter,
-  backgroundColorDynamic,
   borderMake,
   borderRadiusDynamic,
   dimensionDynamic,
@@ -16,25 +16,26 @@ import {
   marginDynamic,
   paddingDynamic,
   PositionAbsolute,
-  SquareBox250px,
   White,
 } from "../styles";
 
 const Background_img = "../media/initialize_app_bg.png";
 const Illustration_img = "../media/initalize_Illustration.png";
 
-export const LoginPage = ({ navigation }) => {
+export const LoginPage = () => {
+  const checkNav = useNavigation();
+
   const GoToLoginDetail = () => {
-    navigation.navigate("LoginScreenStack");
-    console.log("GoToLoginDetail", navigation);
+    checkNav.navigate("LoginScreenDetail");
+    console.log("GoToLoginDetail", checkNav);
   };
 
   return (
     <View
       style={{
+        backgroundColor: "#002E94",
         ...FlexOne,
         ...paddingDynamic("10%", 24, 24, 24),
-        ...backgroundColorDynamic("#002E94"),
       }}
     >
       <View
@@ -55,15 +56,18 @@ export const LoginPage = ({ navigation }) => {
           <Text style={{ ...fontBasic(28, "bold", "#02C9A5") }}> myBID</Text>
         </Text>
       </View>
+
       <View>
         <Image
           source={require(Illustration_img)}
           style={{
-            ...SquareBox250px,
+            height: 250,
+            width: 250,
             ...marginDynamic("20%", "auto", 0, "auto"),
           }}
         />
       </View>
+
       <View style={{ ...marginDynamic("40%") }}>
         <View
           style={{
@@ -87,16 +91,20 @@ export const LoginPage = ({ navigation }) => {
           <TouchableOpacity
             style={{
               ...AlignItemCenter,
+              backgroundColor: White,
               ...paddingDynamic(8, 0, 8),
               ...borderMake(2, White),
               ...borderRadiusDynamic(50),
               ...dimensionDynamic("auto", "45%"),
-              ...backgroundColorDynamic(White),
+            }}
+            onPress={() => {
+              // console.log(CustomIcon);
             }}
           >
             <Text style={{ ...fontBasic(20, "500", "#01396C") }}>Sign Up</Text>
           </TouchableOpacity>
         </View>
+
         <Text
           style={{
             ...fontBasic(12, "normal", White, 0.7),

@@ -1,18 +1,14 @@
 import React, { Fragment, FunctionComponent } from "react";
 import { Text, TextInput } from "react-native";
 
-import {
-  backgroundColorDynamic,
-  borderRadiusDynamic,
-  dimensionDynamic,
-  fontBasic,
-  marginDynamic,
-  paddingDynamic,
-  White,
-} from "../../styles";
+import { borderRadiusDynamic, dimensionDynamic, fontBasic, marginDynamic, paddingDynamic, White } from "../../styles";
 
+// import { IcoMoon } from "../../../resources/fonts/CustomIcon";
 export const InputArea: FunctionComponent<TInputAreaProps> = ({
   label,
+  iconName,
+  iconSize,
+  iconColor,
   ...props
 }) => {
   return (
@@ -25,11 +21,12 @@ export const InputArea: FunctionComponent<TInputAreaProps> = ({
       >
         {label}
       </Text>
+
       <TextInput
         style={{
           ...borderRadiusDynamic(4),
           ...borderRadiusDynamic(8),
-          ...backgroundColorDynamic(White),
+          backgroundColor: White,
           ...dimensionDynamic("auto", "90%"),
           ...marginDynamic(8, "auto", 0, "auto"),
           ...paddingDynamic(16, 8, 16, 24),
