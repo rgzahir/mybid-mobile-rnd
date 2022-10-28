@@ -69,6 +69,8 @@ export const LoginPage = () => {
         />
       </View>
       <IcoMoon name="eye" size={40} color="white" />
+      <IcoMoon name="mail2" size={40} color="white" />
+      <IcoMoon name="omega" size={40} color="white" />
 
       <View style={{ ...marginDynamic("40%") }}>
         <View
