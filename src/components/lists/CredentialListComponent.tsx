@@ -29,6 +29,7 @@ export const CredentialListComponent: FunctionComponent<
             if (type === "passport") {
               return (
                 <DataCredentialPassport
+                  key={key}
                   data={item}
                   showQR={showQR}
                   setShowQR={setShowQR}
@@ -39,6 +40,7 @@ export const CredentialListComponent: FunctionComponent<
             if (type === "certificate") {
               return (
                 <DataCredentialCertificate
+                  key={key}
                   data={item}
                   showQR={showQR}
                   setShowQR={setShowQR}
@@ -51,7 +53,7 @@ export const CredentialListComponent: FunctionComponent<
 
           if (currentFilter === category) {
             return (
-              <View>
+              <View key={key}>
                 <CredentialCard
                   data={item}
                   isShownLocal={isShownLocal}
@@ -73,7 +75,7 @@ export const CredentialListComponent: FunctionComponent<
 
           if (currentFilter === "All") {
             return (
-              <View>
+              <View key={key}>
                 <CredentialCard
                   data={item}
                   isShownLocal={isShownLocal}

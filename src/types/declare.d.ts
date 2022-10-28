@@ -105,6 +105,9 @@ declare interface THighlightItem {
 
 declare type TInputAreaProps = {
   label?: string;
+  iconName?: string;
+  iconSize?: number;
+  iconColor?: string;
   onChangeText?: Function;
   onBlur?: Function;
   placeholder?: string;

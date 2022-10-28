@@ -4,14 +4,13 @@ import { Text, View } from "react-native";
 import {
   Accent,
   AlignItemCenter,
-  backgroundColorDynamic,
   borderRadiusDynamic,
   FlexDirectionRow,
   FlexWrap,
   fontBasic,
   marginDynamic,
   SquareBox60px,
-} from "../styles";
+} from "../../styles";
 
 export const DiscoverHighlightItem = () => {
   return (
@@ -25,8 +24,78 @@ export const DiscoverHighlightItem = () => {
       >
         <View
           style={{
+            backgroundColor: "grey",
             ...SquareBox60px,
-            ...backgroundColorDynamic("grey"),
+            ...borderRadiusDynamic(50),
+            ...marginDynamic(0, 15),
+          }}
+        />
+        <View>
+          <Text
+            style={{
+              ...FlexWrap,
+              ...fontBasic(14, "600", Accent.accent_blue_10),
+            }}
+          >
+            You just added your first credentials.
+          </Text>
+          <Text
+            style={{
+              ...fontBasic(12, "normal", "black", 0.7),
+              ...marginDynamic(8),
+            }}
+          >
+            Today, 10:100AM
+          </Text>
+        </View>
+      </View>
+
+      <View
+        style={{
+          ...AlignItemCenter,
+          ...FlexDirectionRow,
+          ...marginDynamic(0, 0, 16),
+        }}
+      >
+        <View
+          style={{
+            backgroundColor: "grey",
+            ...borderRadiusDynamic(50),
+            ...SquareBox60px,
+            ...marginDynamic(0, 15),
+          }}
+        />
+        <View>
+          <Text
+            style={{
+              ...FlexWrap,
+              ...fontBasic(14, "600", Accent.accent_blue_10),
+            }}
+          >
+            You just added your first credentials.
+          </Text>
+          <Text
+            style={{
+              ...fontBasic(12, "normal", "black", 0.7),
+              ...marginDynamic(8),
+            }}
+          >
+            Today, 10:100AM
+          </Text>
+        </View>
+      </View>
+
+      <View
+        style={{
+          ...AlignItemCenter,
+          ...FlexDirectionRow,
+          ...marginDynamic(0, 0, 16),
+        }}
+      >
+        <View
+          style={{
+            ...SquareBox60px,
+            backgroundColor: "grey",
             ...borderRadiusDynamic(50),
             ...marginDynamic(0, 15),
           }}
@@ -61,7 +130,7 @@ export const DiscoverHighlightItem = () => {
         <View
           style={{
             ...SquareBox60px,
-            ...backgroundColorDynamic("grey"),
+            backgroundColor: "grey",
             ...borderRadiusDynamic(50),
             ...marginDynamic(0, 15),
           }}
@@ -96,77 +165,7 @@ export const DiscoverHighlightItem = () => {
         <View
           style={{
             ...SquareBox60px,
-            ...backgroundColorDynamic("grey"),
-            ...borderRadiusDynamic(50),
-            ...marginDynamic(0, 15),
-          }}
-        />
-        <View>
-          <Text
-            style={{
-              ...FlexWrap,
-              ...fontBasic(14, "600", Accent.accent_blue_10),
-            }}
-          >
-            You just added your first credentials.
-          </Text>
-          <Text
-            style={{
-              ...fontBasic(12, "normal", "black", 0.7),
-              ...marginDynamic(8),
-            }}
-          >
-            Today, 10:100AM
-          </Text>
-        </View>
-      </View>
-
-      <View
-        style={{
-          ...AlignItemCenter,
-          ...FlexDirectionRow,
-          ...marginDynamic(0, 0, 16),
-        }}
-      >
-        <View
-          style={{
-            ...SquareBox60px,
-            ...backgroundColorDynamic("grey"),
-            ...borderRadiusDynamic(50),
-            ...marginDynamic(0, 15),
-          }}
-        />
-        <View>
-          <Text
-            style={{
-              ...FlexWrap,
-              ...fontBasic(14, "600", Accent.accent_blue_10),
-            }}
-          >
-            You just added your first credentials.
-          </Text>
-          <Text
-            style={{
-              ...fontBasic(12, "normal", "black", 0.7),
-              ...marginDynamic(8),
-            }}
-          >
-            Today, 10:100AM
-          </Text>
-        </View>
-      </View>
-
-      <View
-        style={{
-          ...AlignItemCenter,
-          ...FlexDirectionRow,
-          ...marginDynamic(0, 0, 16),
-        }}
-      >
-        <View
-          style={{
-            ...SquareBox60px,
-            ...backgroundColorDynamic("grey"),
+            backgroundColor: "grey",
             ...borderRadiusDynamic(50),
             ...marginDynamic(0, 15),
           }}

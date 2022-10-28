@@ -7,14 +7,14 @@ import BottomNav from "./BottomNav";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
-const LoginScreen = ({ navigation }) => {
+const LoginScreen = () => {
   // console.log('nav', navigation);
   // navigation.navigate('LoginScreenStack');
-  return <LoginPage navigation={navigation} />;
+  return <LoginPage />;
 };
 
-const LoginDetailScreen = ({ navigation }) => {
-  return <KeyboardAvoid navigation={navigation} />;
+const LoginDetailScreen = () => {
+  return <KeyboardAvoid />;
 };
 
 const BottomTabStack = () => {
@@ -30,7 +30,7 @@ const StackNav = () => {
       initialRouteName={"LoginScreen"}
     >
       <Screen name="LoginScreen" component={LoginScreen} />
-      <Screen name="LoginScreenStack" component={LoginDetailScreen} />
+      <Screen name="LoginScreenDetail" component={LoginDetailScreen} />
       <Screen name="DashboardScreenStack" component={BottomTabStack} />
     </Navigator>
   );

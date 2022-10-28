@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
@@ -8,13 +9,13 @@ type TLoginDetailPageProps = {
   // navigation?: NavigatorScreenParams<any, any> | undefined;
 };
 
-export const LoginDetailPage: React.FC<TLoginDetailPageProps> = ({
-  navigation,
-}) => {
+export const LoginDetailPage: React.FC<TLoginDetailPageProps> = () => {
   const [passToggle, setPassToggle] = useState(true);
+  const checkNav = useNavigation();
+
   const goBackPageHandler = () => {
-    navigation.goBack();
-    console.log(navigation);
+    checkNav.goBack();
+    console.log(checkNav);
   };
 
   return (
@@ -39,7 +40,6 @@ export const LoginDetailPage: React.FC<TLoginDetailPageProps> = ({
       </Text>
 
       <LoginFormComponent
-        navigation={navigation}
         passToggle={passToggle}
         setPassToggle={setPassToggle}
       />

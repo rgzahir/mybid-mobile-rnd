@@ -2,7 +2,6 @@ import React, { Fragment, FunctionComponent, useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
 import {
-  backgroundColorDynamic,
   borderRadiusDynamic,
   FlexDirectionRow,
   FlexOne,
@@ -32,10 +31,10 @@ export const DataCredentialPassport: FunctionComponent<
       return (
         <View
           style={{
+            backgroundColor: Primary.primary_blue,
             ...SquareBox80px,
             ...borderRadiusDynamic(16),
             ...marginDynamic(0, "10%"),
-            ...backgroundColorDynamic(Primary.primary_blue),
           }}
         ></View>
       );

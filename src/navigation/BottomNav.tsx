@@ -7,7 +7,6 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { CredentialPage, DiscoverPage } from "../pages";
 import { Accent, marginDynamic, Primary } from "../styles";
 
-
 const { Navigator, Screen } = createBottomTabNavigator();
 
 const DiscoverScreen = () => {
@@ -28,11 +27,11 @@ const FinanceScreen = () => {
   );
 };
 
-const ProfileScreen = ({ navigation }) => {
+const ProfileScreen = () => {
   const checkNav = useNavigation();
   const logOutHandler = () => {
     checkNav.navigate("LoginScreen");
-    console.log(navigation);
+    console.log(checkNav);
   };
   return (
     <View style={{ ...marginDynamic("auto", "auto", "auto", "auto") }}>

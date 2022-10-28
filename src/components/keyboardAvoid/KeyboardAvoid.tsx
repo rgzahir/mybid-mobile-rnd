@@ -4,7 +4,7 @@ import { Keyboard, KeyboardAvoidingView, Platform, TouchableWithoutFeedback } fr
 import { LoginDetailPage } from "../../pages";
 import { FlexOne, marginDynamic, paddingDynamic } from "../../styles";
 
-export const KeyboardAvoid = ({ navigation }) => {
+export const KeyboardAvoid = () => {
   return (
     <KeyboardAvoidingView
       style={{
@@ -16,7 +16,7 @@ export const KeyboardAvoid = ({ navigation }) => {
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <LoginDetailPage navigation={navigation} />
+        <LoginDetailPage />
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
   );
