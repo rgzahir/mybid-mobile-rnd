@@ -103,6 +103,15 @@ declare interface THighlightItem {
   timestamp: Date; //date
 }
 
+declare type TIconButtonProps = {
+  disabledPress?: boolean;
+  color?: string;
+  message?: string;
+  name?: string;
+  onPressHandler?: any;
+  size?: number;
+};
+
 declare type TInputAreaProps = {
   label?: string;
   iconName?: string;
