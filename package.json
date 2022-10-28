@@ -8,7 +8,8 @@
     "ios-ipad": "react-native run-ios --simulator=\"iPad (9th generation)\"",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "update-ios": "cd ios && pod install"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "6.4.0",
