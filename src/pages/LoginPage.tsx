@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
+import { IcoMoon } from "../icons/CustomIcon";
 import {
   AlignItemCenter,
   borderMake,
@@ -67,6 +68,7 @@ export const LoginPage = () => {
           }}
         />
       </View>
+      <IcoMoon name="eye" size={40} color="white" />
 
       <View style={{ ...marginDynamic("40%") }}>
         <View
