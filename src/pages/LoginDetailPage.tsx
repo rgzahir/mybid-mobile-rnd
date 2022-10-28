@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 import { LoginFormComponent } from "../components/form";
-import { IcoMoon } from "../icons/CustomIcon";
 import { fontBasic, marginDynamic, paddingDynamic } from "../styles";
 
 type TLoginDetailPageProps = {
@@ -39,7 +38,6 @@ export const LoginDetailPage: React.FC<TLoginDetailPageProps> = () => {
       >
         Log in to myBID
       </Text>
-      <IcoMoon name="eye" size={40} color="black" />
 
       <LoginFormComponent
         passToggle={passToggle}

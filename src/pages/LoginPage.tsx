@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
+import IconButton from "../components/buttons/IconButton";
 import { IcoMoon } from "../icons/CustomIcon";
 import {
   AlignItemCenter,
@@ -68,9 +69,32 @@ export const LoginPage = () => {
           }}
         />
       </View>
-      <IcoMoon name="eye" size={40} color="white" />
-      <IcoMoon name="mail2" size={40} color="white" />
-      <IcoMoon name="omega" size={40} color="white" />
+      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <IcoMoon name="eye" size={40} color="white" />
+        <IcoMoon name="make-group" size={40} color="white" />
+        <IcoMoon name="strikethrough" size={40} color="white" />
+        <IconButton
+          color="white"
+          disabledPress={true}
+          name="eye"
+          onPressHandler={() => {}}
+          size={40}
+        />
+        <IconButton
+          color="white"
+          disabledPress={false}
+          name="mail2"
+          onPressHandler={() => {}}
+          size={40}
+        />
+        <IconButton
+          color="white"
+          disabledPress={true}
+          name="make-group"
+          onPressHandler={() => {}}
+          size={40}
+        />
+      </View>
 
       <View style={{ ...marginDynamic("40%") }}>
         <View
