@@ -3,7 +3,7 @@ import { TouchableOpacity } from "react-native";
 
 import { IcoMoon } from "../../icons/CustomIcon";
 
-export const IconButton: FunctionComponent<TIconButtonProps> = ({
+export const NormalIconButton: FunctionComponent<TIconButtonProps> = ({
   disabledPress,
   color,
   name,
@@ -19,4 +19,4 @@ export const IconButton: FunctionComponent<TIconButtonProps> = ({
   );
 };
 
-export default IconButton;
+export default NormalIconButton;
