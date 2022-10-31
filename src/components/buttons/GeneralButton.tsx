@@ -37,7 +37,13 @@ export const GeneralButton: FunctionComponent<TGeneralButtonProps> = ({
           onPressHandler();
         }}
       >
-        <Text style={{ ...fontBasic(20, "500", checkFontColor(fontColor)) }}>
+        <Text
+          style={{
+            ...fontBasic(16, "600", checkFontColor(fontColor)),
+            fontFamily: "Poppins-SemiBold",
+            lineHeight: 24,
+          }}
+        >
           {label}
         </Text>
       </TouchableOpacity>

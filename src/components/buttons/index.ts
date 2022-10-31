@@ -2,6 +2,7 @@ export * from "./BackButton";
 export * from "./CloseButton";
 export * from "./DashedButton";
 export * from "./GeneralButton";
+export * from "./GeneralButton_2";
 export * from "./NormalIconButton";
 export * from "./IconSwitchButton";
 export * from "./MoreDetailsButton";
