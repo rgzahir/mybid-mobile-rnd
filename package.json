@@ -10,7 +10,7 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "update-ios": "cd ios && pod install",
-    "update-package": "yarn && yarn ios"
+    "update-package": "yarn && update-ios && yarn ios"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "6.4.0",
