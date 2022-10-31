@@ -6,6 +6,7 @@ import { IcoMoon } from "../../icons/CustomIcon";
 export const IconSwitchButton: FunctionComponent<TIconSwitchButtonProps> = ({
   disabledPress,
   color,
+  color_2,
   name,
   name_2,
   onPressHandler,
@@ -20,7 +21,7 @@ export const IconSwitchButton: FunctionComponent<TIconSwitchButtonProps> = ({
         </TouchableOpacity>
       ) : (
         <TouchableOpacity onPress={onPressHandler} disabled={disabledPress}>
-          <IcoMoon name={name_2} size={size} color={color} />
+          <IcoMoon name={name_2} size={size} color={color_2} />
         </TouchableOpacity>
       )}
     </Fragment>

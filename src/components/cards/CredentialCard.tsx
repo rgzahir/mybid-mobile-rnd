@@ -1,7 +1,8 @@
 import React, { Fragment, FunctionComponent } from "react";
 import { View } from "react-native";
 
-import { Accent, backgroundColorDynamic, borderRadiusDynamic, FlexOne, marginDynamic, paddingDynamic, White } from "../../styles";
+import { CheckIsShown } from "../../functions/CredentialCard";
+import { backgroundColorDynamic, borderRadiusDynamic, FlexOne, marginDynamic, paddingDynamic } from "../../styles";
 import CredentialCardFooter from "./CredentialCardFooter";
 import CredentialCardHeader from "./CredentialCardHeader";
 import QRCredential from "./QRCredential";
@@ -21,19 +22,12 @@ export const CredentialCard: FunctionComponent<TCredentialCardProps> = ({
   setShowQRModal,
 }) => {
   const { credentialType } = data;
-  const checkIsShown = () => {
-    if (isShownLocal) {
-      return Accent.accent_blue_1;
-    }
-
-    return White;
-  };
 
   return (
     <View
       style={{
         ...FlexOne,
-        ...backgroundColorDynamic(checkIsShown()),
+        ...backgroundColorDynamic(CheckIsShown(isShownLocal)),
         ...borderRadiusDynamic(16),
         ...paddingDynamic(24, 16, 24, 16),
         ...marginDynamic(16, 0, 16, 0),
