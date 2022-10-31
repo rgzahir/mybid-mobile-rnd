@@ -82,7 +82,13 @@ export const LoginFormComponent: FunctionComponent<TLoginFormComponent> = ({
             />
 
             <TouchableOpacity style={{ ...marginDynamic(24, 0, 0, 16) }}>
-              <Text style={{ ...fontBasic(14, "bold", "#01396C") }}>
+              <Text
+                style={{
+                  ...fontBasic(16, "600", "#01396C"),
+                  lineHeight: 24,
+                  fontFamily: "Poppins-SemiBold",
+                }}
+              >
                 Forgot Password?
               </Text>
             </TouchableOpacity>

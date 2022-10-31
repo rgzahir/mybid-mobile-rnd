@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { Image, Text, View } from "react-native";
+import { Image, StatusBar, Text, View } from "react-native";
 
 import { BackButton } from "../components/buttons";
 import {
@@ -28,11 +28,12 @@ export const ShowCertificateModal: FunctionComponent<TModalProps> = ({
   return (
     <View
       style={{
+        backgroundColor: "#181818",
         ...FlexOne,
-        ...backgroundColorDynamic("#181818"),
         ...paddingDynamic(48, 16, 0, 16),
       }}
     >
+      <StatusBar barStyle={"light-content"} />
       <View
         style={{
           ...AlignItemCenter,

@@ -21,7 +21,9 @@ export const InputArea: FunctionComponent<TInputAreaProps> = ({
     <Fragment>
       <Text
         style={{
-          ...fontBasic(16, "400", "#676D71", 0.8),
+          ...fontBasic(14, "400", "#676D71", 0.8),
+          lineHeight: 16,
+          fontFamily: "Poppins-Regular",
           ...marginDynamic(24, 0, 0, 16),
         }}
       >

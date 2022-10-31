@@ -35,7 +35,7 @@ const FinanceScreen = () => {
   return (
     <View style={{ ...marginDynamic("auto", "auto", "auto", "auto") }}>
       <TouchableOpacity>
-        <Text>FINANCE SCREEN</Text>
+        <Text style={{ fontFamily: "Poppins-Medium" }}>FINANCE SCREEN</Text>
       </TouchableOpacity>
     </View>
   );

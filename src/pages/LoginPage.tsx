@@ -1,13 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, StatusBar, Text, View } from "react-native";
 
-import { NormalIconButton } from "../components/buttons";
+import { GeneralButton_2, NormalIconButton } from "../components/buttons";
 import { IcoMoon } from "../icons/CustomIcon";
 import {
-  AlignItemCenter,
-  borderMake,
-  borderRadiusDynamic,
   dimensionDynamic,
   FlexDirectionRow,
   FlexOne,
@@ -40,6 +37,7 @@ export const LoginPage = () => {
         ...paddingDynamic("10%", 24, 24, 24),
       }}
     >
+      <StatusBar barStyle={"default"} />
       <View
         style={{
           ...JustifySpaceCenter,
@@ -53,9 +51,24 @@ export const LoginPage = () => {
       <View
         style={{ ...FlexDirectionRow, ...FlexWrap, ...marginDynamic("30%") }}
       >
-        <Text style={{ ...fontBasic(28, "600", White) }}>
+        <Text
+          style={{
+            ...fontBasic(24, "600", White),
+            fontFamily: "Poppins-SemiBold",
+            lineHeight: 32,
+          }}
+        >
           Managing your credential {"\n"}is easy with
-          <Text style={{ ...fontBasic(28, "bold", "#02C9A5") }}> myBID</Text>
+          <Text
+            style={{
+              ...fontBasic(24, "600", "#02C9A5"),
+              fontFamily: "Poppins-SemiBold",
+              lineHeight: 32,
+            }}
+          >
+            {" "}
+            myBID
+          </Text>
         </Text>
       </View>
 
@@ -101,36 +114,21 @@ export const LoginPage = () => {
           style={{
             ...FlexDirectionRow,
             ...JustifySpaceEvenly,
-            ...marginDynamic(0, 0, "15%"),
+            ...marginDynamic(0, 0, "8%"),
           }}
         >
-          <TouchableOpacity
-            style={{
-              ...AlignItemCenter,
-              ...paddingDynamic(8, 0, 8),
-              ...borderMake(2, White),
-              ...borderRadiusDynamic(50),
-              ...dimensionDynamic("auto", "45%"),
-            }}
-            onPress={GoToLoginDetail}
-          >
-            <Text style={{ ...fontBasic(20, "500", White) }}>Log In</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              ...AlignItemCenter,
-              backgroundColor: White,
-              ...paddingDynamic(8, 0, 8),
-              ...borderMake(2, White),
-              ...borderRadiusDynamic(50),
-              ...dimensionDynamic("auto", "45%"),
-            }}
-            onPress={() => {
-              // console.log(CustomIcon);
-            }}
-          >
-            <Text style={{ ...fontBasic(20, "500", "#01396C") }}>Sign Up</Text>
-          </TouchableOpacity>
+          <GeneralButton_2
+            label="Sign In"
+            onPressHandler={GoToLoginDetail}
+            fontColor={White}
+          />
+
+          <GeneralButton_2
+            backgroundColor={White}
+            fontColor={"#01396C"}
+            label="Sign Up"
+            onPressHandler={() => {}}
+          />
         </View>
 
         <Text
