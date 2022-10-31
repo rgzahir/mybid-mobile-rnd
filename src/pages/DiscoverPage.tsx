@@ -1,78 +1,125 @@
 import React from "react";
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 
-import { DiscoverHeroSpace, DiscoverHighlightItem, DiscoverShowStatus } from "../components";
+import { MoreDetailsButton, NormalIconButton } from "../components/buttons";
+import { DiscoverHeroSpace, DiscoverHighlightItem, DiscoverShowStatus } from "../components/discoverComponents";
 import {
   Accent,
-  BaseContainer,
-  BaseContainerCounter,
-  CurrentStatusSpace,
-  DiscoverBg,
-  HeaderSpace,
-  HeaderSpaceAddTest,
-  HighlightSpace,
-  MediumText,
-  MediumTextWhite,
-  NormalMargin,
-  NormalTextWhite,
-  TextComment,
-  TextCommentWhite,
+  AlignItemCenter,
+  borderRadiusDynamic,
+  dimensionDynamic,
+  FlexDirectionRow,
+  FlexOne,
+  FlexWrap,
+  fontBasic,
+  JustifySpaceBetween,
+  marginDynamic,
+  paddingDynamic,
+  PositionAbsolute,
+  ShadowLight,
+  titleColors,
+  White,
 } from "../styles";
 
-export const DiscoverPage = () => {
-  const discover_bg = '../media/discover_bg.png';
+const Discover_bg = "../media/discover_bg.png";
 
+export const DiscoverPage = () => {
   return (
-    <View style={{...BaseContainer}}>
+    <View
+      style={{
+        ...FlexOne,
+        ...paddingDynamic("10%", 24, 24, 24),
+      }}
+    >
       <Image
-        source={require(discover_bg)}
-        style={DiscoverBg}
+        source={require(Discover_bg)}
+        style={{
+          ...PositionAbsolute,
+          ...borderRadiusDynamic(32),
+          ...dimensionDynamic("64%", "120%"),
+        }}
         resizeMode="stretch"
       />
-      <View style={{...HeaderSpace, ...HeaderSpaceAddTest}}>
+
+      <View
+        style={{
+          ...AlignItemCenter,
+          ...FlexDirectionRow,
+          ...JustifySpaceBetween,
+          ...marginDynamic("2%"),
+          ...paddingDynamic(8, 0, 8, 0),
+        }}
+      >
         <View>
           <Text
             style={{
-              ...TextCommentWhite,
-              ...NormalMargin,
-              color: Accent.accent_green_1,
-            }}>
+              ...fontBasic(12, "normal", Accent.accent_green_1, 0.7),
+              ...marginDynamic(8),
+            }}
+          >
             Welcome,
           </Text>
+
           <Text
             style={{
-              ...MediumTextWhite,
-              ...NormalMargin,
-              color: Accent.accent_green_4,
-            }}>
+              ...fontBasic(16, "800", Accent.accent_green_4),
+              ...marginDynamic(8),
+            }}
+          >
             Joey Chan Chan Chan
           </Text>
         </View>
-        <TouchableOpacity>
-          <Text style={NormalTextWhite}>X</Text>
-        </TouchableOpacity>
+
+        <NormalIconButton
+          color="white"
+          disabledPress={false}
+          name="bell"
+          onPressHandler={() => {}}
+          size={24}
+        />
       </View>
+
       <DiscoverHeroSpace />
 
-      <View style={CurrentStatusSpace}>
-        <Text style={MediumTextWhite}>Current Status</Text>
+      <View style={{ ...ShadowLight, ...marginDynamic("10%") }}>
+        <Text style={{ ...fontBasic(16, "800", White) }}>Current Status</Text>
         <DiscoverShowStatus />
       </View>
-      <View style={HighlightSpace}>
-        <Text style={{...MediumText}}>Highlights</Text>
-        <TouchableOpacity>
-          <Text style={TextComment}>View All ${'->'}</Text>
-        </TouchableOpacity>
+
+      <View
+        style={{
+          ...AlignItemCenter,
+          ...JustifySpaceBetween,
+          ...FlexDirectionRow,
+          ...paddingDynamic(0, 0, 8),
+          ...marginDynamic("8%"),
+        }}
+      >
+        <Text
+          style={{
+            ...fontBasic(16, "800", titleColors.secondary),
+          }}
+        >
+          Highlights
+        </Text>
+
+        <MoreDetailsButton
+          disabledPress={false}
+          color="black"
+          label="View All"
+          name_icon="arrow-right2"
+          onPressHandler={() => {}}
+          size={12}
+        />
       </View>
 
       <ScrollView
         style={{
-          ...BaseContainerCounter,
-          marginTop: 1,
-          paddingTop: 1,
-          marginBottom: -32,
-          // backgroundColor: 'lightblue',
-        }}>
+          ...FlexWrap,
+          ...paddingDynamic(8, 24, 0, 24),
+          ...marginDynamic(0, -16, -32, -16),
+        }}
+      >
         <DiscoverHighlightItem />
       </ScrollView>
     </View>

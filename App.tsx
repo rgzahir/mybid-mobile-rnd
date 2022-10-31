@@ -7,42 +7,23 @@
  *
  * @format
  */
+import { NavigationContainer } from "@react-navigation/native";
+import * as React from "react";
+import { View } from "react-native";
 
-import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-
-import StackNav from './src/navigation/StackNav';
+import StackNav from "./src/navigation/StackNav";
+import { backgroundColorDynamic, FlexOne } from "./src/styles";
 
 const App = () => {
   return (
     <NavigationContainer>
-      <View style={styles.baseContainer}>
+      <View
+        style={{ ...FlexOne, ...backgroundColorDynamic("rgba(242,242,242,1)") }}
+      >
         <StackNav />
       </View>
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  baseContainer: {
-    flex: 1,
-    backgroundColor: 'rgba(242,242,242,1)',
-  },
-  header: {
-    flex: 2,
-    // backgroundColor: 'lightblue',
-  },
-  body: {
-    flex: 9,
-    backgroundColor: 'lightgreen',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  footer: {
-    flex: 1,
-    backgroundColor: 'lightblue',
-  },
-});
 
 export default App;

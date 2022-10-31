@@ -1,55 +1,97 @@
 import React, { useState } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 
-import { CredentialCardsCertificate, CredentialCardsPassport } from "../components/cards";
 import { AvailableCredentialFilter } from "../components/filters";
 import { AvailableCredentialHeader } from "../components/headers";
-import { CredentialDataOne, CredentialDataTwo } from "../dummyData";
-import { BaseContainer, ItemCard, NormalMargin, NormalTextWhite } from "../styles";
+import { CredentialListComponent } from "../components/lists";
+import {
+  BaseModal,
+  CredentialDetailModal,
+  ShowCertificateModal,
+  ShowQRCodeModal,
+  VerifyCompletedModal,
+  VerifyCredentialModal,
+} from "../modals";
+import { marginDynamic, paddingDynamic } from "../styles";
 
 export const CredentialPage = () => {
-  const [currentFilter, setCurrentFilter] = useState('All');
-  const [isShownLocal, setIsShownLocal] = useState(false);
-  const [isShownLocalV1, setIsShownLocalV1] = useState(false);
-  const [showQR, setShowQR] = useState(true);
+  const [currentFilter, setCurrentFilter] = useState("All");
+  const [showVerifyModal, setShowVerifyModal] = useState(false);
+  const [showDetailModal, setShowDetailModal] = useState(false);
+  const [showQRModal, setShowQRModal] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
+  const [showVerifyCompleted, setShowVerifyCompleted] = useState(false);
+
+  const showNextModal_1 = () => {
+    setShowDetailModal(!showDetailModal);
+    setShowQRModal(!showQRModal);
+  };
+
+  const showNextModal_2 = () => {
+    setShowDetailModal(!showDetailModal);
+    setShowPreview(!showPreview);
+  };
+
+  const showNextModal_3 = () => {
+    setShowVerifyModal(!showVerifyModal);
+    setShowVerifyCompleted(!showVerifyCompleted);
+  };
 
   return (
-    <View style={BaseContainer}>
+    <View
+      style={{
+        ...paddingDynamic(0, 24, 0, 24),
+        ...marginDynamic(0, 0, 88),
+      }}
+    >
       <AvailableCredentialHeader />
       <AvailableCredentialFilter
-        setCurrentFilter={setCurrentFilter}
         currentFilter={currentFilter}
+        setCurrentFilter={setCurrentFilter}
       />
 
-      <ScrollView>
-        <CredentialCardsPassport
-          identifier={isShownLocal}
-          setIdentifier={setIsShownLocal}
-          Data={CredentialDataOne}
-        />
+      <CredentialListComponent
+        currentFilter={currentFilter}
+        showVerifyModal={showVerifyModal}
+        showQRModal={showQRModal}
+        showDetailModal={showDetailModal}
+        setShowVerifyModal={setShowVerifyModal}
+        setShowDetailModal={setShowDetailModal}
+        setShowQRModal={setShowQRModal}
+      />
 
-        <CredentialCardsCertificate
-          identifier={isShownLocalV1}
-          setIdentifier={setIsShownLocalV1}
-          Data={CredentialDataTwo}
-        />
+      <BaseModal
+        Detail={VerifyCredentialModal}
+        indicator={showVerifyModal}
+        pushNextModalFunction={showNextModal_3}
+        setIndicator={setShowVerifyModal}
+      />
 
-        <View style={ItemCard}>
-          <TouchableOpacity onPress={() => {}}>
-            <Text style={{...NormalTextWhite, fontWeight: 'bold'}}>
-              Academic Transcript Year 1
-            </Text>
-            <Text
-              style={{
-                ...NormalTextWhite,
-                ...NormalMargin,
-                fontStyle: 'italic',
-              }}>
-              USCI University
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
+      <BaseModal
+        Detail={CredentialDetailModal}
+        indicator={showDetailModal}
+        pushNextModalFunction={showNextModal_1}
+        pushNextModalFunction_1={showNextModal_2}
+        setIndicator={setShowDetailModal}
+      />
+
+      <BaseModal
+        Detail={ShowQRCodeModal}
+        indicator={showQRModal}
+        setIndicator={setShowQRModal}
+      />
+
+      <BaseModal
+        Detail={ShowCertificateModal}
+        indicator={showPreview}
+        setIndicator={setShowPreview}
+      />
+
+      <BaseModal
+        Detail={VerifyCompletedModal}
+        indicator={showVerifyCompleted}
+        setIndicator={setShowVerifyCompleted}
+      />
     </View>
   );
 };

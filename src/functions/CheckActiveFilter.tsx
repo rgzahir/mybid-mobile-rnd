@@ -1,6 +1,9 @@
-export const CheckActiveFilter = (item, currentFilter) => {
-  if (item === currentFilter) return {marginRight: 12, fontWeight: 'bold'};
-  else return {marginRight: 12, opacity: 0.5};
-};
+import { FunctionComponent } from "react";
 
-export default CheckActiveFilter;
+export const CheckActiveFilter: FunctionComponent<TCheckActiveFilterProps> = (
+  currentFilter,
+  item
+) => {
+  if (item === currentFilter) return { marginRight: 12, fontWeight: "bold" };
+  else return { marginRight: 12, opacity: 0.5 };
+};

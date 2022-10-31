@@ -1,92 +1,65 @@
-import { Formik } from "formik";
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 
-import { Button, ButtonText, fontBasic, ForgetClick, ForgetText, InputSpace, Label, marginDynamic, paddingDynamic } from "../styles";
+import { NormalIconButton } from "../components/buttons";
+import { LoginFormComponent } from "../components/form";
+import {
+  fontBasic,
+  marginDynamic,
+  Neutral,
+  paddingDynamic,
+  Primary,
+} from "../styles";
 
-const InputArea = ({label, ...props}) => {
-  return (
-    <View>
-      <Text style={Label}>{label}</Text>
-      <TextInput style={InputSpace} {...props} />
-    </View>
-  );
+type TLoginDetailPageProps = {
+  // navigation?: NavigatorScreenParams<any, any> | undefined;
 };
 
-export const LoginDetailPage = ({navigation}) => {
+export const LoginDetailPage: React.FC<TLoginDetailPageProps> = () => {
   const [passToggle, setPassToggle] = useState(true);
-  const goBackPageHandler = () => {
-    navigation.goBack();
-    console.log(navigation);
+  const updatePassToggle = () => {
+    setPassToggle(!passToggle);
   };
 
-  const loginHandlerHandler = () => {
-    navigation.navigate('DashboardScreenStack');
-    console.log(navigation);
+  const checkNav = useNavigation();
+  const goBackPageHandler = () => {
+    checkNav.goBack();
+    console.log(checkNav);
   };
 
   return (
-    <View style={{}}>
-      <TouchableOpacity
-        onPress={goBackPageHandler}
+    <View>
+      <View
         style={{
-          ...marginDynamic('20%', 0, 0, 16),
-        }}>
-        <Text>{'< Back'}</Text>
-      </TouchableOpacity>
+          ...marginDynamic("20%", 0, 0, 16),
+        }}
+      >
+        <NormalIconButton
+          color={Primary.primary_blue}
+          name="arrow-left2"
+          onPressHandler={goBackPageHandler}
+          size={24}
+        />
+      </View>
 
       <Text
         style={{
-          ...marginDynamic('30%'),
-          ...fontBasic(28, '600', '#1A232B'),
-          ...paddingDynamic(0, 0, 0, 16),
-        }}>
+          ...marginDynamic("30%"),
+          ...fontBasic(24, "600", Neutral.neutral_9),
+          ...paddingDynamic(0, 0, 0, 24),
+          fontFamily: "Poppins-SemiBold",
+          lineHeight: 32,
+        }}
+      >
         Log in to myBID
       </Text>
-      <Formik
-        initialValues={{
-          email: '',
-          password: '',
-        }}
-        onSubmit={values => {
-          console.log(values);
-          loginHandlerHandler();
-        }}>
-        {({handleChange, handleBlur, handleSubmit, values}) => (
-          <View>
-            <InputArea
-              label="Email Address:"
-              placeholder="me@gmail.com"
-              onChangeText={handleChange('email')}
-              onBlur={handleBlur('email')}
-              value={values.email}
-              //for password use - security
-              //secureTextEntry={true}
-            />
-            <InputArea
-              label="Password:"
-              placeholder="At least 6 characters"
-              onChangeText={handleChange('password')}
-              onBlur={handleBlur('password')}
-              value={values.password}
-              //for password use - security
-              secureTextEntry={passToggle}
-            />
-            <TouchableOpacity style={ForgetClick}>
-              <Text style={ForgetText}>Forgot Password?</Text>
-            </TouchableOpacity>
 
-            <TouchableOpacity
-              style={Button}
-              onPress={() => {
-                console.log('Go To Dashboard');
-                handleSubmit();
-              }}>
-              <Text style={ButtonText}>Log In</Text>
-            </TouchableOpacity>
-          </View>
-        )}
-      </Formik>
+      <LoginFormComponent
+        passToggle={passToggle}
+        setPassToggle={setPassToggle}
+        updateToggleFunction={updatePassToggle}
+      />
     </View>
   );
 };
