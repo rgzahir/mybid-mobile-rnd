@@ -4,17 +4,45 @@ import React, { Fragment, FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 import { fontBasic, marginDynamic } from "../../styles";
-import { GeneralButton } from "../buttons";
+import { GeneralButton, IconSwitchButton, NormalIconButton } from "../buttons";
 import InputAreaComponent from "./InputAreaComponent";
 
 export const LoginFormComponent: FunctionComponent<TLoginFormComponent> = ({
   passToggle,
+  setPassToggle,
+  updateToggleFunction,
 }) => {
   const checkNav = useNavigation();
 
   const LoginHandler = () => {
     checkNav.navigate("DashboardScreenStack");
     console.log(checkNav);
+  };
+
+  const mail2Icon = () => {
+    return (
+      <NormalIconButton
+        color="black"
+        disabledPress={true}
+        name="mail2"
+        onPressHandler={() => {}}
+        size={24}
+      />
+    );
+  };
+
+  const passwordIcon = () => {
+    return (
+      <IconSwitchButton
+        color="black"
+        disabledPress={false}
+        name="eye"
+        name_2="eye-blocked"
+        onPressHandler={updateToggleFunction}
+        size={24}
+        state={passToggle}
+      />
+    );
   };
 
   return (
@@ -33,9 +61,7 @@ export const LoginFormComponent: FunctionComponent<TLoginFormComponent> = ({
           <View>
             <InputAreaComponent
               label="Email Address:"
-              iconName="mail2"
-              iconSize={24}
-              iconColor="grey"
+              icon={mail2Icon}
               onChangeText={handleChange("email")}
               onBlur={handleBlur("email")}
               placeholder="me@gmail.com"
@@ -46,9 +72,7 @@ export const LoginFormComponent: FunctionComponent<TLoginFormComponent> = ({
 
             <InputAreaComponent
               label="Password:"
-              iconName="mail2"
-              iconSize={24}
-              iconColor="grey"
+              icon={passwordIcon}
               onChangeText={handleChange("password")}
               onBlur={handleBlur("password")}
               placeholder="At least 6 characters"
@@ -66,7 +90,7 @@ export const LoginFormComponent: FunctionComponent<TLoginFormComponent> = ({
             <GeneralButton
               label="Log In"
               onPressHandler={handleSubmit}
-              marginTop="60%"
+              marginTop="50%"
             />
           </View>
         )}

@@ -1,14 +1,20 @@
 import React, { Fragment, FunctionComponent } from "react";
-import { Text, TextInput } from "react-native";
+import { Text, TextInput, View } from "react-native";
 
-import { borderRadiusDynamic, dimensionDynamic, fontBasic, marginDynamic, paddingDynamic, White } from "../../styles";
+import {
+  AlignItemCenter,
+  borderRadiusDynamic,
+  dimensionDynamic,
+  FlexDirectionRow,
+  fontBasic,
+  marginDynamic,
+  paddingDynamic,
+  White,
+} from "../../styles";
 
-// import { IcoMoon } from "../../../resources/fonts/CustomIcon";
 export const InputArea: FunctionComponent<TInputAreaProps> = ({
+  icon,
   label,
-  iconName,
-  iconSize,
-  iconColor,
   ...props
 }) => {
   return (
@@ -22,8 +28,10 @@ export const InputArea: FunctionComponent<TInputAreaProps> = ({
         {label}
       </Text>
 
-      <TextInput
+      <View
         style={{
+          ...AlignItemCenter,
+          ...FlexDirectionRow,
           ...borderRadiusDynamic(4),
           ...borderRadiusDynamic(8),
           backgroundColor: White,
@@ -31,8 +39,16 @@ export const InputArea: FunctionComponent<TInputAreaProps> = ({
           ...marginDynamic(8, "auto", 0, "auto"),
           ...paddingDynamic(16, 8, 16, 24),
         }}
-        {...props}
-      />
+      >
+        {icon ? <View>{icon()}</View> : null}
+
+        <TextInput
+          style={{
+            ...paddingDynamic(0, 0, 0, 16),
+          }}
+          {...props}
+        />
+      </View>
     </Fragment>
   );
 };
