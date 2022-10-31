@@ -1,7 +1,7 @@
 import React from "react";
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 
-import { BackButton } from "../components/buttons";
+import { MoreDetailsButton, NormalIconButton } from "../components/buttons";
 import { DiscoverHeroSpace, DiscoverHighlightItem, DiscoverShowStatus } from "../components/discoverComponents";
 import {
   Accent,
@@ -70,7 +70,13 @@ export const DiscoverPage = () => {
           </Text>
         </View>
 
-        <BackButton label="X" fontColor={Accent.accent_green_1} />
+        <NormalIconButton
+          color="white"
+          disabledPress={false}
+          name="bell"
+          onPressHandler={() => {}}
+          size={24}
+        />
       </View>
 
       <DiscoverHeroSpace />
@@ -97,16 +103,14 @@ export const DiscoverPage = () => {
           Highlights
         </Text>
 
-        {/* <BackButton label="View All" fontColor="black" /> */}
-        <TouchableOpacity>
-          <Text
-            style={{
-              ...fontBasic(12, "normal", "black", 0.7),
-            }}
-          >
-            View All ${"->"}
-          </Text>
-        </TouchableOpacity>
+        <MoreDetailsButton
+          disabledPress={false}
+          color="black"
+          label="View All"
+          name_icon="arrow-right2"
+          onPressHandler={() => {}}
+          size={12}
+        />
       </View>
 
       <ScrollView

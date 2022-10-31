@@ -1,7 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 
+import { BackButton } from "../components/buttons";
 import { LoginFormComponent } from "../components/form";
 import { fontBasic, marginDynamic, paddingDynamic } from "../styles";
 
@@ -11,8 +12,11 @@ type TLoginDetailPageProps = {
 
 export const LoginDetailPage: React.FC<TLoginDetailPageProps> = () => {
   const [passToggle, setPassToggle] = useState(true);
-  const checkNav = useNavigation();
+  const updatePassToggle = () => {
+    setPassToggle(!passToggle);
+  };
 
+  const checkNav = useNavigation();
   const goBackPageHandler = () => {
     checkNav.goBack();
     console.log(checkNav);
@@ -20,14 +24,17 @@ export const LoginDetailPage: React.FC<TLoginDetailPageProps> = () => {
 
   return (
     <View>
-      <TouchableOpacity
-        onPress={goBackPageHandler}
+      <View
         style={{
           ...marginDynamic("20%", 0, 0, 16),
         }}
       >
-        <Text>{"< Back"}</Text>
-      </TouchableOpacity>
+        <BackButton
+          fontColor="black"
+          label="Back"
+          onPressHandler={goBackPageHandler}
+        />
+      </View>
 
       <Text
         style={{
@@ -42,6 +49,7 @@ export const LoginDetailPage: React.FC<TLoginDetailPageProps> = () => {
       <LoginFormComponent
         passToggle={passToggle}
         setPassToggle={setPassToggle}
+        updateToggleFunction={updatePassToggle}
       />
     </View>
   );

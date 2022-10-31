@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
-import IconButton from "../components/buttons/IconButton";
+import { NormalIconButton } from "../components/buttons";
 import { IcoMoon } from "../icons/CustomIcon";
 import {
   AlignItemCenter,
@@ -73,21 +73,21 @@ export const LoginPage = () => {
         <IcoMoon name="eye" size={40} color="white" />
         <IcoMoon name="make-group" size={40} color="white" />
         <IcoMoon name="strikethrough" size={40} color="white" />
-        <IconButton
+        <NormalIconButton
           color="white"
           disabledPress={true}
           name="eye"
           onPressHandler={() => {}}
           size={40}
         />
-        <IconButton
+        <NormalIconButton
           color="white"
           disabledPress={false}
           name="mail2"
           onPressHandler={() => {}}
           size={40}
         />
-        <IconButton
+        <NormalIconButton
           color="white"
           disabledPress={true}
           name="make-group"
