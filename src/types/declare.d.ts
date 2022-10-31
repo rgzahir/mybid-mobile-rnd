@@ -17,6 +17,7 @@ declare type TBackButtonProps = {
   label: string;
   fontColor?: string;
   icon?: "" | any;
+  iconColor?: string;
   message?: string;
   marginTop?: string | number;
   onPressHandler?: any;
@@ -112,13 +113,32 @@ declare type TIconButtonProps = {
   size?: number;
 };
 
+declare type TIconSwitchButtonProps = {
+  disabledPress?: boolean;
+  color?: string;
+  message?: string;
+  name?: string;
+  name_2?: string;
+  onPressHandler?: any;
+  size?: number;
+  state?: boolean;
+};
+
+declare type TMoreDetailsButtonProps = {
+  disabledPress?: boolean;
+  color?: string;
+  message?: string;
+  label?: string;
+  name_icon?: string;
+  onPressHandler?: any;
+  size?: number;
+};
+
 declare type TInputAreaProps = {
   label?: string;
-  iconName?: string;
-  iconSize?: number;
-  iconColor?: string;
-  onChangeText?: Function;
-  onBlur?: Function;
+  icon?: any;
+  onChangeText?: any;
+  onBlur?: any;
   placeholder?: string;
   secureTextEntry?: boolean;
   value?: string;
@@ -127,7 +147,8 @@ declare type TInputAreaProps = {
 declare type TLoginFormComponent = {
   // navigation?: NavigatorScreenParams<any, any> | undefined;
   passToggle?: boolean;
-  setPassToggle?: Function;
+  setPassToggle?: any;
+  updateToggleFunction?: any;
 };
 
 declare type TLoginDetailPageProps = {
