@@ -42,9 +42,10 @@ export const ShowCertificateModal: FunctionComponent<TModalProps> = ({
       >
         <View>
           <BackButton
-            label="< Back"
+            fontColor={White}
+            iconColor={White}
+            label="Back"
             onPressHandler={updateShowPreviewModal}
-            fontColor="white"
           />
         </View>
 

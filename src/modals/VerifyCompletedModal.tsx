@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { Image, View } from "react-native";
 
-import { BackButton, GeneralButton, TextButtonCenter } from "../components/buttons";
+import { CloseButton, GeneralButton, TextButtonCenter } from "../components/buttons";
 import { TextItem_3 } from "../components/TextItem";
 import {
   AlignItemCenter,
@@ -39,7 +39,7 @@ export const VerifyCompletedModal: FunctionComponent<TModalProps> = ({
           ...paddingDynamic(0, 16),
         }}
       >
-        <BackButton
+        <CloseButton
           label="X"
           onPressHandler={updateVerifyCompletedModal}
           fontColor={Neutral.neutral_9}

@@ -58,7 +58,8 @@ export const ShowQRCodeModal: FunctionComponent<TModalProps> = ({
         <View>
           <BackButton
             fontColor={Primary.primary_blue}
-            label="< Back"
+            iconColor={Primary.primary_blue}
+            label="Back"
             onPressHandler={updateShowQRModal}
           />
         </View>
