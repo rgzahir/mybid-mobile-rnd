@@ -1,17 +1,8 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-import {
-  Accent,
-  AlignItemCenter,
-  FlexDirectionRow,
-  fontBasic,
-  JustifySpaceBetween,
-  marginDynamic,
-  Neutral,
-  paddingDynamic,
-} from "../../styles";
-import { BackButton } from "../buttons";
+import { AlignItemCenter, FlexDirectionRow, fontBasic, JustifySpaceBetween, marginDynamic, Neutral, paddingDynamic } from "../../styles";
+import { NormalIconButton } from "../buttons";
 
 export const AvailableCredentialHeader = () => {
   return (
@@ -20,7 +11,7 @@ export const AvailableCredentialHeader = () => {
         ...FlexDirectionRow,
         ...JustifySpaceBetween,
         ...AlignItemCenter,
-        ...marginDynamic("8%"),
+        ...marginDynamic("16%"),
         ...paddingDynamic(8, 0, 8, 0),
       }}
     >
@@ -32,7 +23,7 @@ export const AvailableCredentialHeader = () => {
         Available Credentials
       </Text>
 
-      <BackButton label="X" fontColor={Accent.accent_blue_10} />
+      <NormalIconButton name="omega" size={16} color={Neutral.neutral_10} />
     </View>
   );
 };

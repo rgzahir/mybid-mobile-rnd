@@ -14,9 +14,9 @@ import {
   marginDynamic,
   Neutral,
   paddingDynamic,
-  titleColors,
   White,
 } from "../../styles";
+import { NormalIconButton } from "../buttons";
 
 export const DiscoverHeroSpace = () => {
   return (
@@ -34,15 +34,19 @@ export const DiscoverHeroSpace = () => {
       >
         <View style={{ ...JustifySpaceBetween, ...dimensionDynamic(90) }}>
           <View style={{ ...AlignItemCenter, ...FlexDirectionRow }}>
+            <NormalIconButton
+              color={heroColors.secondary}
+              disabledPress={true}
+              name="map"
+              onPressHandler={() => {}}
+              size={16}
+            />
             <Text
               style={{
-                ...fontBasic(14, "600", titleColors.primary),
-                ...marginDynamic(0, 8),
+                ...fontBasic(16, "800", heroColors.secondary),
+                marginLeft: 8,
               }}
             >
-              X
-            </Text>
-            <Text style={{ ...fontBasic(16, "800", heroColors.secondary) }}>
               Your myBID ID
             </Text>
           </View>
