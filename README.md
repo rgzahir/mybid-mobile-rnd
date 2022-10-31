@@ -8,3 +8,6 @@ https://github.com/regov-enterprise/mybid-mobile-rnd.git
 LATEST WORKING BRANCH
 
 - "feature/icon-button" branch
+- "feature/icon-button" will be merged to branch
+
+p/s: there's mistake in creating the feature branch. The working tree is messy. Refer to develop for latest working branch
