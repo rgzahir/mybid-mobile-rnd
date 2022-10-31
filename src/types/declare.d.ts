@@ -116,6 +116,7 @@ declare type TIconButtonProps = {
 declare type TIconSwitchButtonProps = {
   disabledPress?: boolean;
   color?: string;
+  color_2?: string;
   message?: string;
   name?: string;
   name_2?: string;
