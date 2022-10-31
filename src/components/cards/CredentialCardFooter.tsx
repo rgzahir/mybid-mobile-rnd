@@ -15,7 +15,7 @@ import {
   Primary,
   Secondary,
 } from "../../styles";
-import { BackButton } from "../buttons";
+import { NormalIconButton } from "../buttons";
 
 export const CredentialCardFooter: FunctionComponent<
   TCredentialCardFooterProps
@@ -51,13 +51,12 @@ export const CredentialCardFooter: FunctionComponent<
           onPress={updateShowQR}
         >
           <View style={{ ...marginDynamic(0, 0, 4), ...FlexDirectionRow }}>
-            <Text
-              style={{
-                ...fontBasic(14, "bold", Secondary.secondary_green),
-              }}
-            >
-              X
-            </Text>
+            <NormalIconButton
+              name="map"
+              color={Secondary.secondary_green}
+              size={16}
+              disabledPress={true}
+            />
             <Text
               style={{
                 ...fontBasic(14, "bold", Secondary.secondary_green),
@@ -77,10 +76,12 @@ export const CredentialCardFooter: FunctionComponent<
         </Text>
       </View>
 
-      <BackButton
-        fontColor={Secondary.secondary_green}
-        label=">>>"
+      <NormalIconButton
+        name="arrow-right2"
+        size={24}
+        color={Secondary.secondary_green}
         onPressHandler={updateShowDetailModal}
+        disabledPress={false}
       />
     </View>
   );

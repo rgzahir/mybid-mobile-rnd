@@ -2,6 +2,7 @@ import React, { Fragment, FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 import { Accent, AlignItemCenter, FlexDirectionRow, fontBasic, JustifySpaceBetween, marginDynamic } from "../../styles";
+import { NormalIconButton } from "../buttons";
 
 export const CredentialCardHeader: FunctionComponent<
   TCredentialCardHeaderProps
@@ -34,9 +35,21 @@ export const CredentialCardHeader: FunctionComponent<
           </Text>
         </View>
 
-        <Text style={{ ...fontBasic(16, "bold", Accent.accent_blue_5) }}>
-          X
-        </Text>
+        {isShownLocal ? (
+          <NormalIconButton
+            name="arrow-up2"
+            size={16}
+            color={Accent.accent_blue_5}
+            disabledPress={true}
+          />
+        ) : (
+          <NormalIconButton
+            name="circle-right"
+            size={16}
+            color={Accent.accent_blue_5}
+            disabledPress={true}
+          />
+        )}
       </TouchableOpacity>
     </Fragment>
   );

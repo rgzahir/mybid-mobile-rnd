@@ -3,7 +3,7 @@ import { ScrollView, View } from "react-native";
 
 import { DummyDataArray } from "../../dummyData";
 import { Primary } from "../../styles";
-import DashedButton from "../buttons/DashedButton";
+import { DashedButton } from "../buttons";
 import { CredentialCard, DataCredentialCertificate, DataCredentialPassport } from "../cards";
 
 export const CredentialListComponent: FunctionComponent<
@@ -25,7 +25,7 @@ export const CredentialListComponent: FunctionComponent<
           const [isShownLocal, setIsShownLocal] = useState(false);
           const [showQR, setShowQR] = useState(false);
 
-          const checkCredentialType = (type: any) => {
+          const checkCredentialType = (type: string) => {
             if (type === "passport") {
               return (
                 <DataCredentialPassport
