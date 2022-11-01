@@ -3,7 +3,6 @@ import { Text, View } from "react-native";
 
 import {
   AlignItemCenter,
-  backgroundColorDynamic,
   borderRadiusDynamic,
   dimensionDynamic,
   FlexDirectionRow,
@@ -13,6 +12,7 @@ import {
   JustifySpaceBetween,
   marginDynamic,
   paddingDynamic,
+  POPPINS_SEMIBOLD,
   SquareBox60px,
   titleColors,
 } from "../../styles";
@@ -24,7 +24,7 @@ export const DiscoverShowStatus = () => {
         ...JustifySpaceBetween,
         ...FlexDirectionRow,
         ...borderRadiusDynamic(16),
-        ...backgroundColorDynamic(titleColors.white),
+        backgroundColor: titleColors.white,
         ...dimensionDynamic("auto", "100%"),
         ...paddingDynamic(24, 24, 48, 24),
         ...marginDynamic(12),
@@ -33,15 +33,17 @@ export const DiscoverShowStatus = () => {
       <View style={{ ...AlignItemCenter, ...dimensionDynamic(60, "20%") }}>
         <View
           style={{
-            ...SquareBox60px,
             ...borderRadiusDynamic(80),
-            ...backgroundColorDynamic(heroColors.secondary),
+            backgroundColor: heroColors.secondary,
+            ...SquareBox60px,
             ...marginDynamic(0, 0, 8),
           }}
         />
         <Text
           style={{
-            ...fontBasic(12, "normal", heroColorsText.primary),
+            ...fontBasic(12, "600", heroColorsText.primary),
+            fontFamily: POPPINS_SEMIBOLD,
+            lineHeight: 16,
           }}
         >
           Basics
@@ -52,14 +54,16 @@ export const DiscoverShowStatus = () => {
         <View
           style={{
             ...SquareBox60px,
-            ...backgroundColorDynamic(heroColors.secondary),
+            backgroundColor: heroColors.secondary,
             ...borderRadiusDynamic(80),
             ...marginDynamic(0, 0, 8),
           }}
         />
         <Text
           style={{
-            ...fontBasic(12, "normal", heroColorsText.primary),
+            ...fontBasic(12, "600", heroColorsText.primary),
+            fontFamily: POPPINS_SEMIBOLD,
+            lineHeight: 16,
           }}
         >
           Identity
@@ -70,14 +74,16 @@ export const DiscoverShowStatus = () => {
         <View
           style={{
             ...SquareBox60px,
-            ...backgroundColorDynamic(heroColors.secondary),
+            backgroundColor: heroColors.secondary,
             ...borderRadiusDynamic(80),
             ...marginDynamic(0, 0, 8),
           }}
         />
         <Text
           style={{
-            ...fontBasic(12, "normal", heroColorsText.primary),
+            ...fontBasic(12, "600", heroColorsText.primary),
+            fontFamily: POPPINS_SEMIBOLD,
+            lineHeight: 16,
           }}
         >
           Finance
@@ -88,14 +94,16 @@ export const DiscoverShowStatus = () => {
         <View
           style={{
             ...SquareBox60px,
-            ...backgroundColorDynamic(heroColors.secondary),
+            backgroundColor: heroColors.secondary,
             ...borderRadiusDynamic(80),
             ...marginDynamic(0, 0, 8),
           }}
         />
         <Text
           style={{
-            ...fontBasic(12, "normal", heroColorsText.primary),
+            ...fontBasic(10, "600", heroColorsText.primary),
+            fontFamily: POPPINS_SEMIBOLD,
+            lineHeight: 16,
           }}
         >
           Education

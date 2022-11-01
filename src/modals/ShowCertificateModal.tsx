@@ -4,7 +4,6 @@ import { Image, StatusBar, Text, View } from "react-native";
 import { BackButton } from "../components/buttons";
 import {
   AlignItemCenter,
-  backgroundColorDynamic,
   borderRadiusDynamic,
   dimensionDynamic,
   FlexDirectionRow,
@@ -13,6 +12,7 @@ import {
   JustifyFlexStart,
   marginDynamic,
   paddingDynamic,
+  POPPINS_MEDIUM,
   White,
 } from "../styles";
 
@@ -53,6 +53,7 @@ export const ShowCertificateModal: FunctionComponent<TModalProps> = ({
         <Text
           style={{
             ...fontBasic(14, "500", White, 1, "normal", 16),
+            fontFamily: POPPINS_MEDIUM,
             ...paddingDynamic(0, 0, 0, "24%"),
           }}
         >
@@ -63,7 +64,7 @@ export const ShowCertificateModal: FunctionComponent<TModalProps> = ({
       <View
         style={{
           ...borderRadiusDynamic(16),
-          ...backgroundColorDynamic(White),
+          backgroundColor: White,
           ...marginDynamic("40%", "auto", 48, "auto"),
           ...paddingDynamic(32, 32, 32, 32),
         }}

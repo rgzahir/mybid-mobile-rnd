@@ -5,7 +5,6 @@ import { SquareButton, TextButtonCenter } from "../components/buttons";
 import { LineHorizontal, TextItem_1, TextItem_2 } from "../components/TextItem";
 import {
   Accent,
-  backgroundColorDynamic,
   borderRadiusDynamic,
   FlexDirectionRow,
   FlexOne,
@@ -14,6 +13,7 @@ import {
   marginDynamic,
   Neutral,
   paddingDynamic,
+  POPPINS_REGULAR,
   White,
 } from "../styles";
 
@@ -35,7 +35,7 @@ export const CredentialDetailModal: FunctionComponent<
     <View
       style={{
         ...FlexOne,
-        ...backgroundColorDynamic(White),
+        backgroundColor: White,
         ...borderRadiusDynamic(32),
         ...marginDynamic("20%"),
         ...paddingDynamic(50, 16, 0, 16),
@@ -49,6 +49,7 @@ export const CredentialDetailModal: FunctionComponent<
       <Text
         style={{
           ...fontBasic(32, "600", Accent.accent_blue_10, 1, "normal", 40),
+          fontFamily: POPPINS_REGULAR,
         }}
       >
         {"Bachelor of Arts (Hons) in Business Administration"}
@@ -64,6 +65,7 @@ export const CredentialDetailModal: FunctionComponent<
         <Text
           style={{
             ...fontBasic(10, "400", Neutral.neutral_10, 1, "normal", 12),
+            fontFamily: POPPINS_REGULAR,
           }}
         >
           Certificate

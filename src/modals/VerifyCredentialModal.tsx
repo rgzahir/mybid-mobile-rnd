@@ -3,7 +3,16 @@ import { Text, View } from "react-native";
 
 import { GeneralButton, TextButtonCenter } from "../components/buttons";
 import { TextItem_1 } from "../components/TextItem";
-import { backgroundColorDynamic, borderRadiusDynamic, FlexOne, fontBasic, marginDynamic, Neutral, paddingDynamic, White } from "../styles";
+import {
+  borderRadiusDynamic,
+  FlexOne,
+  fontBasic,
+  marginDynamic,
+  Neutral,
+  paddingDynamic,
+  POPPINS_REGULAR,
+  White,
+} from "../styles";
 
 export const VerifyCredentialModal: FunctionComponent<TModalProps> = ({
   indicator,
@@ -17,16 +26,17 @@ export const VerifyCredentialModal: FunctionComponent<TModalProps> = ({
   return (
     <View
       style={{
-        ...FlexOne,
-        ...backgroundColorDynamic(White),
-        ...paddingDynamic(100, 16, 0, 16),
+        backgroundColor: White,
         ...borderRadiusDynamic(32),
+        ...FlexOne,
+        ...paddingDynamic(100, 16, 0, 16),
         ...marginDynamic("15%"),
       }}
     >
       <Text
         style={{
           ...fontBasic(24, "600", Neutral.neutral_10, 1, "normal", 32),
+          fontFamily: POPPINS_REGULAR,
         }}
       >
         Share your credentials with Recruitment Sdn. Bhd.?

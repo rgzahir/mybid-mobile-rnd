@@ -12,6 +12,7 @@ import {
   JustifySpaceBetween,
   marginDynamic,
   paddingDynamic,
+  POPPINS_REGULAR,
   Primary,
   Secondary,
 } from "../../styles";
@@ -50,7 +51,7 @@ export const CredentialCardFooter: FunctionComponent<
           }}
           onPress={updateShowQR}
         >
-          <View style={{ ...marginDynamic(0, 0, 4), ...FlexDirectionRow }}>
+          <View style={{ ...marginDynamic(0, 0, 12), ...FlexDirectionRow }}>
             <NormalIconButton
               name="map"
               color={Secondary.secondary_green}
@@ -59,17 +60,21 @@ export const CredentialCardFooter: FunctionComponent<
             />
             <Text
               style={{
-                ...fontBasic(14, "bold", Secondary.secondary_green),
+                ...fontBasic(12, "bold", Secondary.secondary_green),
+                fontFamily: POPPINS_REGULAR,
+                lineHeight: 16,
               }}
             >
-              {"  "}Show QR Code
+              {"    "}Show QR Code
             </Text>
           </View>
         </TouchableOpacity>
 
         <Text
           style={{
-            ...fontBasic(12, "normal", Accent.accent_blue_6),
+            ...fontBasic(10, "400", Accent.accent_blue_6),
+            fontFamily: POPPINS_REGULAR,
+            lineHeight: 12,
           }}
         >
           Data update on {lastUpdated}

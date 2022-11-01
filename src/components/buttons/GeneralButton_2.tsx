@@ -8,6 +8,7 @@ import {
   dimensionDynamic,
   fontBasic,
   paddingDynamic,
+  POPPINS_SEMIBOLD,
   White,
 } from "../../styles";
 
@@ -35,7 +36,7 @@ export const GeneralButton_2: FunctionComponent<TGeneralButtonProps> = ({
           style={{
             ...fontBasic(16, "600", fontColor),
             lineHeight: 24,
-            fontFamily: "Poppins-SemiBold",
+            fontFamily: POPPINS_SEMIBOLD,
           }}
         >
           {label}

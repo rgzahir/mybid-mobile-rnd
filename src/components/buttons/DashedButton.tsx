@@ -2,7 +2,16 @@ import React, { Fragment, FunctionComponent } from "react";
 import { Text, TouchableOpacity } from "react-native";
 
 import { checkFontColor } from "../../functions";
-import { AlignItemCenter, borderMake, borderRadiusDynamic, dimensionDynamic, fontBasic, marginDynamic, paddingDynamic } from "../../styles";
+import {
+  AlignItemCenter,
+  borderMake,
+  borderRadiusDynamic,
+  dimensionDynamic,
+  fontBasic,
+  marginDynamic,
+  paddingDynamic,
+  POPPINS_SEMIBOLD,
+} from "../../styles";
 
 export const DashedButton: FunctionComponent<TBackButtonProps> = ({
   fontColor,
@@ -23,9 +32,19 @@ export const DashedButton: FunctionComponent<TBackButtonProps> = ({
         }}
         onPress={onPressHandler}
       >
-        <Text style={{ ...fontBasic(16, "bold", checkFontColor(fontColor)) }}>
+        <Text
+          style={{
+            ...fontBasic(16, "600", checkFontColor(fontColor)),
+            fontFamily: POPPINS_SEMIBOLD,
+            lineHeight: 24,
+          }}
+        >
           <Text
-            style={{ ...fontBasic(24, "normal", checkFontColor(fontColor)) }}
+            style={{
+              ...fontBasic(16, "600", checkFontColor(fontColor)),
+              fontFamily: POPPINS_SEMIBOLD,
+              lineHeight: 24,
+            }}
           >
             + {"\t"}{" "}
           </Text>

@@ -3,7 +3,12 @@ import { Formik } from "formik";
 import React, { Fragment, FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
-import { fontBasic, marginDynamic } from "../../styles";
+import {
+  fontBasic,
+  marginDynamic,
+  POPPINS_SEMIBOLD,
+  Primary,
+} from "../../styles";
 import { GeneralButton, IconSwitchButton, NormalIconButton } from "../buttons";
 import InputAreaComponent from "./InputAreaComponent";
 
@@ -84,9 +89,9 @@ export const LoginFormComponent: FunctionComponent<TLoginFormComponent> = ({
             <TouchableOpacity style={{ ...marginDynamic(24, 0, 0, 16) }}>
               <Text
                 style={{
-                  ...fontBasic(16, "600", "#01396C"),
+                  ...fontBasic(16, "600", Primary.primary_blue),
                   lineHeight: 24,
-                  fontFamily: "Poppins-SemiBold",
+                  fontFamily: POPPINS_SEMIBOLD,
                 }}
               >
                 Forgot Password?

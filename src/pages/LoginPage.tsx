@@ -14,14 +14,14 @@ import {
   JustifySpaceEvenly,
   marginDynamic,
   paddingDynamic,
+  POPPINS_SEMIBOLD,
   PositionAbsolute,
   White,
 } from "../styles";
 
-const Background_img = "../media/initialize_app_bg.png";
-const Illustration_img = "../media/initalize_Illustration.png";
-
 export const LoginPage = () => {
+  const BACKGROUND_IMAGE = "../media/initialize_app_bg.png";
+  const ILLUSTRATION_IMAGE = "../media/initalize_Illustration.png";
   const checkNav = useNavigation();
 
   const GoToLoginDetail = () => {
@@ -45,7 +45,7 @@ export const LoginPage = () => {
           ...dimensionDynamic(1, 1),
         }}
       >
-        <Image source={require(Background_img)} />
+        <Image source={require(BACKGROUND_IMAGE)} />
       </View>
 
       <View
@@ -54,7 +54,7 @@ export const LoginPage = () => {
         <Text
           style={{
             ...fontBasic(24, "600", White),
-            fontFamily: "Poppins-SemiBold",
+            fontFamily: POPPINS_SEMIBOLD,
             lineHeight: 32,
           }}
         >
@@ -62,7 +62,7 @@ export const LoginPage = () => {
           <Text
             style={{
               ...fontBasic(24, "600", "#02C9A5"),
-              fontFamily: "Poppins-SemiBold",
+              fontFamily: POPPINS_SEMIBOLD,
               lineHeight: 32,
             }}
           >
@@ -74,7 +74,7 @@ export const LoginPage = () => {
 
       <View>
         <Image
-          source={require(Illustration_img)}
+          source={require(ILLUSTRATION_IMAGE)}
           style={{
             height: 250,
             width: 250,
@@ -83,29 +83,29 @@ export const LoginPage = () => {
         />
       </View>
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-        <IcoMoon name="eye" size={40} color="white" />
-        <IcoMoon name="make-group" size={40} color="white" />
-        <IcoMoon name="strikethrough" size={40} color="white" />
+        <IcoMoon name="eye" size={24} color="white" />
+        <IcoMoon name="make-group" size={24} color="white" />
+        <IcoMoon name="strikethrough" size={24} color="white" />
         <NormalIconButton
           color="white"
-          disabledPress={true}
+          disabledPress={false}
           name="eye"
           onPressHandler={() => {}}
-          size={40}
+          size={24}
         />
         <NormalIconButton
           color="white"
           disabledPress={false}
           name="mail2"
           onPressHandler={() => {}}
-          size={40}
+          size={24}
         />
         <NormalIconButton
           color="white"
           disabledPress={true}
           name="make-group"
           onPressHandler={() => {}}
-          size={40}
+          size={24}
         />
       </View>
 
