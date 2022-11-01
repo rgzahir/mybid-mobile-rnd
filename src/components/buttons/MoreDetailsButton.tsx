@@ -1,7 +1,12 @@
 import React, { Fragment, FunctionComponent } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
-import { AlignItemCenter, FlexDirectionRow, fontBasic } from "../../styles";
+import {
+  AlignItemCenter,
+  FlexDirectionRow,
+  fontBasic,
+  POPPINS_SEMIBOLD,
+} from "../../styles";
 import NormalIconButton from "./NormalIconButton";
 
 export const MoreDetailsButton: FunctionComponent<TMoreDetailsButtonProps> = ({
@@ -24,7 +29,9 @@ export const MoreDetailsButton: FunctionComponent<TMoreDetailsButtonProps> = ({
       >
         <Text
           style={{
-            ...fontBasic(12, "normal", color, 0.7),
+            ...fontBasic(12, "600", color, 0.7),
+            fontFamily: POPPINS_SEMIBOLD,
+            lineHeight: 16,
             marginRight: 8,
           }}
         >

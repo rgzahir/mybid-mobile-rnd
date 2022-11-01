@@ -6,9 +6,10 @@ import {
   AlignItemCenter,
   borderRadiusDynamic,
   FlexDirectionRow,
-  FlexWrap,
   fontBasic,
   marginDynamic,
+  POPPINS_MEDIUM,
+  POPPINS_REGULAR,
   SquareBox60px,
 } from "../../styles";
 
@@ -33,19 +34,24 @@ export const DiscoverHighlightItem = () => {
         <View>
           <Text
             style={{
-              ...FlexWrap,
-              ...fontBasic(14, "600", Accent.accent_blue_10),
+              ...fontBasic(14, "500", Accent.accent_blue_10),
+              fontFamily: POPPINS_MEDIUM,
+              lineHeight: 16,
+              ...marginDynamic(0, 0, 8),
             }}
           >
-            You just added your first credentials.
+            You have just added your first credentials.
           </Text>
+
           <Text
             style={{
-              ...fontBasic(12, "normal", "black", 0.7),
-              ...marginDynamic(8),
+              ...fontBasic(12, "400", Accent.accent_blue_2, 0.7),
+              fontFamily: POPPINS_REGULAR,
+              lineHeight: 14,
+              // ...marginDynamic(8),
             }}
           >
-            Today, 10:100AM
+            Today, 10:10 AM
           </Text>
         </View>
       </View>
@@ -60,27 +66,32 @@ export const DiscoverHighlightItem = () => {
         <View
           style={{
             backgroundColor: "grey",
-            ...borderRadiusDynamic(50),
             ...SquareBox60px,
+            ...borderRadiusDynamic(50),
             ...marginDynamic(0, 15),
           }}
         />
         <View>
           <Text
             style={{
-              ...FlexWrap,
-              ...fontBasic(14, "600", Accent.accent_blue_10),
+              ...fontBasic(14, "500", Accent.accent_blue_10),
+              fontFamily: POPPINS_MEDIUM,
+              lineHeight: 16,
+              ...marginDynamic(0, 0, 8),
             }}
           >
-            You just added your first credentials.
+            You have just added your first credentials.
           </Text>
+
           <Text
             style={{
-              ...fontBasic(12, "normal", "black", 0.7),
-              ...marginDynamic(8),
+              ...fontBasic(12, "400", Accent.accent_blue_2, 0.7),
+              fontFamily: POPPINS_REGULAR,
+              lineHeight: 14,
+              // ...marginDynamic(8),
             }}
           >
-            Today, 10:100AM
+            Today, 10:10 AM
           </Text>
         </View>
       </View>
@@ -94,8 +105,8 @@ export const DiscoverHighlightItem = () => {
       >
         <View
           style={{
-            ...SquareBox60px,
             backgroundColor: "grey",
+            ...SquareBox60px,
             ...borderRadiusDynamic(50),
             ...marginDynamic(0, 15),
           }}
@@ -103,89 +114,24 @@ export const DiscoverHighlightItem = () => {
         <View>
           <Text
             style={{
-              ...FlexWrap,
-              ...fontBasic(14, "600", Accent.accent_blue_10),
+              ...fontBasic(14, "500", Accent.accent_blue_10),
+              fontFamily: POPPINS_MEDIUM,
+              lineHeight: 16,
+              ...marginDynamic(0, 0, 8),
             }}
           >
-            You just added your first credentials.
+            You have just added your first credentials.
           </Text>
-          <Text
-            style={{
-              ...fontBasic(12, "normal", "black", 0.7),
-              ...marginDynamic(8),
-            }}
-          >
-            Today, 10:100AM
-          </Text>
-        </View>
-      </View>
 
-      <View
-        style={{
-          ...AlignItemCenter,
-          ...FlexDirectionRow,
-          ...marginDynamic(0, 0, 16),
-        }}
-      >
-        <View
-          style={{
-            ...SquareBox60px,
-            backgroundColor: "grey",
-            ...borderRadiusDynamic(50),
-            ...marginDynamic(0, 15),
-          }}
-        />
-        <View>
           <Text
             style={{
-              ...FlexWrap,
-              ...fontBasic(14, "600", Accent.accent_blue_10),
+              ...fontBasic(12, "400", Accent.accent_blue_2, 0.7),
+              fontFamily: POPPINS_REGULAR,
+              lineHeight: 14,
+              // ...marginDynamic(8),
             }}
           >
-            You just added your first credentials.
-          </Text>
-          <Text
-            style={{
-              ...fontBasic(12, "normal", "black", 0.7),
-              ...marginDynamic(8),
-            }}
-          >
-            Today, 10:100AM
-          </Text>
-        </View>
-      </View>
-
-      <View
-        style={{
-          ...AlignItemCenter,
-          ...FlexDirectionRow,
-          ...marginDynamic(0, 0, 16),
-        }}
-      >
-        <View
-          style={{
-            ...SquareBox60px,
-            backgroundColor: "grey",
-            ...borderRadiusDynamic(50),
-            ...marginDynamic(0, 15),
-          }}
-        />
-        <View>
-          <Text
-            style={{
-              ...FlexWrap,
-              ...fontBasic(14, "600", Accent.accent_blue_10),
-            }}
-          >
-            You just added your first credentials.
-          </Text>
-          <Text
-            style={{
-              ...fontBasic(12, "normal", "black", 0.7),
-              ...marginDynamic(8),
-            }}
-          >
-            Today, 10:100AM
+            Today, 10:10 AM
           </Text>
         </View>
       </View>

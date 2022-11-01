@@ -2,7 +2,11 @@ import React from "react";
 import { Image, ScrollView, Text, View } from "react-native";
 
 import { MoreDetailsButton, NormalIconButton } from "../components/buttons";
-import { DiscoverHeroSpace, DiscoverHighlightItem, DiscoverShowStatus } from "../components/discoverComponents";
+import {
+  DiscoverHeroSpace,
+  DiscoverHighlightItem,
+  DiscoverShowStatus,
+} from "../components/discoverComponents";
 import {
   Accent,
   AlignItemCenter,
@@ -15,7 +19,8 @@ import {
   JustifySpaceBetween,
   marginDynamic,
   paddingDynamic,
-  PositionAbsolute,
+  POPPINS_MEDIUM,
+  POPPINS_SEMIBOLD,
   ShadowLight,
   titleColors,
   White,
@@ -34,7 +39,7 @@ export const DiscoverPage = () => {
       <Image
         source={require(Discover_bg)}
         style={{
-          ...PositionAbsolute,
+          position: "absolute",
           ...borderRadiusDynamic(32),
           ...dimensionDynamic("64%", "120%"),
         }}
@@ -53,7 +58,8 @@ export const DiscoverPage = () => {
         <View>
           <Text
             style={{
-              ...fontBasic(12, "normal", Accent.accent_green_1, 0.7),
+              ...fontBasic(12, "500", Accent.accent_green_1, 0.7, "normal", 14),
+              fontFamily: POPPINS_MEDIUM,
               ...marginDynamic(8),
             }}
           >
@@ -62,7 +68,8 @@ export const DiscoverPage = () => {
 
           <Text
             style={{
-              ...fontBasic(16, "800", Accent.accent_green_4),
+              ...fontBasic(20, "600", Accent.accent_green_4, 1, "normal", 24),
+              fontFamily: POPPINS_SEMIBOLD,
               ...marginDynamic(8),
             }}
           >
@@ -82,7 +89,14 @@ export const DiscoverPage = () => {
       <DiscoverHeroSpace />
 
       <View style={{ ...ShadowLight, ...marginDynamic("10%") }}>
-        <Text style={{ ...fontBasic(16, "800", White) }}>Current Status</Text>
+        <Text
+          style={{
+            ...fontBasic(16, "600", White, 1, "normal", 20),
+            fontFamily: POPPINS_SEMIBOLD,
+          }}
+        >
+          Current Status
+        </Text>
         <DiscoverShowStatus />
       </View>
 
@@ -97,7 +111,8 @@ export const DiscoverPage = () => {
       >
         <Text
           style={{
-            ...fontBasic(16, "800", titleColors.secondary),
+            ...fontBasic(16, "600", titleColors.secondary, 1, "normal", 20),
+            fontFamily: POPPINS_SEMIBOLD,
           }}
         >
           Highlights

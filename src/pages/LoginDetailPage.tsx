@@ -9,6 +9,7 @@ import {
   marginDynamic,
   Neutral,
   paddingDynamic,
+  POPPINS_SEMIBOLD,
   Primary,
 } from "../styles";
 
@@ -48,7 +49,7 @@ export const LoginDetailPage: React.FC<TLoginDetailPageProps> = () => {
           ...marginDynamic("30%"),
           ...fontBasic(24, "600", Neutral.neutral_9),
           ...paddingDynamic(0, 0, 0, 24),
-          fontFamily: "Poppins-SemiBold",
+          fontFamily: POPPINS_SEMIBOLD,
           lineHeight: 32,
         }}
       >

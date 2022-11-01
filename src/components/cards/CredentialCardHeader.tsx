@@ -2,7 +2,16 @@ import React, { Fragment, FunctionComponent, useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 import { UpdateTextColor } from "../../functions/CredentialCard";
-import { Accent, AlignItemCenter, FlexDirectionRow, fontBasic, JustifySpaceBetween, marginDynamic } from "../../styles";
+import {
+  Accent,
+  AlignItemCenter,
+  FlexDirectionRow,
+  fontBasic,
+  JustifySpaceBetween,
+  marginDynamic,
+  POPPINS_REGULAR,
+  POPPINS_SEMIBOLD,
+} from "../../styles";
 import { NormalIconButton } from "../buttons";
 
 export const CredentialCardHeader: FunctionComponent<
@@ -26,12 +35,20 @@ export const CredentialCardHeader: FunctionComponent<
         }}
       >
         <View>
-          <Text style={{ ...fontBasic(14, "bold", textColor_1) }}>
+          <Text
+            style={{
+              ...fontBasic(20, "600", textColor_1),
+              fontFamily: POPPINS_SEMIBOLD,
+              lineHeight: 24,
+            }}
+          >
             {credentialName}
           </Text>
           <Text
             style={{
-              ...fontBasic(14, "600", textColor_2, 1, "italic"),
+              ...fontBasic(14, "400", textColor_2, 1, "italic"),
+              fontFamily: POPPINS_REGULAR,
+              lineHeight: 16,
               ...marginDynamic(8),
             }}
           >

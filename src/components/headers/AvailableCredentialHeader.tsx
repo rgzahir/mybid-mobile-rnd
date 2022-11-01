@@ -1,7 +1,16 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-import { AlignItemCenter, FlexDirectionRow, fontBasic, JustifySpaceBetween, marginDynamic, Neutral, paddingDynamic } from "../../styles";
+import {
+  AlignItemCenter,
+  FlexDirectionRow,
+  fontBasic,
+  JustifySpaceBetween,
+  marginDynamic,
+  Neutral,
+  paddingDynamic,
+  POPPINS_SEMIBOLD,
+} from "../../styles";
 import { NormalIconButton } from "../buttons";
 
 export const AvailableCredentialHeader = () => {
@@ -17,7 +26,9 @@ export const AvailableCredentialHeader = () => {
     >
       <Text
         style={{
-          ...fontBasic(18, "600", Neutral.neutral_10),
+          ...fontBasic(20, "600", Neutral.neutral_10),
+          fontFamily: POPPINS_SEMIBOLD,
+          lineHeight: 24,
         }}
       >
         Available Credentials

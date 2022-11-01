@@ -3,7 +3,13 @@ import { Text, TouchableOpacity, View } from "react-native";
 
 import { CredentialFilter } from "../../dummyData";
 import { CheckActiveFilter } from "../../functions";
-import { FlexDirectionRow, marginDynamic, Primary } from "../../styles";
+import {
+  FlexDirectionRow,
+  fontBasic,
+  marginDynamic,
+  POPPINS_REGULAR,
+  Primary,
+} from "../../styles";
 
 export const AvailableCredentialFilter: FunctionComponent<
   TAvailableCredentialFilterProps
@@ -19,7 +25,15 @@ export const AvailableCredentialFilter: FunctionComponent<
             }}
             style={CheckActiveFilter(item, currentFilter)}
           >
-            <Text style={{ color: Primary.primary_blue }}>{item}</Text>
+            <Text
+              style={{
+                fontFamily: POPPINS_REGULAR,
+                ...fontBasic(16, "400", Primary.primary_blue),
+                lineHeight: 20,
+              }}
+            >
+              {item}
+            </Text>
           </TouchableOpacity>
         );
       })}

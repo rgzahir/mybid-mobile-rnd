@@ -1,7 +1,15 @@
 import React, { FunctionComponent } from "react";
 import { Text, View } from "react-native";
 
-import { AlignItemCenter, dimensionDynamic, FlexWrap, fontBasic, marginDynamic, textAlignDynamic } from "../../styles";
+import {
+  AlignItemCenter,
+  dimensionDynamic,
+  FlexWrap,
+  fontBasic,
+  marginDynamic,
+  POPPINS_REGULAR,
+  POPPINS_SEMIBOLD,
+} from "../../styles";
 
 export const TextItem_3: FunctionComponent<TTextItem_2Props> = ({
   color_1,
@@ -21,6 +29,7 @@ export const TextItem_3: FunctionComponent<TTextItem_2Props> = ({
       <Text
         style={{
           ...fontBasic(16, "600", color_1, 1, "normal", 20),
+          fontFamily: POPPINS_SEMIBOLD,
           ...marginDynamic(4, 0, 4),
         }}
       >
@@ -28,9 +37,10 @@ export const TextItem_3: FunctionComponent<TTextItem_2Props> = ({
       </Text>
       <Text
         style={{
-          ...textAlignDynamic("center"),
+          ...AlignItemCenter,
           ...FlexWrap,
           ...fontBasic(12, "400", color_2, 1, "normal", 14),
+          fontFamily: POPPINS_REGULAR,
           ...marginDynamic(16, 0, 16, 0),
         }}
       >

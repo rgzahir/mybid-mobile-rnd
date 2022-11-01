@@ -3,7 +3,6 @@ import { Text, View } from "react-native";
 
 import {
   AlignItemCenter,
-  backgroundColorDynamic,
   borderRadiusBottomDynamic,
   borderRadiusDynamic,
   dimensionDynamic,
@@ -14,6 +13,8 @@ import {
   marginDynamic,
   Neutral,
   paddingDynamic,
+  POPPINS_REGULAR,
+  POPPINS_SEMIBOLD,
   White,
 } from "../../styles";
 import { NormalIconButton } from "../buttons";
@@ -24,10 +25,10 @@ export const DiscoverHeroSpace = () => {
       <View
         style={{
           ...AlignItemCenter,
+          backgroundColor: heroColors.primary,
+          ...borderRadiusDynamic(16),
           ...FlexDirectionRow,
           ...JustifySpaceBetween,
-          ...backgroundColorDynamic(heroColors.primary),
-          ...borderRadiusDynamic(16),
           ...marginDynamic("6%"),
           ...paddingDynamic(24, 24, 24, 24),
         }}
@@ -43,7 +44,9 @@ export const DiscoverHeroSpace = () => {
             />
             <Text
               style={{
-                ...fontBasic(16, "800", heroColors.secondary),
+                ...fontBasic(20, "600", heroColors.secondary),
+                fontFamily: POPPINS_SEMIBOLD,
+                lineHeight: 24,
                 marginLeft: 8,
               }}
             >
@@ -52,7 +55,9 @@ export const DiscoverHeroSpace = () => {
           </View>
           <Text
             style={{
-              ...fontBasic(12, "normal", heroColors.secondary, 0.7),
+              ...fontBasic(12, "400", heroColors.secondary, 0.7),
+              fontFamily: POPPINS_REGULAR,
+              lineHeight: 14,
             }}
           >
             joeychan_gmail.com
@@ -61,7 +66,7 @@ export const DiscoverHeroSpace = () => {
         <View
           style={{
             ...borderRadiusDynamic(16),
-            ...backgroundColorDynamic(White),
+            backgroundColor: White,
             ...dimensionDynamic(90, 90),
           }}
         />
@@ -70,17 +75,17 @@ export const DiscoverHeroSpace = () => {
       <View
         style={{
           ...borderRadiusBottomDynamic(16),
+          backgroundColor: Neutral.neutral_1,
           ...marginDynamic(0, "auto", 0, "auto"),
           ...dimensionDynamic(5, "85%"),
-          ...backgroundColorDynamic(Neutral.neutral_1),
         }}
       />
       <View
         style={{
           ...borderRadiusBottomDynamic(16),
+          backgroundColor: White,
           ...marginDynamic(0, "auto", 0, "auto"),
           ...dimensionDynamic(5, "75%"),
-          ...backgroundColorDynamic(White),
         }}
       />
     </Fragment>

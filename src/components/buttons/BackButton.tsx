@@ -3,7 +3,13 @@ import { Text, TouchableOpacity } from "react-native";
 
 import { checkFontColor } from "../../functions/checkFontColor";
 import { IcoMoon } from "../../icons/CustomIcon";
-import { AlignItemCenter, FlexDirectionRow, fontBasic, marginDynamic } from "../../styles";
+import {
+  AlignItemCenter,
+  FlexDirectionRow,
+  fontBasic,
+  marginDynamic,
+  POPPINS_REGULAR,
+} from "../../styles";
 
 export const BackButton: FunctionComponent<TBackButtonProps> = ({
   fontColor,
@@ -33,6 +39,7 @@ export const BackButton: FunctionComponent<TBackButtonProps> = ({
         <Text
           style={{
             ...fontBasic(16, "600", checkFontColor(fontColor), 1, "normal", 24),
+            fontFamily: POPPINS_REGULAR,
             ...marginDynamic(0, 0, 0, 8),
           }}
         >

@@ -1,7 +1,12 @@
 import React, { Fragment, FunctionComponent } from "react";
 import { Text, TouchableOpacity } from "react-native";
 
-import { fontBasic, marginDynamic, Primary } from "../../styles";
+import {
+  fontBasic,
+  marginDynamic,
+  POPPINS_SEMIBOLD,
+  Primary,
+} from "../../styles";
 
 export const TextButtonCenter: FunctionComponent<TTextButtonCenterProps> = ({
   label,
@@ -19,6 +24,8 @@ export const TextButtonCenter: FunctionComponent<TTextButtonCenterProps> = ({
           style={{
             alignSelf: "center",
             ...fontBasic(16, "600", Primary.primary_blue, 1, "normal", 24),
+            fontFamily: POPPINS_SEMIBOLD,
+            lineHeight: 24,
           }}
         >
           {label}

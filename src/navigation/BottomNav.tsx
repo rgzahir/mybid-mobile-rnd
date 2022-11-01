@@ -6,7 +6,13 @@ import { Text, TouchableOpacity, View } from "react-native";
 
 import { NormalIconButton } from "../components/buttons";
 import { CredentialPage, DiscoverPage } from "../pages";
-import { Accent, marginDynamic, Primary, White } from "../styles";
+import {
+  Accent,
+  marginDynamic,
+  POPPINS_MEDIUM,
+  Primary,
+  White,
+} from "../styles";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -21,7 +27,7 @@ const CredentialScreen = () => {
 const ScanCredentialScreen = () => {
   return (
     <View style={{ ...marginDynamic("auto", "auto", "auto", "auto") }}>
-      <Text>Scan Credential Screen</Text>
+      <Text style={{ fontFamily: POPPINS_MEDIUM }}>Scan Credential Screen</Text>
       {/* <BaseModal
         Detail={ShowQRCodeModal}
         indicator={showQRModal}
@@ -35,7 +41,7 @@ const FinanceScreen = () => {
   return (
     <View style={{ ...marginDynamic("auto", "auto", "auto", "auto") }}>
       <TouchableOpacity>
-        <Text style={{ fontFamily: "Poppins-Medium" }}>FINANCE SCREEN</Text>
+        <Text style={{ fontFamily: POPPINS_MEDIUM }}>FINANCE SCREEN</Text>
       </TouchableOpacity>
     </View>
   );
@@ -50,7 +56,7 @@ const ProfileScreen = () => {
   return (
     <View style={{ ...marginDynamic("auto", "auto", "auto", "auto") }}>
       <TouchableOpacity onPress={logOutHandler}>
-        <Text>LOG OUT</Text>
+        <Text style={{ fontFamily: POPPINS_MEDIUM }}>LOG OUT</Text>
       </TouchableOpacity>
     </View>
   );

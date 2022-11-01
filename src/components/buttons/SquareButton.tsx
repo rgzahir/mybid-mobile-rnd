@@ -11,6 +11,7 @@ import {
   fontBasic,
   marginDynamic,
   paddingDynamic,
+  POPPINS_REGULAR,
 } from "../../styles";
 
 export const SquareButton: FunctionComponent<TSquareButtonProps> = ({
@@ -36,6 +37,8 @@ export const SquareButton: FunctionComponent<TSquareButtonProps> = ({
         <Text
           style={{
             ...fontBasic(12, "500", checkFontColor(fontColor)),
+            fontFamily: POPPINS_REGULAR,
+            lineHeight: 16,
             ...marginDynamic(16),
           }}
         >

@@ -8,7 +8,9 @@ import {
   FlexDirectionRow,
   fontBasic,
   marginDynamic,
+  Neutral,
   paddingDynamic,
+  POPPINS_REGULAR,
   White,
 } from "../../styles";
 
@@ -21,9 +23,9 @@ export const InputArea: FunctionComponent<TInputAreaProps> = ({
     <Fragment>
       <Text
         style={{
-          ...fontBasic(14, "400", "#676D71", 0.8),
+          ...fontBasic(14, "400", Neutral.neutral_6, 0.8),
           lineHeight: 16,
-          fontFamily: "Poppins-Regular",
+          fontFamily: POPPINS_REGULAR,
           ...marginDynamic(24, 0, 0, 16),
         }}
       >
@@ -33,11 +35,11 @@ export const InputArea: FunctionComponent<TInputAreaProps> = ({
       <View
         style={{
           ...AlignItemCenter,
-          ...FlexDirectionRow,
           ...borderRadiusDynamic(4),
           ...borderRadiusDynamic(8),
           backgroundColor: White,
           ...dimensionDynamic("auto", "90%"),
+          ...FlexDirectionRow,
           ...marginDynamic(8, "auto", 0, "auto"),
           ...paddingDynamic(16, 8, 16, 24),
         }}

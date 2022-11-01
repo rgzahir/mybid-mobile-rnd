@@ -6,7 +6,6 @@ import { TextItem_3 } from "../components/TextItem";
 import {
   Accent,
   AlignItemCenter,
-  backgroundColorDynamic,
   borderRadiusDynamic,
   dimensionDynamic,
   FlexDirectionRow,
@@ -15,7 +14,6 @@ import {
   JustifyFlexStart,
   marginDynamic,
   paddingDynamic,
-  PositionAbsolute,
   Primary,
   White,
 } from "../styles";
@@ -33,15 +31,15 @@ export const ShowQRCodeModal: FunctionComponent<TModalProps> = ({
   return (
     <View
       style={{
+        backgroundColor: White,
         ...FlexOne,
-        ...backgroundColorDynamic(White),
         ...paddingDynamic(48, 16, 0, 16),
       }}
     >
       <Image
         source={BG_SHOW_QR_MODAL}
         style={{
-          ...PositionAbsolute,
+          position: "absolute",
           ...marginDynamic(-48, -48, -32, -48),
           ...dimensionDynamic("140%", "140%"),
         }}
@@ -77,7 +75,7 @@ export const ShowQRCodeModal: FunctionComponent<TModalProps> = ({
       <View
         style={{
           ...borderRadiusDynamic(16),
-          ...backgroundColorDynamic(White),
+          backgroundColor: White,
           ...marginDynamic("40%", "auto", 48, "auto"),
           ...paddingDynamic(32, 32, 32, 32),
         }}
