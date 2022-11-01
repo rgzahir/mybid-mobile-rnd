@@ -1,7 +1,12 @@
 import React from "react";
 import { Image, View } from "react-native";
 
-import { borderRadiusDynamic, marginDynamic, SquareBox80px, White } from "../../styles";
+import {
+  borderRadiusDynamic,
+  marginDynamic,
+  SquareBox80px,
+  White,
+} from "../../styles";
 
 export const CheckPicture = (profilePicture: any) => {
   if (profilePicture) {

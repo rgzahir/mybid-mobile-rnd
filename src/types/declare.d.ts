@@ -5,39 +5,39 @@ declare type TCredentialType =
   | "transcript";
 
 declare interface IPassport {
+  category?: "All" | "Basic" | "Education" | "Finance";
   credentialId: number;
-  credentialType: TCredentialType;
   credentialName: string;
   credentialProvider: string;
+  credentialType: TCredentialType;
+  dateOfIssue?: string;
   fullName: string;
   isShown: boolean;
-  profilePicture: string;
-  qrCode: string;
-  UpdateIsShown: Function;
-  category?: "All" | "Basic" | "Education" | "Finance";
-  dateOfIssue?: string;
   lastUpdated?: string;
   nationality?: string;
   passportNumber?: string;
+  profilePicture: string;
+  qrCode: string;
+  UpdateIsShown: Function;
 }
 
 declare interface IProfile {
-  userId: number | undefined;
   userEmail: string | undefined;
-  userIdentification: number | undefined;
   userFirstName: string | undefined;
+  userFullName?: string | undefined;
+  userId: number | undefined;
+  userIdentification: number | undefined;
   userLastName: string | undefined;
   userNationality: string | undefined;
-  userProfilePicture: string | undefined;
-  userFullName?: string | undefined;
   userNotifications?: number | undefined;
+  userProfilePicture: string | undefined;
 }
 
 declare interface IUserBasics {
   basicsProgress: number;
-  identifyProgress: number;
-  financeProgress: number;
   educationProgress: number;
+  financeProgress: number;
+  identifyProgress: number;
   isComplete: boolean;
 }
 
@@ -49,63 +49,63 @@ declare type TAvailableCredentialFilterProps = {
 declare type TBaseModalProps = {
   Detail: any;
   indicator: boolean;
-  setIndicator: any;
-  pushNextModalFunction?: any;
   pushNextModalFunction_1?: any;
+  pushNextModalFunction?: any;
+  setIndicator: any;
 };
 
 // TBackButtonProps && TGeneralButtonProps is the same
 // and maybe TSquareButtonProps, TSTextButtonCenterProps too
 declare type TBackButtonProps = {
-  label: string;
   fontColor?: string;
   icon?: "" | any;
   iconColor?: string;
-  message?: string;
+  label: string;
   marginTop?: string | number;
+  message?: string;
   onPressHandler?: any;
 };
 
 declare type TCredentialDetailModalProps = {
   indicator: boolean;
-  setIndicator: any;
-  pushNextModalFunction?: any;
   pushNextModalFunction_1?: any;
+  pushNextModalFunction?: any;
+  setIndicator: any;
 };
 
 declare type TCredentialCardProps = {
-  isShownLocal: boolean;
-  setIsShownLocal: Function;
   checkCredentialType?: any;
   data?: any;
-  showQR?: boolean;
+  isShownLocal: boolean;
+  setIsShownLocal: Function;
+  setShowDetailModal: any;
   setShowQR?: Function;
-  showVerifyModal: boolean;
+  setShowQRModal: any;
   setShowVerifyModal: any;
   showDetailModal: boolean;
-  setShowDetailModal: any;
+  showQR?: boolean;
   showQRModal: boolean;
-  setShowQRModal: any;
+  showVerifyModal: boolean;
 };
 
 declare type TCredentialCardFooterProps = {
   data?: any;
-  showQR?: boolean;
-  setShowQR?: any;
-  showDetailModal: boolean;
   setShowDetailModal: any;
-  showQRModal: boolean;
+  setShowQR?: any;
   setShowQRModal: any;
+  showDetailModal: boolean;
+  showQR?: boolean;
+  showQRModal: boolean;
 };
 
 declare type TCredentialListProps = {
   currentFilter: string;
-  showVerifyModal: boolean;
+  setShowDetailModal: any;
+  setShowQRModal: any;
   setShowVerifyModal: any;
   showDetailModal: boolean;
-  setShowDetailModal: any;
   showQRModal: boolean;
-  setShowQRModal: any;
+  showVerifyModal: boolean;
 };
 
 declare type TCredentialCardHeaderProps = {
@@ -115,29 +115,29 @@ declare type TCredentialCardHeaderProps = {
 };
 
 declare type TCheckActiveFilterProps = {
-  item: any;
   currentFilter: any;
+  item: any;
 };
 
 declare type TDataCredentialCertificateProps = {
   data?: any;
-  showQR?: boolean;
   setShowQR?: any;
+  showQR?: boolean;
 };
 
 declare type TDataCredentialPassportProps = {
   data?: any;
-  showQR?: boolean;
   setShowQR?: any;
+  showQR?: boolean;
 };
 
 declare type TGeneralButtonProps = {
-  label: string;
   backgroundColor?: string;
   fontColor?: string;
   icon?: "" | any;
-  message?: string;
+  label: string;
   marginTop?: string | number;
+  message?: string;
   onPressHandler?: any;
 };
 
@@ -148,8 +148,8 @@ declare interface THighlightItem {
 }
 
 declare type TIconButtonProps = {
-  disabledPress?: boolean;
   color?: string;
+  disabledPress?: boolean;
   message?: string;
   name?: string;
   onPressHandler?: any;
@@ -157,32 +157,33 @@ declare type TIconButtonProps = {
 };
 
 declare type TIconSwitchButtonProps = {
-  disabledPress?: boolean;
-  color?: string;
   color_2?: string;
+  color?: string;
+  disabledPress?: boolean;
   message?: string;
-  name?: string;
   name_2?: string;
+  name?: string;
   onPressHandler?: any;
   size?: number;
   state?: boolean;
 };
 
 declare type TMoreDetailsButtonProps = {
-  disabledPress?: boolean;
   color?: string;
-  message?: string;
+  disabledPress?: boolean;
   label?: string;
+  message?: string;
   name_icon?: string;
   onPressHandler?: any;
   size?: number;
 };
 
 declare type TInputAreaProps = {
-  label?: string;
   icon?: any;
-  onChangeText?: any;
+  keyboardType?: string;
+  label?: string;
   onBlur?: any;
+  onChangeText?: any;
   placeholder?: string;
   secureTextEntry?: boolean;
   value?: string;
@@ -201,51 +202,51 @@ declare type TLoginDetailPageProps = {
 
 declare type TModalProps = {
   indicator: boolean;
-  setIndicator: any;
-  pushNextModalFunction?: any;
   pushNextModalFunction_1?: any;
+  pushNextModalFunction?: any;
+  setIndicator: any;
 };
 
 declare type TQRCredentialProps = {
   data?: any;
-  showQR?: boolean;
   setShowQR?: any;
-  showVerifyModal: boolean;
   setShowVerifyModal: any;
+  showQR?: boolean;
+  showVerifyModal: boolean;
 };
 
 declare type TSquareButtonProps = {
-  label: string;
   backgroundColor?: string;
   fontColor?: string;
   icon?: "" | any;
+  label: string;
   message?: string;
   onPressHandler?: any;
 };
 
 declare type TTextButtonCenterProps = {
-  label: string;
   color?: string;
   icon?: "" | any;
+  label: string;
   message?: string;
   onPressHandler?: any;
 };
 
 declare type TTextItem_1Props = {
-  subTitle: string;
   subText: string;
+  subTitle: string;
 };
 
 declare type TTextItem_2Props = {
-  subTitle: string;
-  subText: string;
   color_1?: string;
   color_2?: string;
+  subText: string;
+  subTitle: string;
   width?: string | number;
 };
 
 declare interface TUserProgress {
-  user: string;
   currentProgress: number;
   isComplete: boolean;
+  user: string;
 }
