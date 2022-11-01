@@ -7,6 +7,7 @@ import {
   DiscoverHighlightItem,
   DiscoverShowStatus,
 } from "../components/discoverComponents";
+import { userProfile } from "../dummyData";
 import {
   Accent,
   AlignItemCenter,
@@ -21,12 +22,16 @@ import {
   paddingDynamic,
   POPPINS_MEDIUM,
   POPPINS_SEMIBOLD,
+  Primary,
   ShadowLight,
   titleColors,
   White,
 } from "../styles";
 
 const Discover_bg = "../media/discover_bg.png";
+
+const { userEmail, userFirstName, userLastName, userNotifications } =
+  userProfile;
 
 export const DiscoverPage = () => {
   return (
@@ -73,17 +78,32 @@ export const DiscoverPage = () => {
               ...marginDynamic(8),
             }}
           >
-            Joey Chan Chan Chan
+            {userFirstName + " " + userLastName}
           </Text>
         </View>
 
-        <NormalIconButton
-          color="white"
-          disabledPress={false}
-          name="bell"
-          onPressHandler={() => {}}
-          size={24}
-        />
+        <View>
+          <NormalIconButton
+            color="white"
+            disabledPress={false}
+            name="bell"
+            onPressHandler={() => {}}
+            size={24}
+          />
+          <View
+            style={{
+              position: "absolute",
+              backgroundColor: Primary.primary_blue,
+              borderRadius: 16,
+              padding: 4,
+              ...marginDynamic(-4, -16, 0, -8),
+            }}
+          >
+            <Text style={{ ...fontBasic(10, "700", White, 1, "normal", 12) }}>
+              {userNotifications}
+            </Text>
+          </View>
+        </View>
       </View>
 
       <DiscoverHeroSpace />

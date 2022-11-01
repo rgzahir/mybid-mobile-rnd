@@ -1,30 +1,21 @@
-type TCredentialType = "nric" | "passport" | "certificate" | "transcript";
-
-interface IPassport {
-  credentialId: number;
-  credentialType: TCredentialType;
-  credentialName: string;
-  credentialProvider: string;
-  fullName: string;
-  isShown: boolean;
-  profilePicture: string;
-  qrCode: string;
-  UpdateIsShown: Function;
-  category?: "All" | "Basic" | "Education" | "Finance";
-  dateOfIssue?: string;
-  lastUpdated?: string;
-  nationality?: string;
-  passportNumber?: string;
-}
-
-// type TData = [{}];
-
 export const CredentialFilter: string[] = [
   "All",
   "Basic",
   "Education",
   "Finance",
 ];
+
+export const userProfile: IProfile = {
+  userId: 221101001,
+  userEmail: "joeychan@gmail.com",
+  userIdentification: 123456789011,
+  userFirstName: "Joey Chan",
+  userLastName: "Chan Chan",
+  userNationality: "Malaysia",
+  userProfilePicture: require("../media/Avatar.png"),
+  // userFullName: this.userFirstName + this.userLastName,
+  userNotifications: 13,
+};
 
 export const CredentialDataOne: IPassport = {
   credentialId: 1,

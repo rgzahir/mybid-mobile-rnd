@@ -26,6 +26,7 @@ const StackNav = () => {
     <Navigator
       screenOptions={{
         headerShown: false,
+        animation: "none",
       }}
       initialRouteName={"LoginScreen"}
     >

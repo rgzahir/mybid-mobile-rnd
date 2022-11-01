@@ -71,6 +71,7 @@ export const LoginFormComponent: FunctionComponent<TLoginFormComponent> = ({
               onBlur={handleBlur("email")}
               placeholder="me@gmail.com"
               value={values.email}
+              keyboardType="email-address"
               //for password use - security
               //secureTextEntry={true}
             />
