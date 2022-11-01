@@ -25,8 +25,9 @@ export const heroColorsText = {
 
 export const Neutral = {
   neutral_1: "#E6E7E7",
-  neutral_9: "#1A232B",
+  neutral_6: "#676D71",
   neutral_7: "#4D545A",
+  neutral_9: "#1A232B",
   neutral_10: "#010B13",
 };
 

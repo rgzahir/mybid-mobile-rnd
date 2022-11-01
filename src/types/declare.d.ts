@@ -1,3 +1,46 @@
+declare type TCredentialType =
+  | "nric"
+  | "passport"
+  | "certificate"
+  | "transcript";
+
+declare interface IPassport {
+  credentialId: number;
+  credentialType: TCredentialType;
+  credentialName: string;
+  credentialProvider: string;
+  fullName: string;
+  isShown: boolean;
+  profilePicture: string;
+  qrCode: string;
+  UpdateIsShown: Function;
+  category?: "All" | "Basic" | "Education" | "Finance";
+  dateOfIssue?: string;
+  lastUpdated?: string;
+  nationality?: string;
+  passportNumber?: string;
+}
+
+declare interface IProfile {
+  userId: number | undefined;
+  userEmail: string | undefined;
+  userIdentification: number | undefined;
+  userFirstName: string | undefined;
+  userLastName: string | undefined;
+  userNationality: string | undefined;
+  userProfilePicture: string | undefined;
+  userFullName?: string | undefined;
+  userNotifications?: number | undefined;
+}
+
+declare interface IUserBasics {
+  basicsProgress: number;
+  identifyProgress: number;
+  financeProgress: number;
+  educationProgress: number;
+  isComplete: boolean;
+}
+
 declare type TAvailableCredentialFilterProps = {
   currentFilter: string;
   setCurrentFilter: Function;
