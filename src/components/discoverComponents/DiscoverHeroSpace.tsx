@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import { Text, View } from "react-native";
 
+import { userProfile } from "../../dummyData";
+import { CheckPicture } from "../../functions/CredentialCard";
 import {
   AlignItemCenter,
   borderRadiusBottomDynamic,
@@ -20,6 +22,8 @@ import {
 import { NormalIconButton } from "../buttons";
 
 export const DiscoverHeroSpace = () => {
+  const { userEmail, userProfilePicture } = userProfile;
+
   return (
     <Fragment>
       <View
@@ -60,16 +64,13 @@ export const DiscoverHeroSpace = () => {
               lineHeight: 14,
             }}
           >
-            joeychan_gmail.com
+            {userEmail}
           </Text>
         </View>
-        <View
-          style={{
-            ...borderRadiusDynamic(16),
-            backgroundColor: White,
-            ...dimensionDynamic(90, 90),
-          }}
-        />
+
+        <View style={{ marginLeft: 16 }}>
+          {CheckPicture(userProfilePicture)}
+        </View>
       </View>
 
       <View
