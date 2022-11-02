@@ -5,12 +5,16 @@ import React, { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 
 import { NormalIconButton } from "../components/buttons";
-import { CredentialPage, DiscoverPage } from "../pages";
+import { CredentialPage, DiscoverPage, ScanCredentialPage } from "../pages";
 import {
   Accent,
+  AlignItemCenter,
+  FlexOne,
+  JustifySpaceCenter,
   marginDynamic,
   POPPINS_MEDIUM,
   Primary,
+  ShadowLight,
   White,
 } from "../styles";
 
@@ -25,21 +29,18 @@ const CredentialScreen = () => {
 };
 
 const ScanCredentialScreen = () => {
-  return (
-    <View style={{ ...marginDynamic("auto", "auto", "auto", "auto") }}>
-      <Text style={{ fontFamily: POPPINS_MEDIUM }}>Scan Credential Screen</Text>
-      {/* <BaseModal
-        Detail={ShowQRCodeModal}
-        indicator={showQRModal}
-        setIndicator={setShowQRModal}
-      /> */}
-    </View>
-  );
+  return <ScanCredentialPage />;
 };
 
 const FinanceScreen = () => {
   return (
-    <View style={{ ...marginDynamic("auto", "auto", "auto", "auto") }}>
+    <View
+      style={{
+        ...FlexOne,
+        ...AlignItemCenter,
+        ...JustifySpaceCenter,
+      }}
+    >
       <TouchableOpacity>
         <Text style={{ fontFamily: POPPINS_MEDIUM }}>FINANCE SCREEN</Text>
       </TouchableOpacity>
@@ -64,6 +65,9 @@ const ProfileScreen = () => {
 
 const BottomNav = () => {
   const [quickScan, setQuickScan] = useState(false);
+  const updateQuickScan = (): void => {
+    setQuickScan(!quickScan);
+  };
 
   return (
     <Navigator
@@ -125,54 +129,33 @@ const BottomNav = () => {
       />
 
       <Screen
-        name="Scan Credential"
+        name="ScanCredential"
         component={ScanCredentialScreen}
         options={{
           tabBarLabel: "",
-          tabBarIcon: ({ focused }) =>
-            focused ? (
-              <View
-                style={{
-                  position: "absolute",
-                  bottom: -8, // space from bottombar
-                  backgroundColor: White,
-                  height: 68,
-                  width: 68,
-                  borderRadius: 68,
-                  padding: 8,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <NormalIconButton
-                  color={Primary.primary_blue}
-                  disabledPress={true}
-                  name="qrcode"
-                  size={40}
-                />
-              </View>
-            ) : (
-              <View
-                style={{
-                  position: "absolute",
-                  bottom: -8, // space from bottombar
-                  backgroundColor: White,
-                  height: 68,
-                  width: 68,
-                  borderRadius: 68,
-                  padding: 8,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <NormalIconButton
-                  color={Accent.accent_blue_2}
-                  disabledPress={true}
-                  name="qrcode"
-                  size={40}
-                />
-              </View>
-            ),
+          tabBarIcon: () => (
+            <View
+              style={{
+                position: "absolute",
+                bottom: -8, // space from bottombar
+                backgroundColor: Primary.primary_blue,
+                height: 68,
+                width: 68,
+                borderRadius: 68,
+                padding: 8,
+                justifyContent: "center",
+                alignItems: "center",
+                ...ShadowLight,
+              }}
+            >
+              <NormalIconButton
+                color={White}
+                disabledPress={true}
+                name="qrcode"
+                size={40}
+              />
+            </View>
+          ),
         }}
       />
 

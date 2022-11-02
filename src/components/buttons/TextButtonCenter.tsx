@@ -16,7 +16,9 @@ export const TextButtonCenter: FunctionComponent<TTextButtonCenterProps> = ({
     <Fragment>
       <TouchableOpacity
         style={{
-          ...marginDynamic(16, "auto", 0, "auto"),
+          ...marginDynamic(0, "auto", 0, "auto"),
+          width: "100%",
+          // backgroundColor: "black",
         }}
         onPress={onPressHandler}
       >

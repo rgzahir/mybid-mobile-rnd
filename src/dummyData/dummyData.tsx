@@ -134,7 +134,4 @@ export const DummyDataArray = [
   { ...CredentialDataOne },
   { ...CredentialDataTwo },
   { ...CredentialDataThree },
-  { ...CredentialDataFour },
-  { ...CredentialDataFive },
-  { ...CredentialDataSix },
 ];
