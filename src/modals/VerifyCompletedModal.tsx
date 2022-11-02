@@ -1,11 +1,14 @@
 import React, { FunctionComponent } from "react";
 import { Image, View } from "react-native";
 
-import { CloseButton, GeneralButton, TextButtonCenter } from "../components/buttons";
+import {
+  CloseButton,
+  GeneralButton,
+  TextButtonCenter,
+} from "../components/buttons";
 import { TextItem_3 } from "../components/TextItem";
 import {
   AlignItemCenter,
-  backgroundColorDynamic,
   FlexDirectionRow,
   FlexOne,
   JustifyFlexEnd,
@@ -28,7 +31,7 @@ export const VerifyCompletedModal: FunctionComponent<TModalProps> = ({
     <View
       style={{
         ...FlexOne,
-        ...backgroundColorDynamic(Neutral.neutral_1),
+        backgroundColor: Neutral.neutral_1,
         ...paddingDynamic(48, 16, 0, 16),
       }}
     >
@@ -66,9 +69,10 @@ export const VerifyCompletedModal: FunctionComponent<TModalProps> = ({
 
       <GeneralButton
         label="Done"
-        marginTop="30%"
+        marginTop="50%"
         onPressHandler={updateVerifyCompletedModal}
       />
+      <View style={{ marginTop: 16 }} />
       <TextButtonCenter label="View Details" onPressHandler={() => {}} />
     </View>
   );
