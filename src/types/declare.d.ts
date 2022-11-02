@@ -4,6 +4,14 @@ declare type TCredentialType =
   | "certificate"
   | "transcript";
 
+declare interface ICheckActiveFilterProps {
+  (currentFilter: string, item: string): object;
+}
+declare interface IAvailableCredentialFilterProps {
+  currentFilter: string;
+  setCurrentFilter: Function;
+  // (currentFilter: string, setCurrentFilter: Function): JSX.Element;
+}
 declare interface IPassport {
   category?: "All" | "Basic" | "Education" | "Finance";
   credentialId: number;
@@ -64,6 +72,10 @@ declare type TBackButtonProps = {
   marginTop?: string | number;
   message?: string;
   onPressHandler?: any;
+};
+
+declare type IButtonSliderProps = {
+  onCompletedHandler: any;
 };
 
 declare type TCredentialDetailModalProps = {
@@ -226,6 +238,7 @@ declare type TSquareButtonProps = {
 
 declare type TTextButtonCenterProps = {
   color?: string;
+  disabledHandler?: boolean;
   icon?: "" | any;
   label: string;
   message?: string;

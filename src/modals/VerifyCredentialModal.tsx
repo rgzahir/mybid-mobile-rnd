@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from "react";
 import { Text, View } from "react-native";
 
-import { GeneralButton, TextButtonCenter } from "../components/buttons";
+import { TextButtonCenter } from "../components/buttons";
+import { ButtonSlider } from "../components/sliders";
 import { TextItem_1 } from "../components/TextItem";
 import {
   borderRadiusDynamic,
@@ -77,7 +78,8 @@ export const VerifyCredentialModal: FunctionComponent<TModalProps> = ({
         />
       </View>
 
-      <GeneralButton label="Accept" onPressHandler={pushNextModalFunction} />
+      <ButtonSlider onCompletedHandler={pushNextModalFunction} />
+      <View style={{ marginTop: 16 }} />
       <TextButtonCenter label="Decline" onPressHandler={updateVerifyModal} />
     </View>
   );

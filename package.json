@@ -10,9 +10,10 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "update-ios": "cd ios && pod install",
-    "update-package": "yarn && update-ios && yarn ios"
+    "update-package": "yarn && yarn update-ios && yarn ios"
   },
   "dependencies": {
+    "@ptomasroos/react-native-multi-slider": "2.2.2",
     "@react-navigation/bottom-tabs": "6.4.0",
     "@react-navigation/material-bottom-tabs": "6.2.4",
     "@react-navigation/native": "6.0.13",
