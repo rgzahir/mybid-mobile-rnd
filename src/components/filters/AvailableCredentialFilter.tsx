@@ -12,8 +12,8 @@ import {
 } from "../../styles";
 
 export const AvailableCredentialFilter: FunctionComponent<
-  TAvailableCredentialFilterProps
-> = ({ currentFilter, setCurrentFilter }) => {
+  IAvailableCredentialFilterProps
+> = ({ currentFilter, setCurrentFilter }): JSX.Element => {
   return (
     <View style={{ ...FlexDirectionRow, ...marginDynamic(16, 0, 16) }}>
       {CredentialFilter.map((item, key) => {
@@ -23,7 +23,7 @@ export const AvailableCredentialFilter: FunctionComponent<
             onPress={() => {
               setCurrentFilter(item);
             }}
-            style={CheckActiveFilter(item, currentFilter)}
+            style={CheckActiveFilter(currentFilter, item)}
           >
             <Text
               style={{
