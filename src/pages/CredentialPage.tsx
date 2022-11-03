@@ -7,6 +7,7 @@ import { CredentialListComponent } from "../components/lists";
 import {
   BaseModal,
   CredentialDetailModal,
+  ScanningFaceIdModal,
   ShowCertificateModal,
   ShowQRCodeModal,
   VerifyCompletedModal,
@@ -21,6 +22,7 @@ export const CredentialPage = () => {
   const [showQRModal, setShowQRModal] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
   const [showVerifyCompleted, setShowVerifyCompleted] = useState(false);
+  const [showVerifyingStatus, setShowVerifyingStatus] = useState(false);
 
   const showNextModal_1 = () => {
     setShowDetailModal(!showDetailModal);
@@ -28,12 +30,19 @@ export const CredentialPage = () => {
   };
 
   const showNextModal_2 = () => {
+    //from detail modal to preview credential modal
     setShowDetailModal(!showDetailModal);
     setShowPreview(!showPreview);
   };
 
   const showNextModal_3 = () => {
+    //from detail modal to verify completed modal
     setShowVerifyModal(!showVerifyModal);
+    setShowVerifyingStatus(!showVerifyingStatus);
+  };
+
+  const showNextModal_4 = () => {
+    setShowVerifyingStatus(!showVerifyingStatus);
     setShowVerifyCompleted(!showVerifyCompleted);
   };
 
@@ -91,6 +100,13 @@ export const CredentialPage = () => {
         Detail={VerifyCompletedModal}
         indicator={showVerifyCompleted}
         setIndicator={setShowVerifyCompleted}
+      />
+
+      <BaseModal
+        Detail={ScanningFaceIdModal}
+        indicator={showVerifyingStatus}
+        pushNextModalFunction={showNextModal_4}
+        setIndicator={setShowVerifyingStatus}
       />
     </View>
   );
