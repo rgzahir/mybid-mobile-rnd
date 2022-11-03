@@ -15,7 +15,7 @@ export const borderMake = (width?: number, color?: string) => {
   };
 };
 
-export const backgroundColorDynamic = (color: number | string) => {
+export const backgroundColorDynamic = (color: number | string): object => {
   return { backgroundColor: color };
 };
 

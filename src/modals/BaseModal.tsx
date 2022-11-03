@@ -1,7 +1,7 @@
 import React, { Fragment, FunctionComponent } from "react";
 import { Image, Modal } from "react-native";
 
-import { borderRadiusDynamic, dimensionDynamic, PositionAbsolute } from "../styles";
+import { borderRadiusDynamic, dimensionDynamic } from "../styles";
 
 export const BaseModal: FunctionComponent<TBaseModalProps> = ({
   Detail,
@@ -24,7 +24,7 @@ export const BaseModal: FunctionComponent<TBaseModalProps> = ({
         <Image
           source={require(Discover_bg)}
           style={{
-            ...PositionAbsolute,
+            position: "absolute",
             ...borderRadiusDynamic(32),
             ...dimensionDynamic("64%", "120%"),
           }}
