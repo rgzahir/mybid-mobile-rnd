@@ -1,8 +1,8 @@
 // In App.js in a new project
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
-import React, { useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import React from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
 import { NormalIconButton } from "../components/buttons";
 import { CredentialPage, DiscoverPage, ScanCredentialPage } from "../pages";
@@ -64,20 +64,15 @@ const ProfileScreen = () => {
 };
 
 const BottomNav = () => {
-  const [quickScan, setQuickScan] = useState(false);
-  const updateQuickScan = (): void => {
-    setQuickScan(!quickScan);
-  };
-
   return (
     <Navigator
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: Primary.primary_blue,
         tabBarInactiveTintColor: Accent.accent_blue_2,
-        // tabBarActiveBackgroundColor: Accent.accent_green_1,
         tabBarAllowFontScaling: true,
       }}
+      // tabBar={(props) => <TabBar props={props} />}
       initialRouteName={"Discover"}
     >
       <Screen
@@ -87,12 +82,23 @@ const BottomNav = () => {
           tabBarLabel: "Discover",
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <NormalIconButton
-                color={Primary.primary_blue}
-                disabledPress={true}
-                name="safari"
-                size={24}
-              />
+              <View>
+                <NormalIconButton
+                  color={Primary.primary_blue}
+                  disabledPress={true}
+                  name="safari"
+                  size={24}
+                />
+                <Image
+                  source={require("../media/Polygon_1.png")}
+                  // resizeMode="contain"
+                  style={{
+                    marginLeft: -22,
+                    marginTop: 54,
+                    position: "absolute",
+                  }}
+                />
+              </View>
             ) : (
               <NormalIconButton
                 color={Accent.accent_blue_2}
@@ -111,12 +117,23 @@ const BottomNav = () => {
           tabBarLabel: "Credentials",
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <NormalIconButton
-                color={Primary.primary_blue}
-                disabledPress={true}
-                name="folder-open"
-                size={24}
-              />
+              <View>
+                <NormalIconButton
+                  color={Primary.primary_blue}
+                  disabledPress={true}
+                  name="folder-open"
+                  size={24}
+                />
+                <Image
+                  source={require("../media/Polygon_1.png")}
+                  // resizeMode="contain"
+                  style={{
+                    marginLeft: -22,
+                    marginTop: 54,
+                    position: "absolute",
+                  }}
+                />
+              </View>
             ) : (
               <NormalIconButton
                 color={Accent.accent_blue_2}
@@ -163,15 +180,27 @@ const BottomNav = () => {
         name="Finance"
         component={FinanceScreen}
         options={{
+          tabBarBadge: 8,
           tabBarLabel: "Finance",
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <NormalIconButton
-                color={Primary.primary_blue}
-                disabledPress={true}
-                name="credit-card"
-                size={24}
-              />
+              <View>
+                <NormalIconButton
+                  color={Primary.primary_blue}
+                  disabledPress={true}
+                  name="credit-card"
+                  size={24}
+                />
+                <Image
+                  source={require("../media/Polygon_1.png")}
+                  // resizeMode="contain"
+                  style={{
+                    marginLeft: -22,
+                    marginTop: 54,
+                    position: "absolute",
+                  }}
+                />
+              </View>
             ) : (
               <NormalIconButton
                 color={Accent.accent_blue_2}
@@ -190,12 +219,23 @@ const BottomNav = () => {
           tabBarLabel: "Profile",
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <NormalIconButton
-                color={Primary.primary_blue}
-                disabledPress={true}
-                name="user"
-                size={24}
-              />
+              <View>
+                <NormalIconButton
+                  color={Primary.primary_blue}
+                  disabledPress={true}
+                  name="user"
+                  size={24}
+                />
+                <Image
+                  source={require("../media/Polygon_1.png")}
+                  // resizeMode="contain"
+                  style={{
+                    marginLeft: -22,
+                    marginTop: 54,
+                    position: "absolute",
+                  }}
+                />
+              </View>
             ) : (
               <NormalIconButton
                 color={Accent.accent_blue_2}
