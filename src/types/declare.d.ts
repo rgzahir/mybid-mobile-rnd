@@ -4,6 +4,12 @@ declare type TCredentialType =
   | "certificate"
   | "transcript";
 
+declare type TPoppinsFont =
+  | "Poppins-Bold"
+  | "Poppins-SemiBold"
+  | "Poppins-Medium"
+  | "Poppins-Regular";
+
 declare interface ICheckActiveFilterProps {
   (currentFilter: string, item: string): object;
 }

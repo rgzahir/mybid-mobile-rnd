@@ -44,31 +44,59 @@ export const CredentialCardFooter: FunctionComponent<
       }}
     >
       <View>
-        <TouchableOpacity
-          style={{
-            ...FlexDirectionRow,
-            ...JustifySpaceBetween,
-          }}
-          onPress={updateShowQR}
-        >
-          <View style={{ ...marginDynamic(0, 0, 12), ...FlexDirectionRow }}>
-            <NormalIconButton
-              name="map"
-              color={Secondary.secondary_green}
-              size={16}
-              disabledPress={true}
-            />
-            <Text
-              style={{
-                ...fontBasic(12, "bold", Secondary.secondary_green),
-                fontFamily: POPPINS_REGULAR,
-                lineHeight: 16,
-              }}
-            >
-              {"    "}Show QR Code
-            </Text>
-          </View>
-        </TouchableOpacity>
+        {showQR ? (
+          <TouchableOpacity
+            style={{
+              ...FlexDirectionRow,
+              ...JustifySpaceBetween,
+            }}
+            onPress={updateShowQR}
+          >
+            <View style={{ ...marginDynamic(0, 0, 12), ...FlexDirectionRow }}>
+              <NormalIconButton
+                name="arrow-left2"
+                color={Secondary.secondary_green}
+                size={16}
+                disabledPress={true}
+              />
+              <Text
+                style={{
+                  ...fontBasic(12, "bold", Secondary.secondary_green),
+                  fontFamily: POPPINS_REGULAR,
+                  lineHeight: 16,
+                }}
+              >
+                {"    "}Back
+              </Text>
+            </View>
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity
+            style={{
+              ...FlexDirectionRow,
+              ...JustifySpaceBetween,
+            }}
+            onPress={updateShowQR}
+          >
+            <View style={{ ...marginDynamic(0, 0, 12), ...FlexDirectionRow }}>
+              <NormalIconButton
+                name="map"
+                color={Secondary.secondary_green}
+                size={16}
+                disabledPress={true}
+              />
+              <Text
+                style={{
+                  ...fontBasic(12, "bold", Secondary.secondary_green),
+                  fontFamily: POPPINS_REGULAR,
+                  lineHeight: 16,
+                }}
+              >
+                {"    "}Show QR Code
+              </Text>
+            </View>
+          </TouchableOpacity>
+        )}
 
         <Text
           style={{
