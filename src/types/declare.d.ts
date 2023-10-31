@@ -55,6 +55,16 @@ declare interface IUserBasics {
   isComplete: boolean;
 }
 
+declare interface IBackButtonProps {
+  fontColor?: string;
+  icon?: "" | any;
+  iconColor?: string;
+  label: string;
+  marginTop?: string | number;
+  message?: string;
+  onPressHandler?: any;
+}
+
 declare type TAvailableCredentialFilterProps = {
   currentFilter: string;
   setCurrentFilter: Function;

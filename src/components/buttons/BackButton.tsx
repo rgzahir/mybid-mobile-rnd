@@ -11,12 +11,12 @@ import {
   POPPINS_REGULAR,
 } from "../../styles";
 
-export const BackButton: FunctionComponent<TBackButtonProps> = ({
+export const BackButton: FunctionComponent<IBackButtonProps> = ({
   fontColor,
   iconColor,
   label,
   onPressHandler,
-}) => {
+}): JSX.Element => {
   const checkIconColor = () => {
     if (iconColor) {
       return iconColor;
