@@ -1,0 +1,505 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackButton renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "marginBottom": 16,
+      "marginLeft": undefined,
+      "marginRight": 0,
+      "marginTop": 16,
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    selectable={false}
+    style={
+      [
+        {
+          "color": "black",
+          "fontSize": 16,
+        },
+        undefined,
+        {
+          "fontFamily": "icomoon",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        {},
+      ]
+    }
+  >
+    
+  </Text>
+  <Text
+    style={
+      {
+        "color": "#ffffff",
+        "fontFamily": "Poppins-Regular",
+        "fontSize": 16,
+        "fontStyle": "normal",
+        "fontWeight": "600",
+        "lineHeight": 24,
+        "marginBottom": 0,
+        "marginLeft": 8,
+        "marginRight": 0,
+        "marginTop": 0,
+        "opacity": 1,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`CloseButton renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": undefined,
+        "fontFamily": "Poppins-Regular",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`DashedButton renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "borderColor": "#01396C",
+      "borderRadius": 32,
+      "borderStyle": "dashed",
+      "borderWidth": 2,
+      "height": "auto",
+      "marginBottom": 240,
+      "marginLeft": "auto",
+      "marginRight": "auto",
+      "marginTop": 16,
+      "opacity": 1,
+      "paddingBottom": 16,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 8,
+      "width": "90%",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "#ffffff",
+        "fontFamily": "Poppins-SemiBold",
+        "fontSize": 16,
+        "fontStyle": undefined,
+        "fontWeight": "600",
+        "lineHeight": 24,
+        "opacity": undefined,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#ffffff",
+          "fontFamily": "Poppins-SemiBold",
+          "fontSize": 16,
+          "fontStyle": undefined,
+          "fontWeight": "600",
+          "lineHeight": 24,
+          "opacity": undefined,
+        }
+      }
+    >
+      + 
+      	
+       
+    </Text>
+  </Text>
+</View>
+`;
+
+exports[`GeneralButton renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#01396C",
+      "borderColor": "#01396C",
+      "borderRadius": 32,
+      "borderWidth": 2,
+      "height": "auto",
+      "marginBottom": 0,
+      "marginLeft": "auto",
+      "marginRight": "auto",
+      "marginTop": undefined,
+      "opacity": 1,
+      "paddingBottom": 12,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingTop": 12,
+      "width": "90%",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "#ffffff",
+        "fontFamily": "Poppins-SemiBold",
+        "fontSize": 16,
+        "fontStyle": undefined,
+        "fontWeight": "600",
+        "lineHeight": 24,
+        "opacity": undefined,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`GeneralButton_2 renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": undefined,
+      "borderColor": "#FFFFFF",
+      "borderRadius": 50,
+      "borderWidth": 2,
+      "height": "auto",
+      "opacity": 1,
+      "paddingBottom": 16,
+      "paddingLeft": undefined,
+      "paddingRight": 0,
+      "paddingTop": 16,
+      "width": "45%",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": undefined,
+        "fontFamily": "Poppins-SemiBold",
+        "fontSize": 16,
+        "fontStyle": undefined,
+        "fontWeight": "600",
+        "lineHeight": 24,
+        "opacity": undefined,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`IconSwitchButton renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    selectable={false}
+    style={
+      [
+        {
+          "color": undefined,
+          "fontSize": 12,
+        },
+        undefined,
+        {
+          "fontFamily": "icomoon",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        {},
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`MoreDetailsButton renders correctly 1`] = `
+<View>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": undefined,
+          "fontFamily": "Poppins-SemiBold",
+          "fontSize": 12,
+          "fontStyle": undefined,
+          "fontWeight": "600",
+          "lineHeight": 16,
+          "marginRight": 8,
+          "opacity": 0.7,
+        }
+      }
+    />
+    <View
+      accessibilityState={
+        {
+          "disabled": true,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "opacity": 1,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        selectable={false}
+        style={
+          [
+            {
+              "color": "black",
+              "fontSize": 12,
+            },
+            undefined,
+            {
+              "fontFamily": "icomoon",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            {},
+          ]
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`NormalIconButton renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    selectable={false}
+    style={
+      [
+        {
+          "color": undefined,
+          "fontSize": 12,
+        },
+        undefined,
+        {
+          "fontFamily": "icomoon",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        {},
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`SquareButton renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#01396C",
+      "borderRadius": 16,
+      "height": "auto",
+      "opacity": 1,
+      "paddingBottom": 16,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "width": 160,
+    }
+  }
+>
+  <Image />
+  <Text
+    style={
+      {
+        "color": "#ffffff",
+        "fontFamily": "Poppins-Regular",
+        "fontSize": 12,
+        "fontStyle": undefined,
+        "fontWeight": "500",
+        "lineHeight": 16,
+        "marginBottom": undefined,
+        "marginLeft": undefined,
+        "marginRight": undefined,
+        "marginTop": 16,
+        "opacity": undefined,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`TextButtonCenter renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "marginBottom": 0,
+      "marginLeft": "auto",
+      "marginRight": "auto",
+      "marginTop": 0,
+      "opacity": 1,
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "alignSelf": "center",
+        "color": "#01396C",
+        "fontFamily": "Poppins-SemiBold",
+        "fontSize": 16,
+        "fontStyle": "normal",
+        "fontWeight": "600",
+        "lineHeight": 24,
+        "opacity": 1,
+      }
+    }
+  />
+</View>
+`;
